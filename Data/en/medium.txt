@@ -1,0 +1,10 @@
+ocean
+house
+grass
+table
+cloud
+river
+beach
+smile
+chair
+quiet

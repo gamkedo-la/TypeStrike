@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://5uhkotpicmc1"]
+
+[ext_resource type="Material" uid="uid://ccbtvlisd2k75" path="res://Materials/red.tres" id="1_jhd2q"]
+[ext_resource type="Script" path="res://Components/EnemyBase/EnemyBase.gd" id="1_verte"]
+[ext_resource type="Material" uid="uid://cg4toje106t5a" path="res://Materials/white.tres" id="2_tlt1q"]
+[ext_resource type="Script" path="res://Components/BillboardMesh.gd" id="4_1ybbc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uopbk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fqhfy"]
+material = ExtResource("1_jhd2q")
+
+[sub_resource type="BoxMesh" id="BoxMesh_vx01n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldpvw"]
+resource_local_to_scene = true
+font_size = 36
+shadow_size = 16
+shadow_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vxc0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03cuy"]
+resource_local_to_scene = true
+transparency = 4
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_5vxc0")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_iubjb"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_03cuy")
+
+[node name="EnemyBase" type="CharacterBody3D"]
+script = ExtResource("1_verte")
+move_speed = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_uopbk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_fqhfy")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D"]
+transform = Transform3D(0.416983, 0, 0, 0, 0.208438, 0, 0, 0, 0.416983, -0.000678062, 0.492258, -0.414477)
+material_override = ExtResource("2_tlt1q")
+mesh = SubResource("BoxMesh_vx01n")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Panel" type="Panel" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "sample text"
+label_settings = SubResource("LabelSettings_ldpvw")
+uppercase = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-10.9373, 0, 9.56166e-07, 0, 10.9373, 0, -9.56166e-07, 0, -10.9373, 0, 2.60454, 0)
+mesh = SubResource("QuadMesh_iubjb")
+script = ExtResource("4_1ybbc")

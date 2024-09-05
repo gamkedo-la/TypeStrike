@@ -1,0 +1,10 @@
+cat
+dog
+tree
+book
+car
+sun
+fish
+chair
+apple
+star
