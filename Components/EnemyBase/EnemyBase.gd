@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var move_speed : float = 5.0
 @export var word : String
+@export var target : TypeStrikePlayer
 
 func _init():
 	word = [
@@ -32,5 +33,10 @@ func erase(letter : String) -> String:
 	return word
 
 func _physics_process(delta):
-	velocity = Vector3(0, 0, move_speed)
-	move_and_slide()
+	if target:
+		look_at(target.global_position)
+		var direction = target.global_position - self.global_position
+		rotation.y = atan2(direction.z, direction.x)
+		#velocity = -basis.z * move_speed
+		#velocity = Vector3(0, 0, move_speed)
+		move_and_slide()

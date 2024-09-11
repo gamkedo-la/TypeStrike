@@ -1,34 +1,105 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1t8f0obc186b"]
+[gd_scene load_steps=10 format=3 uid="uid://b1t8f0obc186b"]
 
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="1_3sbqm"]
 [ext_resource type="PackedScene" uid="uid://dgdtjr8holjb4" path="res://Components/EnemySpawner/EnemySpawner.tscn" id="2_2vuqi"]
+[ext_resource type="PackedScene" uid="uid://bac5b7pawc0yq" path="res://Meshes/test_map_blockout.glb" id="3_1b40a"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ugcad"]
+
+[sub_resource type="Sky" id="Sky_1m75t"]
+sky_material = SubResource("PhysicalSkyMaterial_ugcad")
 
 [sub_resource type="Environment" id="Environment_shc2y"]
-background_energy_multiplier = 0.0
+background_mode = 2
+sky = SubResource("Sky_1m75t")
+ambient_light_source = 3
+fog_enabled = true
+fog_height = 1.0
+fog_height_density = 1.0
+volumetric_fog_albedo = Color(0.49559, 0.548833, 0.357076, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vh4v3"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_sfo0e"]
+[sub_resource type="Curve3D" id="Curve3D_khvet"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.42, 0, 0.767, -0.42, 0, -0.767, -0.499, 0, -9.66, 1.368, 0, 0.046, -1.368, 0, -0.046, -5.802, 0, -9.676, -0.184, 0, 2.745, 0.184, 0, -2.615, -17.819, 0, -11.307, 0, 0, 0, 0, 0, 0, -13.749, 0, -16.508, 0, 0, 0, 0, 0, 0, -29.142, 0, -15.308),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b063c"]
+resource_local_to_scene = true
+size = Vector3(1.95215, 1.76611, 1.53711)
 
 [node name="Level1" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.346936, -0.663188, 0.663188, 0, 0.707107, 0.707107, -0.937889, -0.245321, 0.245321, 13.7033, 11.6575, -8.36809)
-fov = 65.0
-size = 18.496
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_shc2y")
 camera_attributes = SubResource("CameraAttributesPractical_vh4v3")
 
+[node name="Path3D" type="Path3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5512, -2.38419e-07, 23.6566)
+curve = SubResource("Curve3D_khvet")
+
+[node name="Player" parent="WorldEnvironment/Path3D" instance=ExtResource("1_3sbqm")]
+transform = Transform3D(0.998653, 0, 0.0515867, 0, 1, 0, -0.0515867, 0, 0.998653, 0, 0, 0)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.207231, -0.570246, 0.794906, -0.0164404, 0.8104, 0.585647, -0.978154, -0.134433, 0.158565, 0, -3.80309, 7.39592)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.27152, 0, 0, 0, 1, 0, 0, 0, 22.108, 0, 0, -19.7001)
-mesh = SubResource("PlaneMesh_sfo0e")
-
-[node name="Player" parent="." instance=ExtResource("1_3sbqm")]
+transform = Transform3D(0.207231, -0.570246, 0.794906, -0.0164404, 0.8104, 0.585647, -0.978154, -0.134433, 0.158565, -0.0363235, -3.77962, 7.38722)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("2_2vuqi")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -40.0679)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.2911, 4.76837e-07, 17.8959)
+
+[node name="Node3D" parent="EnemySpawner/SpawnPoints" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27722, 4.76837e-07, 3.53923)
+
+[node name="Node3D2" type="Node3D" parent="EnemySpawner/SpawnPoints" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98738, 0.00627232, 5.09444)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner/SpawnPoints/Node3D2"]
+
+[node name="CollisionShape3D" parent="EnemySpawner" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.837845, 0)
+shape = SubResource("BoxShape3D_b063c")
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("2_2vuqi")]
+transform = Transform3D(-0.648837, 0, 0.760927, 0, 1, 0, -0.760927, 0, -0.648837, 9.69736, 4.76837e-07, 7.05709)
+
+[node name="Node3D" parent="EnemySpawner2/SpawnPoints" index="0"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -1.07452, 4.76837e-07, 6.6354)
+
+[node name="Node3D2" type="Node3D" parent="EnemySpawner2/SpawnPoints" index="1"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0.103709, 4.76837e-07, 9.60857)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner2/SpawnPoints/Node3D2"]
+
+[node name="CollisionShape3D" parent="EnemySpawner2" index="1"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.837845, 0)
+shape = SubResource("BoxShape3D_b063c")
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("2_2vuqi")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1.70258, 4.76837e-07, 8.02335)
+
+[node name="Node3D" parent="EnemySpawner3/SpawnPoints" index="0"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -3.15115, 2.38418e-07, 5.54062)
+
+[node name="Node3D3" type="Node3D" parent="EnemySpawner3/SpawnPoints" index="1"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -1.30028, 2.38418e-07, 5.54062)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner3/SpawnPoints/Node3D3"]
+
+[node name="Node3D2" type="Node3D" parent="EnemySpawner3/SpawnPoints" index="2"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0.644239, 4.76837e-07, 5.59229)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner3/SpawnPoints/Node3D2"]
+
+[node name="CollisionShape3D" parent="EnemySpawner3" index="1"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.837845, 0)
+shape = SubResource("BoxShape3D_b063c")
+
+[node name="test_map_blockout" parent="." instance=ExtResource("3_1b40a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55961, 0, 0.427317)
+
+[editable path="EnemySpawner"]
+[editable path="EnemySpawner2"]
+[editable path="EnemySpawner3"]

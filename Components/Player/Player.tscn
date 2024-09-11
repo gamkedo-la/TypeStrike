@@ -1,33 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://pqdm4i0c0o1l"]
+[gd_scene load_steps=4 format=3 uid="uid://pqdm4i0c0o1l"]
 
 [ext_resource type="Script" path="res://Components/Player/Player.gd" id="1_bwaaj"]
-[ext_resource type="Material" uid="uid://bh8chiqnmmi0t" path="res://Materials/blue.tres" id="1_i8mh7"]
-[ext_resource type="Material" uid="uid://cg4toje106t5a" path="res://Materials/white.tres" id="2_7jcat"]
+[ext_resource type="Script" path="res://Components/Player/PlayerRails.gd" id="1_h5clx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q57ax"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_b3ckf"]
+[node name="Player" type="PathFollow3D"]
+loop = false
+tilt_enabled = false
+script = ExtResource("1_h5clx")
 
-[sub_resource type="BoxMesh" id="BoxMesh_uikeq"]
-
-[node name="Player" type="CharacterBody3D"]
+[node name="Area3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_bwaaj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_q57ax")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-material_override = ExtResource("1_i8mh7")
-mesh = SubResource("CapsuleMesh_b3ckf")
-skeleton = NodePath("../..")
+[node name="Camera3D" type="Camera3D" parent="Area3D/CollisionShape3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/MeshInstance3D"]
-transform = Transform3D(0.416983, 0, 0, 0, 0.208438, 0, 0, 0, 0.416983, -0.000678062, 0.492258, -0.414477)
-material_override = ExtResource("2_7jcat")
-mesh = SubResource("BoxMesh_uikeq")
-
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="TextEdit" parent="Area3D"]
 offset_right = 8.0
 offset_bottom = 8.0
 context_menu_enabled = false
@@ -35,3 +27,4 @@ shortcut_keys_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
+metadata/_edit_use_anchors_ = true
