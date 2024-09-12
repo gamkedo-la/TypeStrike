@@ -34,9 +34,6 @@ func erase(letter : String) -> String:
 
 func _physics_process(delta):
 	if target:
-		look_at(target.global_position)
-		var direction = target.global_position - self.global_position
-		rotation.y = atan2(direction.z, direction.x)
-		#velocity = -basis.z * move_speed
-		#velocity = Vector3(0, 0, move_speed)
+		look_at(target.global_position, Vector3.UP)
+		velocity = -global_basis.z * move_speed
 		move_and_slide()
