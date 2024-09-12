@@ -54,13 +54,9 @@ func enemy_spawned(node: Node):
 
 func begin_wave(spawned_enemies: Array[EnemyBase]):
 	enemies = spawned_enemies
-	#active_spawner.child_entered_tree.connect(self.enemy_spawned)
-	#print("spawn func connected")
 	stop_progress()
 
 func end_wave():
-	#active_spawner.child_entered_tree.disconnect(enemy_spawned)
-	#active_spawner = null
 	continue_progress()
 
 func stop_progress():
