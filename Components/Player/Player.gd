@@ -3,15 +3,17 @@ extends CharacterBody3D
 
 const english_alpha = "abcdefghijklmnopqrstuvwxyz"
 
+@export var player_rails : PlayerRails
+@export var textarea : TextEdit
+
 var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
 var current_target : int = -1
-var textarea : TextEdit
 
 signal wave_defeated
+signal correct_letter
 
 func _ready():
-	textarea = $TextEdit
 	textarea.text_changed.connect(_text_input)
 	textarea.grab_focus()
 	wave_defeated.connect(end_wave)
@@ -47,7 +49,6 @@ func remove_target():
 		wave_defeated.emit()
 
 func enemy_spawned(node: Node):
-	print("unit spawned", node.name)
 	if node is EnemyBase:
 		var enemy = node as EnemyBase
 		enemies.append(enemy)
@@ -60,7 +61,7 @@ func end_wave():
 	continue_progress()
 
 func stop_progress():
-	$"..".should_move = false
+	player_rails.should_move = false
 	
 func continue_progress():
-	$"..".should_move = true
+	player_rails.should_move = true

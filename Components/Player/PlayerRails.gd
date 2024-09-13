@@ -1,3 +1,4 @@
+class_name PlayerRails
 extends PathFollow3D
 
 @export var speed : float = 2.0

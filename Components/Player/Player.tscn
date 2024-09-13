@@ -10,8 +10,10 @@ loop = false
 tilt_enabled = false
 script = ExtResource("1_h5clx")
 
-[node name="Area3D" type="CharacterBody3D" parent="."]
+[node name="Area3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player_rails", "textarea")]
 script = ExtResource("1_bwaaj")
+player_rails = NodePath("..")
+textarea = NodePath("TextEdit")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

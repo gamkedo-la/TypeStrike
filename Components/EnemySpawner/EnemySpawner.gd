@@ -2,7 +2,7 @@ class_name EnemySpawner
 extends Area3D
 
 @export var enemy_type : PackedScene
-@export var spawn_points : Vector3
+@export var spawn_points : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +17,7 @@ func _on_body_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local
 		var player = body as TypeStrikePlayer
 		body_shape_entered.disconnect(_on_body_entered)
 		var enemies : Array[EnemyBase] = []
-		for node in $SpawnPoints.get_children():
-			#node.look_at(player.global_position)
-			node.look_at(player.position)
+		for node in spawn_points.get_children():
 			var enemy = enemy_type.instantiate() as EnemyBase
 			node.add_child(enemy)
 			enemy.target = body
