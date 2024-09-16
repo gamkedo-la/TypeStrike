@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=5 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
+[ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_7iniu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1sks"]
 font_size = 64
@@ -8,7 +10,6 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [node name="WinScreen" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,3 +27,16 @@ text = "Level complete!"
 label_settings = SubResource("LabelSettings_g1sks")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.7
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_bottom = -0.231995
+theme = ExtResource("2_7sqmg")
+text = "Back to menu"
+script = ExtResource("3_7iniu")
+level_scene = "res://Components/UI/MainMenu.tscn"
