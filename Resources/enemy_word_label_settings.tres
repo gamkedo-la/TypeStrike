@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://jwwd4b7gdgoh"]
+
+[ext_resource type="FontFile" uid="uid://ctfji3yanf8v2" path="res://Resources/Fonts/whitrabt.ttf" id="1_tx4vb"]
+
+[resource]
+font = ExtResource("1_tx4vb")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)

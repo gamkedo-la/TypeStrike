@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://urlbj24trl7l"]
+
+[ext_resource type="FontFile" uid="uid://ctfji3yanf8v2" path="res://Resources/Fonts/whitrabt.ttf" id="1_2hvlj"]
+
+[resource]
+default_font_size = 16
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_2hvlj")
+Label/fonts/font = ExtResource("1_2hvlj")
