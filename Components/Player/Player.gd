@@ -1,8 +1,6 @@
 class_name TypeStrikePlayer
 extends CharacterBody3D
 
-const english_alpha = "abcdefghijklmnopqrstuvwxyz"
-
 @export var player_rails : PlayerRails
 @export var textarea : TextEdit
 
