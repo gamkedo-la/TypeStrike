@@ -30,9 +30,10 @@ resource_local_to_scene = true
 lightmap_size_hint = Vector2i(7, 7)
 material = SubResource("StandardMaterial3D_03cuy")
 
-[node name="EnemyBase" type="CharacterBody3D"]
+[node name="EnemyBase" type="CharacterBody3D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_verte")
 move_speed = 0.5
+label = NodePath("SubViewport/Panel/Label")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

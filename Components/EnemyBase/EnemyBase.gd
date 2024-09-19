@@ -4,30 +4,18 @@ extends CharacterBody3D
 @export var move_speed : float = 5.0
 @export var word : String
 @export var target : TypeStrikePlayer
-
-func _init():
-	word = [
-		"bright future",
-		"luminous glow",
-		"gentle breeze",
-		"whispered song",
-		"golden sunset",
-		"silent ocean",
-		"vivid dreams",
-		"radiant smile",
-		"charming tale",
-		"joyful moments",
-	].pick_random()
+@export var label : Label
 
 func _ready():
-	$SubViewport/Panel/Label.text = word
+	word = TypingPhrases.get_random_phrase()
+	label.text = word
 
 func erase(letter : String) -> String:
 	if word.begins_with(letter):
 		word = word.erase(0, 1)
 		if word.begins_with(" "):
 			word = word.erase(0, 1)
-		$SubViewport/Panel/Label.text = word
+		label.text = word
 	if word.length() <= 0:
 		queue_free()
 	return word
