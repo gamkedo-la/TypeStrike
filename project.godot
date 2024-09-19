@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TypeStrike"
-run/main_scene="res://Levels/level1.tscn"
+run/main_scene="res://Components/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
