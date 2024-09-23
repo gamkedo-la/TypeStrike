@@ -8,13 +8,10 @@ var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
 var current_target : int = -1
 
-signal wave_defeated
-signal correct_letter
 
 func _ready():
 	textarea.text_changed.connect(_text_input)
 	textarea.grab_focus()
-	wave_defeated.connect(end_wave)
 
 func _text_input():
 	var key_typed = textarea.text[-1].to_lower()
@@ -44,7 +41,7 @@ func remove_target():
 	current_target = -1
 	textarea.clear()
 	if enemies.size() == 0:
-		wave_defeated.emit()
+		Messenger.wave_defeated.emit()
 
 func enemy_spawned(node: Node):
 	if node is EnemyBase:
@@ -53,13 +50,4 @@ func enemy_spawned(node: Node):
 
 func begin_wave(spawned_enemies: Array[EnemyBase]):
 	enemies = spawned_enemies
-	stop_progress()
-
-func end_wave():
-	continue_progress()
-
-func stop_progress():
-	player_rails.should_move = false
-	
-func continue_progress():
-	player_rails.should_move = true
+	Messenger.wave_started.emit()

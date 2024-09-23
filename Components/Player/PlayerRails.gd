@@ -10,6 +10,8 @@ var should_move : bool = true
 
 func _ready():
 	current_speed = speed
+	Messenger.wave_started.connect(stop_progress)
+	Messenger.wave_defeated.connect(continue_progress)
 
 func _process(delta):
 	if should_move:
@@ -22,3 +24,9 @@ func _input(event):
 		current_speed = speed * 4.0
 	if event.is_action_released("fast_forward"):
 		current_speed = speed
+
+func stop_progress():
+	should_move = false
+	
+func continue_progress():
+	should_move = true
