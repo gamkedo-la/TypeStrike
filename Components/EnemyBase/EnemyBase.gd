@@ -18,6 +18,7 @@ func erase(letter : String) -> String:
 		label.text = word
 	if word.length() <= 0:
 		queue_free()
+		Messenger.enemy_defeated.emit()
 	return word
 
 func _physics_process(delta):

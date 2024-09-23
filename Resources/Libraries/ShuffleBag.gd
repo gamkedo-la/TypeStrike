@@ -1,19 +1,19 @@
 extends RefCounted
 class_name ShuffleBag
 
-var initial : Array
 var bag : Array
+var index : int = 0
 
 func populate(items : Array) -> void:
-	initial = items
+	bag = items
 	reshuffle()
 
 func reshuffle():
-	bag = initial.duplicate()
+	index = 0
 	bag.shuffle()
 
 func random() -> Variant:
-	if bag.is_empty():
+	if index >= bag.size():
 		reshuffle()
-	
-	return bag.pop_front()
+	index += 1
+	return bag[index-1]

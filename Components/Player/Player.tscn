@@ -23,6 +23,8 @@ shape = SubResource("CapsuleShape3D_q57ax")
 
 [node name="TextEdit" type="TextEdit" parent="Area3D"]
 anchors_preset = -1
+anchor_left = -0.188368
+anchor_top = -0.0401235
 anchor_right = 0.007
 anchor_bottom = 0.012
 offset_left = -116.0
