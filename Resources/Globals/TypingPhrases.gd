@@ -4,7 +4,7 @@ var phrases : ShuffleBag
 
 func _init():
 	phrases = ShuffleBag.new()
-	var dictionary_file = FileAccess.open("res://Resources/dictionary.txt", FileAccess.READ)
+	var dictionary_file = FileAccess.open("res://Resources/PhraseFiles/en/medium.txt", FileAccess.READ)
 	var phrase_array = []
 	while not dictionary_file.eof_reached():
 		var phrase = dictionary_file.get_line()
