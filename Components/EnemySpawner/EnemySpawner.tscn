@@ -6,10 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlojh"]
 resource_local_to_scene = true
 
-[node name="EnemySpawner" type="Area3D" node_paths=PackedStringArray("spawn_points")]
+[node name="EnemySpawner" type="Area3D"]
 script = ExtResource("1_mubw7")
 enemy_type = ExtResource("2_fnly5")
-spawn_points = NodePath("SpawnPoints")
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 

@@ -2,10 +2,11 @@ class_name EnemySpawner
 extends Area3D
 
 @export var enemy_type : PackedScene
-@export var spawn_points : Node3D
+var spawn_points : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	spawn_points = $SpawnPoints
 	body_shape_entered.connect(_on_body_entered)
 
 func _on_timer_timeout():
