@@ -12,6 +12,7 @@ var current_target : int = -1
 func _ready():
 	textarea.text_changed.connect(_text_input)
 	textarea.grab_focus()
+	player_rails.path_completed.connect(unfocus_input)
 
 func _text_input():
 	var key_typed = textarea.text[-1].to_lower()
@@ -42,6 +43,9 @@ func remove_target():
 	textarea.clear()
 	if enemies.size() == 0:
 		Messenger.wave_defeated.emit()
+
+func unfocus_input():
+	textarea.release_focus()
 
 func enemy_spawned(node: Node):
 	if node is EnemyBase:

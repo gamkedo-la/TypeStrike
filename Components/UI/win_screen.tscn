@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=6 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
@@ -8,6 +8,11 @@
 font_size = 64
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_c6iug"]
+device = -1
+keycode = 66
+unicode = 98
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -37,6 +42,7 @@ anchor_right = 0.7
 anchor_bottom = 0.8
 offset_bottom = -0.231995
 theme = ExtResource("2_7sqmg")
-text = "Back to menu"
+text = "[B] Back to menu"
 script = ExtResource("3_7iniu")
 level_scene = "res://Components/UI/MainMenu.tscn"
+trigger_key = SubResource("InputEventKey_c6iug")
