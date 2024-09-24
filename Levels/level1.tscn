@@ -27,10 +27,10 @@ size = Vector3(1.95215, 1.76611, 1.53711)
 
 [sub_resource type="Curve3D" id="Curve3D_khvet"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.42, 0, 0.767, -0.42, 0, -0.767, -0.499, 0, -9.66, 1.368, 0, 0.046, -1.368, 0, -0.046, -5.802, 0, -9.676, -0.184, 0, 2.745, 0.184, 0, -2.615, -17.819, 0, -11.307, 0, 0, 0, 0, 0, 0, -13.749, 0, -16.508, 0, 0, 0, 0, 0, 0, -29.142, 0, -15.308),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.42, 0, 0.767, -0.42, 0, -0.767, -0.499, 0, -9.66, 1.368, 0, 0.046, -1.368, 0, -0.046, -5.802, 0, -9.676, 4.061, 0, 0, 0.184, 0, 0, -17.819, 0, -11.307, 0, 0, 0, 0, 0, 0, -13.749, 0, -16.508, 0, 0, 0, 0, 0, 0, -29.142, 0, -15.308, 0, 0, 0, 0, 0, 0, -34.5512, 2.38419e-07, -4.6566, 0, 0, 0, 0, 0, 0, -43.5512, 2.38419e-07, -7.6566, -2.145, 0, 2.655, 1.855, 0, -4.055, -43.5512, 2.38419e-07, -24.6566, -3, 0, 3, 3, 0, -3, -20.5512, 2.38419e-07, -30.6566, 0, 0, 0, 0, 0, 0, -8.5512, 2.38419e-07, -37.6566),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 11
 
 [node name="Level1" type="Node3D"]
 
@@ -91,6 +91,26 @@ transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0.644239
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.837845, 0)
 shape = SubResource("BoxShape3D_b063c")
 
+[node name="EnemySpawner4" parent="." instance=ExtResource("2_2vuqi")]
+transform = Transform3D(-0.349423, 0, 0.936965, 0, 1, 0, -0.936965, 0, -0.349423, -12.4771, -1.7053e-13, -3.89065)
+
+[node name="Node3D" parent="EnemySpawner4/SpawnPoints" index="0"]
+transform = Transform3D(-0.288848, 0, -0.957375, 0, 1, 0, 0.957375, 0, -0.288848, -1.17001, 2.38418e-07, 13.489)
+
+[node name="Node3D3" type="Node3D" parent="EnemySpawner4/SpawnPoints" index="1"]
+transform = Transform3D(0.0703662, 0, -0.997521, 0, 1, 0, 0.997521, 0, 0.0703662, -1.61105, 2.38418e-07, 11.5608)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner4/SpawnPoints/Node3D3"]
+
+[node name="Node3D2" type="Node3D" parent="EnemySpawner4/SpawnPoints" index="2"]
+transform = Transform3D(0.326179, 0, -0.945309, 0, 1, 0, 0.945309, 0, 0.326179, -2.91818, 4.76837e-07, 10.041)
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner4/SpawnPoints/Node3D2"]
+
+[node name="CollisionShape3D" parent="EnemySpawner4" index="1"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.837845, 0)
+shape = SubResource("BoxShape3D_b063c")
+
 [node name="test_map_blockout" parent="." instance=ExtResource("3_1b40a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55961, 0, 0.427317)
 
@@ -101,10 +121,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5512, -2.38419e-07, 23.656
 curve = SubResource("Curve3D_khvet")
 
 [node name="Player" parent="Path3D" instance=ExtResource("1_3sbqm")]
-transform = Transform3D(0.998648, 0, 0.0515865, 0, 1, 0, -0.0515865, 0, 0.998648, 0, 0, 0)
+transform = Transform3D(0.998644, 0, 0.0515863, 0, 1, 0, -0.0515863, 0, 0.998644, 0, 0, 0)
 
 [connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
 
 [editable path="EnemySpawner"]
 [editable path="EnemySpawner2"]
 [editable path="EnemySpawner3"]
+[editable path="EnemySpawner4"]
