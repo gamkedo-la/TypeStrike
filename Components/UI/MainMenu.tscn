@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=8 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
 [ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="2_l0abo"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_3cvst"]
 [ext_resource type="Script" path="res://Components/UI/QuitButton.gd" id="4_i7vk5"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_2444r"]
+keycode = 80
+
+[sub_resource type="InputEventKey" id="InputEventKey_a5rkl"]
+device = -1
+keycode = 81
+unicode = 81
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,8 +49,10 @@ layout_mode = 2
 text = "Play"
 script = ExtResource("3_3cvst")
 level_scene = "res://Levels/level1.tscn"
+trigger_key = SubResource("InputEventKey_2444r")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("4_i7vk5")
+trigger_key = SubResource("InputEventKey_a5rkl")
