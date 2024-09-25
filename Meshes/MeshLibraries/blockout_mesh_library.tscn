@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4gnqgrntq8hm"]
+
+[ext_resource type="PackedScene" uid="uid://nfmwvbqogh3a" path="res://Meshes/MeshLibraries/blockout_mesh_library.glb" id="1_vdixh"]
+
+[node name="blockout_mesh_library" instance=ExtResource("1_vdixh")]
