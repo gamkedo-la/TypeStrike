@@ -31,8 +31,8 @@ func get_target(letter : String):
 func attack_target(letter : String):
 	var enemy = enemies[current_target]
 	if enemy:
-		var remainder = enemy.erase(letter)
-		if remainder.length() <= 0:
+		var remaining = enemy.erase(letter)
+		if remaining <= 0:
 			remove_target()
 	else:
 		current_target = -1

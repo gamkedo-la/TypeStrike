@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://5uhkotpicmc1"]
+[gd_scene load_steps=12 format=3 uid="uid://5uhkotpicmc1"]
 
 [ext_resource type="Material" uid="uid://ccbtvlisd2k75" path="res://Materials/red.tres" id="1_jhd2q"]
 [ext_resource type="Script" path="res://Components/EnemyBase/EnemyBase.gd" id="1_verte"]
 [ext_resource type="Material" uid="uid://cg4toje106t5a" path="res://Materials/white.tres" id="2_tlt1q"]
 [ext_resource type="Script" path="res://Components/BillboardMesh.gd" id="4_1ybbc"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="4_cc6lo"]
-[ext_resource type="LabelSettings" uid="uid://jwwd4b7gdgoh" path="res://Resources/enemy_word_label_settings.tres" id="5_53hsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uopbk"]
 
@@ -64,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_cc6lo")
 
-[node name="Label" type="Label" parent="SubViewport/Panel"]
+[node name="Label" type="RichTextLabel" parent="SubViewport/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,9 +77,9 @@ offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_cc6lo")
-text = "sample text"
-label_settings = ExtResource("5_53hsf")
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "[center]sample text[/center]"
+fit_content = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-10.2736, 0, 8.98143e-07, 0, 10.2736, 0, -8.98143e-07, 0, -10.2736, 0, 2.60454, 0)
