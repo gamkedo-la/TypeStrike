@@ -33,5 +33,5 @@ func _physics_process(delta):
 func _update_label():
 	var typed = word.substr(0, word_index)
 	var remaining = word.substr(word_index)
-	var label_text = "[center][color=DEEP_SKY_BLUE]%s[/color]%s[/center]" % [typed, remaining]
+	var label_text = "[center][font_size=32][color=DEEP_SKY_BLUE]%s[/color]%s[/font_size][/center]" % [typed, remaining]
 	label.text = label_text
