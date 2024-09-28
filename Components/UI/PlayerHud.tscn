@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/UI/PlayerHud.gd" id="1_eicr1"]
 
-[node name="PlayerHud" type="Control"]
+[node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,11 +10,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eicr1")
+score_label = NodePath("TypingPhraseContainer/HBoxContainer/ScoreValue")
 
 [node name="TypingPhraseContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 62.0
+offset_bottom = 23.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TypingPhraseContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="TypingPhraseContainer/HBoxContainer"]
+layout_mode = 2
+text = "Score:"
+
+[node name="ScoreValue" type="Label" parent="TypingPhraseContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"

@@ -31,6 +31,10 @@ func erase(letter : String) -> int:
 		if word_index < word.length() && word[word_index] == " ":
 			word_index += 1
 		_update_label()
+		Messenger.correct_letter_typed.emit()
+	else:
+		Messenger.wrong_letter_typed.emit()
+
 	if word_index >= word.length():
 		queue_free()
 		Messenger.enemy_defeated.emit()
