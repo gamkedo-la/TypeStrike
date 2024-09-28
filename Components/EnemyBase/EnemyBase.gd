@@ -7,13 +7,25 @@ var original_word : String
 @export var target : TypeStrikePlayer
 @export var label : RichTextLabel
 var word_index : int = 0
+@export var text_material : Material
+
+@export var typed_label : Label3D
+@export var typed_bg : Label3D
+@export var remaining_label : Label3D
+@export var remaining_bg : Label3D
+var background_char = "▋"
+var in_front = false
 
 func _ready():
 	word = TypingPhrases.get_random_phrase()
 	_update_label()
+	$SubViewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	Messenger.enemy_spawned.emit(self)
 
 func erase(letter : String) -> int:
+	if not in_front:
+		_move_to_front()
+
 	if word[word_index] == letter:
 		word_index += 1
 		if word_index < word.length() && word[word_index] == " ":
@@ -30,8 +42,28 @@ func _physics_process(delta):
 		velocity = -global_basis.z * move_speed
 		move_and_slide()
 
+func _move_to_front():
+	in_front = true
+	$SubViewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	remaining_bg.visible = true
+	typed_bg.visible = true
+	typed_bg.render_priority = 10
+	remaining_bg.render_priority = 10
+	remaining_label.render_priority = 20
+	typed_label.render_priority = 20
+
 func _update_label():
 	var typed = word.substr(0, word_index)
 	var remaining = word.substr(word_index)
-	var label_text = "[center][font_size=32][color=DEEP_SKY_BLUE]%s[/color]%s[/font_size][/center]" % [typed, remaining]
-	label.text = label_text
+	var offset = ((typed.length() - remaining.length()) / 2.0) * 38.0
+	var offset_bg = ((typed.length() - remaining.length()) / 2.0) * 37.0
+	typed_label.offset.x = offset
+	typed_label.text = typed
+	remaining_label.text = remaining
+	remaining_label.offset.x = offset
+	typed_bg.text = background_char.repeat(typed.length())
+	remaining_bg.text = background_char.repeat(remaining.length())
+	typed_bg.offset.x = offset_bg
+	remaining_bg.offset.x = offset_bg
+	#var label_text = "[center][font_size=32][color=DEEP_SKY_BLUE]%s[/color]%s[/font_size][/center]" % [typed, remaining]
+	#label.text = label_text
