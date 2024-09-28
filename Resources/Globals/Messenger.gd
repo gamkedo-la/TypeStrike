@@ -7,4 +7,4 @@ signal player_take_damage
 signal wave_started
 signal wave_defeated
 signal enemy_spawned(enemy: EnemyBase)
-signal score_changed(old_score: int, new_score: int)
+signal score_changed(streak: int, score: int)

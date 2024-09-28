@@ -14,11 +14,10 @@ func _break_streak():
 	multiplier = 1
 
 func _update_player_score():
-	var old_score = score
 	streak += 1
 	_calculate_multiplier()
 	score += letter_value_base * multiplier
-	Messenger.score_changed.emit(old_score, score)
+	Messenger.score_changed.emit(streak, score)
 	
 func _calculate_multiplier():
 	multiplier = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/UI/PlayerHud.gd" id="1_eicr1"]
 
-[node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label")]
+[node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label", "streak_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eicr1")
-score_label = NodePath("TypingPhraseContainer/HBoxContainer/ScoreValue")
+score_label = NodePath("TypingPhraseContainer/VBoxContainer/ScoreContainer/ScoreValue")
+streak_label = NodePath("TypingPhraseContainer/VBoxContainer/StreakContainer/StreakValue")
 
 [node name="TypingPhraseContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -19,13 +20,27 @@ offset_bottom = 23.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TypingPhraseContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TypingPhraseContainer"]
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="TypingPhraseContainer/HBoxContainer"]
+[node name="ScoreContainer" type="HBoxContainer" parent="TypingPhraseContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="TypingPhraseContainer/VBoxContainer/ScoreContainer"]
 layout_mode = 2
 text = "Score:"
 
-[node name="ScoreValue" type="Label" parent="TypingPhraseContainer/HBoxContainer"]
+[node name="ScoreValue" type="Label" parent="TypingPhraseContainer/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="StreakContainer" type="HBoxContainer" parent="TypingPhraseContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StreakLabel" type="Label" parent="TypingPhraseContainer/VBoxContainer/StreakContainer"]
+layout_mode = 2
+text = "Streak:"
+
+[node name="StreakValue" type="Label" parent="TypingPhraseContainer/VBoxContainer/StreakContainer"]
 layout_mode = 2
 text = "0"
