@@ -8,6 +8,8 @@
 
 [sub_resource type="InputEventKey" id="InputEventKey_2444r"]
 keycode = 80
+physical_keycode = 80
+key_label = 80
 
 [sub_resource type="InputEventKey" id="InputEventKey_a5rkl"]
 device = -1
