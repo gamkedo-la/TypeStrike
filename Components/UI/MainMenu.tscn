@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Components/UI/QuitButton.gd" id="4_i7vk5"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_2444r"]
-keycode = 80
-physical_keycode = 80
-key_label = 80
+device = -1
+keycode = 83
+unicode = 83
 
 [sub_resource type="InputEventKey" id="InputEventKey_a5rkl"]
 device = -1
@@ -51,6 +51,13 @@ layout_mode = 2
 text = "[P] Play"
 script = ExtResource("3_3cvst")
 level_scene = "res://Levels/level1.tscn"
+trigger_key = SubResource("InputEventKey_2444r")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "[S] Settings"
+script = ExtResource("3_3cvst")
+level_scene = "res://Components/UI/SettingsMenu.tscn"
 trigger_key = SubResource("InputEventKey_2444r")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
