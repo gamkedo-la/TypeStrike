@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=9 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
@@ -8,8 +8,13 @@
 
 [sub_resource type="InputEventKey" id="InputEventKey_2444r"]
 device = -1
+keycode = 80
+unicode = 112
+
+[sub_resource type="InputEventKey" id="InputEventKey_cest3"]
+device = -1
 keycode = 83
-unicode = 83
+unicode = 115
 
 [sub_resource type="InputEventKey" id="InputEventKey_a5rkl"]
 device = -1
@@ -58,7 +63,7 @@ layout_mode = 2
 text = "[S] Settings"
 script = ExtResource("3_3cvst")
 level_scene = "res://Components/UI/SettingsMenu.tscn"
-trigger_key = SubResource("InputEventKey_2444r")
+trigger_key = SubResource("InputEventKey_cest3")
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
