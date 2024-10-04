@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://fdpfrvxj66fa"]
+[gd_scene load_steps=3 format=3 uid="uid://fdpfrvxj66fa"]
 
 [ext_resource type="Script" path="res://Components/UI/PlayerHud.gd" id="1_eicr1"]
+[ext_resource type="PackedScene" uid="uid://cv88lewxmuvp6" path="res://Components/UI/PauseMenu.tscn" id="2_aehjx"]
 
 [node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label", "streak_label")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,37 +12,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eicr1")
-score_label = NodePath("TypingPhraseContainer/VBoxContainer/ScoreContainer/ScoreValue")
-streak_label = NodePath("TypingPhraseContainer/VBoxContainer/StreakContainer/StreakValue")
+score_label = NodePath("StatsContainer/VBoxContainer/ScoreContainer/ScoreValue")
+streak_label = NodePath("StatsContainer/VBoxContainer/StreakContainer/StreakValue")
 
-[node name="TypingPhraseContainer" type="MarginContainer" parent="."]
+[node name="StatsContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 offset_right = 62.0
 offset_bottom = 23.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TypingPhraseContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsContainer"]
 layout_mode = 2
 
-[node name="ScoreContainer" type="HBoxContainer" parent="TypingPhraseContainer/VBoxContainer"]
+[node name="ScoreContainer" type="HBoxContainer" parent="StatsContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="TypingPhraseContainer/VBoxContainer/ScoreContainer"]
+[node name="ScoreLabel" type="Label" parent="StatsContainer/VBoxContainer/ScoreContainer"]
 layout_mode = 2
 text = "Score:"
 
-[node name="ScoreValue" type="Label" parent="TypingPhraseContainer/VBoxContainer/ScoreContainer"]
+[node name="ScoreValue" type="Label" parent="StatsContainer/VBoxContainer/ScoreContainer"]
 layout_mode = 2
 text = "0"
 
-[node name="StreakContainer" type="HBoxContainer" parent="TypingPhraseContainer/VBoxContainer"]
+[node name="StreakContainer" type="HBoxContainer" parent="StatsContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="StreakLabel" type="Label" parent="TypingPhraseContainer/VBoxContainer/StreakContainer"]
+[node name="StreakLabel" type="Label" parent="StatsContainer/VBoxContainer/StreakContainer"]
 layout_mode = 2
 text = "Streak:"
 
-[node name="StreakValue" type="Label" parent="TypingPhraseContainer/VBoxContainer/StreakContainer"]
+[node name="StreakValue" type="Label" parent="StatsContainer/VBoxContainer/StreakContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_aehjx")]
+visible = false
+layout_mode = 1

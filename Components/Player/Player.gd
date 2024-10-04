@@ -13,6 +13,7 @@ func _ready():
 	textarea.text_changed.connect(_text_input)
 	textarea.grab_focus()
 	player_rails.path_completed.connect(unfocus_input)
+	Messenger.pause_changed.connect(handle_pause_changed)
 
 func _text_input():
 	var key_typed = textarea.text[-1].to_lower()
@@ -55,3 +56,7 @@ func enemy_spawned(node: Node):
 func begin_wave(spawned_enemies: Array[EnemyBase]):
 	enemies = spawned_enemies
 	Messenger.wave_started.emit()
+
+func handle_pause_changed(paused: bool):
+	if not paused:
+		textarea.grab_focus()

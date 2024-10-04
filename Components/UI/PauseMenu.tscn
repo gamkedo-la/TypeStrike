@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv88lewxmuvp6"]
+
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_oryxb"]
+[ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="3_qafcc"]
+[ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_851a4"]
+[ext_resource type="Script" path="res://Components/UI/ResumeButton.gd" id="4_fapse"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_hulsc"]
+resource_local_to_scene = true
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="InputEventKey" id="InputEventKey_cest3"]
+resource_local_to_scene = true
+device = -1
+keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_nqa6t"]
+resource_local_to_scene = true
+device = -1
+keycode = 81
+unicode = 113
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oryxb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+text = "Paused"
+label_settings = ExtResource("3_qafcc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "[R] Resume"
+script = ExtResource("4_fapse")
+trigger_key = SubResource("InputEventKey_hulsc")
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "[S] Settings"
+script = ExtResource("4_851a4")
+level_scene = "res://Components/UI/SettingsMenu.tscn"
+trigger_key = SubResource("InputEventKey_cest3")
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "[Q] Quit to Main Menu"
+script = ExtResource("4_851a4")
+level_scene = "res://Components/UI/MainMenu.tscn"
+unpause = true
+trigger_key = SubResource("InputEventKey_nqa6t")
