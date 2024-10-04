@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="1_3sbqm"]
 [ext_resource type="PackedScene" uid="uid://dgdtjr8holjb4" path="res://Components/EnemySpawner/EnemySpawner.tscn" id="2_2vuqi"]
-[ext_resource type="PackedScene" uid="uid://bac5b7pawc0yq" path="res://Meshes/test_map_blockout.glb" id="3_1b40a"]
+[ext_resource type="PackedScene" uid="uid://bphx3mefxm0ls" path="res://Meshes/test_map_blockout.tscn" id="2_imtpq"]
 [ext_resource type="PackedScene" uid="uid://cvgr706cfuhue" path="res://Components/UI/win_screen.tscn" id="4_r8m1o"]
 [ext_resource type="Material" uid="uid://cduc5lbphscw5" path="res://Materials/SurfaceGlitchMaterial.material" id="5_my7p6"]
 
@@ -114,7 +114,7 @@ transform = Transform3D(0.326179, 0, -0.945309, 0, 1, 0, 0.945309, 0, 0.326179, 
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0.837845, 0)
 shape = SubResource("BoxShape3D_b063c")
 
-[node name="test_map_blockout" parent="." instance=ExtResource("3_1b40a")]
+[node name="test_map_blockout2" parent="." instance=ExtResource("2_imtpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55961, 0, 0.427317)
 
 [node name="WinScreen" parent="." instance=ExtResource("4_r8m1o")]
