@@ -16,7 +16,7 @@ func _ready():
 	Messenger.pause_changed.connect(handle_pause_changed)
 
 func _text_input():
-	var key_typed = textarea.text[-1].to_lower()
+	var key_typed = textarea.text[-1].to_lower() if textarea.text.length() > 0 else ""
 	if current_target < 0:
 		current_target = get_target(key_typed)
 	if current_target >= 0:
