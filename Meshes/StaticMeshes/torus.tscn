@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://14bcro00fo0s"]
+
+[ext_resource type="PackedScene" uid="uid://co2jbo7tl08g3" path="res://Meshes/StaticMeshes/torus.glb" id="1_qb1uk"]
+[ext_resource type="Script" path="res://Scripts/RotateOnAxis.gd" id="2_5cud4"]
+[ext_resource type="Material" uid="uid://cduc5lbphscw5" path="res://Materials/SurfaceGlitchMaterial.material" id="3_qnwlw"]
+
+[node name="torus" instance=ExtResource("1_qb1uk")]
+script = ExtResource("2_5cud4")
+rotation_axis = Vector3(0, 0, 1)
+rotation_rate = 1.0
+scale_factor = 1.0
+
+[node name="pentagonal_torus" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_qnwlw")
+
+[node name="AnimationPlayer" parent="." index="1"]
+reset_on_save = false
