@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dciy1pk4n3ph"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ugcad"]
+
+[sub_resource type="Sky" id="Sky_1m75t"]
+sky_material = SubResource("PhysicalSkyMaterial_ugcad")
+
+[resource]
+background_mode = 1
+sky = SubResource("Sky_1m75t")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+fog_height = 1.0
+fog_height_density = 1.0
+volumetric_fog_albedo = Color(0.49559, 0.548833, 0.357076, 1)
