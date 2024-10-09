@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://er6whp0j2ou5"]
+[gd_scene load_steps=11 format=3 uid="uid://er6whp0j2ou5"]
 
 [ext_resource type="MeshLibrary" uid="uid://crous2m8kb4sd" path="res://Meshes/MeshLibraries/blockout.meshlib" id="1_wltjo"]
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="2_4dreb"]
 [ext_resource type="ArrayMesh" uid="uid://bnlwp8fqo46hs" path="res://Meshes/StaticMeshes/tower_a.res" id="4_28arg"]
 [ext_resource type="PackedScene" uid="uid://14bcro00fo0s" path="res://Meshes/StaticMeshes/torus.tscn" id="4_di3mb"]
+[ext_resource type="MeshLibrary" uid="uid://da7vm84qsj6gf" path="res://Meshes/StaticMeshes/pipes.meshlib" id="5_pmxsc"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_m4f1p"]
 
@@ -50,7 +51,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 curve = SubResource("Curve3D_aox4y")
 
 [node name="Player" parent="Path3D" instance=ExtResource("2_4dreb")]
-speed = 0.0
 
 [node name="TowerA" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.33486, 0, 0, 0, 3.33486, 0, 0, 0, 3.33486, -9.33322, 0, -69.8206)
@@ -59,3 +59,13 @@ mesh = ExtResource("4_28arg")
 [node name="torus" parent="." instance=ExtResource("4_di3mb")]
 transform = Transform3D(12.2783, -1.44241e-07, -3.29984, -3.29984, -5.36702e-07, -12.2783, 0, 12.714, -5.55747e-07, 0, 0, -31.8476)
 scale_factor = 5.0
+
+[node name="GridMap2" type="GridMap" parent="."]
+mesh_library = ExtResource("5_pmxsc")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(131069, 65519, 524290, 131069, 65520, 524289, 131069, 65521, 524289, 196606, 65518, 393218, 131070, 65521, 131073, 65534, 65523, 393218, 262143, 65517, 1179649, 196608, 65517, 1179649, 196609, 65517, 1179649, 196610, 65517, 1179649, 196610, 65516, 1310722, 327684, 65516, 1441794, 327685, 65516, 1441793, 327686, 65516, 1441793, 327687, 65516, 1441793, 327688, 65516, 1441793, 327690, 65516, 1441793, 327689, 65516, 1441793, 327691, 65516, 1441793, 131073, 65519, 1, 262142, 65517, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)

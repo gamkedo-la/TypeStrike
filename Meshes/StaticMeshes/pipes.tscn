@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://da1iwq4itc25d"]
+
+[ext_resource type="PackedScene" uid="uid://b01qlh2b002i6" path="res://Meshes/StaticMeshes/pipes.glb" id="1_i3rwy"]
+[ext_resource type="Material" uid="uid://cg4toje106t5a" path="res://Materials/white.tres" id="2_yygvu"]
+
+[node name="pipes" instance=ExtResource("1_i3rwy")]
+
+[node name="pipes_right_bend" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.147574)
+surface_material_override/0 = ExtResource("2_yygvu")
+
+[node name="pipes_straight2" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0157983, 0, 0)
+surface_material_override/0 = ExtResource("2_yygvu")
+
+[node name="pipes_vertical_bend" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_yygvu")
