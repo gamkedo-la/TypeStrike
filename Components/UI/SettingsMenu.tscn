@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1vbq8efigd0c"]
+[gd_scene load_steps=7 format=3 uid="uid://d1vbq8efigd0c"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_pexnt"]
-[ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_lxxbg"]
+[ext_resource type="Script" path="res://Components/UI/SettingsMenu.gd" id="2_okkfc"]
 [ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="3_sy2f8"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_jwtpe"]
 
@@ -9,6 +9,11 @@
 device = -1
 keycode = 66
 unicode = 98
+
+[sub_resource type="InputEventKey" id="InputEventKey_7hqus"]
+device = -1
+keycode = 65
+unicode = 65
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -19,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pexnt")
-script = ExtResource("2_lxxbg")
+script = ExtResource("2_okkfc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -41,6 +46,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution:"
+
+[node name="ResolutionOptions" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+item_count = 4
+popup/item_0/text = "100%"
+popup/item_0/id = 1
+popup/item_1/text = "75%"
+popup/item_1/id = 2
+popup/item_2/text = "50%"
+popup/item_2/id = 2
+popup/item_3/text = "10%"
+popup/item_3/id = 3
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
@@ -56,10 +85,20 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 2
 text = "[B] Back"
 script = ExtResource("4_jwtpe")
 level_scene = "res://Components/UI/MainMenu.tscn"
 trigger_key = SubResource("InputEventKey_2444r")
+
+[node name="ApplySettingsButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "[A] Apply"
+script = ExtResource("4_jwtpe")
+level_scene = "res://Components/UI/MainMenu.tscn"
+trigger_key = SubResource("InputEventKey_7hqus")
