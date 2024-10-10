@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cp6y8qjeag5wn"]
+
+[ext_resource type="Texture2D" uid="uid://bi1jigqkji7oc" path="res://Textures/lights-blue.png" id="1_rgufo"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_rgufo")

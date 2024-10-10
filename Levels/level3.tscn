@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c06go7rvv1w7s"]
+[gd_scene load_steps=22 format=3 uid="uid://c06go7rvv1w7s"]
 
 [ext_resource type="PackedScene" uid="uid://dgdtjr8holjb4" path="res://Components/EnemySpawner/EnemySpawner.tscn" id="1_h6nvo"]
 [ext_resource type="Environment" uid="uid://dciy1pk4n3ph" path="res://Levels/level3_environment.tres" id="2_8k746"]
@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="4_b2rju"]
 [ext_resource type="ArrayMesh" uid="uid://ben3e65aku650" path="res://ContentSources/neon-city-elements/city-buildings.obj" id="4_s0s3l"]
 [ext_resource type="Material" uid="uid://dv8b7352jgl4v" path="res://Materials/grid-neon.material" id="5_y8xh2"]
+[ext_resource type="ArrayMesh" uid="uid://55aoh8re3lix" path="res://ContentSources/neon-city-elements/city-planks.obj" id="7_ybhew"]
+[ext_resource type="Material" uid="uid://flk1q3myprtm" path="res://Materials/grid-neon-red.material" id="8_s2rrq"]
+[ext_resource type="ArrayMesh" uid="uid://lxe5yrrav4gw" path="res://ContentSources/neon-city-elements/city-tee.obj" id="9_inmbp"]
+[ext_resource type="Material" uid="uid://dma4nqxq2tsko" path="res://Materials/grid-neon-green.material" id="10_tw064"]
+[ext_resource type="ArrayMesh" uid="uid://bg234bvoe1fb2" path="res://ContentSources/neon-city-elements/city-escher.obj" id="11_a73vr"]
+[ext_resource type="Material" uid="uid://rnlwdvmocvl4" path="res://Materials/grid-neon-magenta.material" id="12_nqpce"]
+[ext_resource type="ArrayMesh" uid="uid://b2jlidxwi3t03" path="res://ContentSources/neon-city-elements/city-pylons.obj" id="13_tpwdb"]
+[ext_resource type="Material" uid="uid://cduc5lbphscw5" path="res://Materials/SurfaceGlitchMaterial.material" id="14_70xjd"]
+[ext_resource type="ArrayMesh" uid="uid://d3eenhevr1027" path="res://ContentSources/neon-city-elements/city-maze.obj" id="15_old5i"]
+[ext_resource type="Material" uid="uid://cp6y8qjeag5wn" path="res://Materials/static-blue.tres" id="16_6pw22"]
+[ext_resource type="ArrayMesh" uid="uid://lj8h8xciw7le" path="res://ContentSources/neon-city-elements/city-spiky.obj" id="17_klcwe"]
+[ext_resource type="Material" uid="uid://cpttlxwhld53s" path="res://Materials/static-purple-transparent.tres" id="18_i1an5"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vh4v3"]
 
@@ -147,13 +159,6 @@ gi_mode = 0
 mesh = ExtResource("4_s0s3l")
 surface_material_override/0 = ExtResource("5_y8xh2")
 
-[node name="City-buildings12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.25, 2.18557e-08, 0, -2.18557e-08, -0.25, 0, 0, 0, 0.25, 66.6018, 12.1837, 57.3792)
-cast_shadow = 0
-gi_mode = 0
-mesh = ExtResource("4_s0s3l")
-surface_material_override/0 = ExtResource("5_y8xh2")
-
 [node name="City-buildings13" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.25, 2.18557e-08, 0, -2.18557e-08, -0.25, 0, 0, 0, 0.25, 52.9155, 7.66171, -19.5245)
 cast_shadow = 0
@@ -189,13 +194,6 @@ gi_mode = 0
 mesh = ExtResource("4_s0s3l")
 surface_material_override/0 = ExtResource("5_y8xh2")
 
-[node name="City-buildings10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.25, 2.18557e-08, 0, -2.18557e-08, -0.25, 0, 0, 0, 0.25, 46.1623, 11.6179, 84.3331)
-cast_shadow = 0
-gi_mode = 0
-mesh = ExtResource("4_s0s3l")
-surface_material_override/0 = ExtResource("5_y8xh2")
-
 [node name="City-buildings5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -57.155, 0.246645, 98.2911)
 cast_shadow = 0
@@ -223,6 +221,171 @@ cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("4_s0s3l")
 surface_material_override/0 = ExtResource("5_y8xh2")
+
+[node name="City-planks" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, -0.05, 0, 0.05, -2.18557e-09, 6, 0, -3)
+mesh = ExtResource("7_ybhew")
+surface_material_override/0 = ExtResource("8_s2rrq")
+
+[node name="City-planks3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, -2.18557e-09, 9.55343e-17, 65, 7, 18)
+mesh = ExtResource("7_ybhew")
+surface_material_override/0 = ExtResource("8_s2rrq")
+
+[node name="City-planks4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, -2.18557e-09, 9.55343e-17, 65, 7, 5)
+mesh = ExtResource("7_ybhew")
+surface_material_override/0 = ExtResource("8_s2rrq")
+
+[node name="City-planks5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, -2.18557e-09, 9.55343e-17, 65, 7, -8)
+mesh = ExtResource("7_ybhew")
+surface_material_override/0 = ExtResource("8_s2rrq")
+
+[node name="City-tee" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 10, -1, 28)
+mesh = ExtResource("9_inmbp")
+surface_material_override/0 = ExtResource("10_tw064")
+
+[node name="City-tee2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2, -1, 42)
+mesh = ExtResource("9_inmbp")
+surface_material_override/0 = ExtResource("10_tw064")
+
+[node name="City-escher" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.09697, -7.544, 69.8525)
+mesh = ExtResource("11_a73vr")
+surface_material_override/0 = ExtResource("12_nqpce")
+
+[node name="City-escher2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 72.1009, -7.544, 71.7675)
+mesh = ExtResource("11_a73vr")
+surface_material_override/0 = ExtResource("12_nqpce")
+
+[node name="City-pylons" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 15.4957, -1.59596, -3.66118)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-pylons2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 51.7661, -1.59596, -3.92186)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-pylons6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 39.3244, 16.7799, -3.00511)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-pylons3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 51.7661, -1.59596, 68.8789)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-pylons4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 26.7661, -1.59596, 68.8789)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-pylons5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 68.4878, 17.6153, 67.9936)
+mesh = ExtResource("13_tpwdb")
+surface_material_override/0 = ExtResource("14_70xjd")
+
+[node name="City-maze" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 23.73, 2.89081, 66.7325)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, -2.20801, 22.8445, 66.7325)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 34.8689, 6.58343, -4.03979)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 7.34188, -1.43911, -4.03979)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 63.3088, 0.797295, 45.1683)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 63.3088, 6.27195, 20.9006)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 63.3088, 21.5476, 61.9505)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 3.40594, 21.5476, 61.9505)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 3.40594, 1.14364, 27.3286)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 3.40594, 2.64067, 58.5746)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="City-maze11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, -4.37114e-09, 0, -4.37114e-09, -0.1, -0.1, -4.37114e-09, 1.91069e-16, 3.40594, 17.5014, 28.1129)
+mesh = ExtResource("15_old5i")
+surface_material_override/0 = ExtResource("16_6pw22")
+
+[node name="static-purple-transparent" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 4.53076, 13.7881)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 13.0457, 21.2181)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 1.46073, 31.035)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -2.7238, 26.8425, 51.0878)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -2.7238, 9.21334, 10.761)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, -2.7238, 26.8425, 33.6879)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, -2.7238, 5.87247, 52.4346)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
+
+[node name="static-purple-transparent6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, -2.7238, 11.3509, 4.7212)
+mesh = ExtResource("17_klcwe")
+surface_material_override/0 = ExtResource("18_i1an5")
 
 [connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
 
