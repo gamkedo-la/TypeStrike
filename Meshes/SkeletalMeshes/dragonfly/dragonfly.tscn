@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37o2i3qtxbxe"]
+
+[ext_resource type="PackedScene" uid="uid://brev75y7tt5em" path="res://Meshes/SkeletalMeshes/dragonfly/dragonfly.glb" id="1_kutv3"]
+
+[node name="dragonfly2" instance=ExtResource("1_kutv3")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-0.704808, 0, 0, 0.709398)
+bones/1/rotation = Quaternion(-0.00502254, 0, 0, 0.999987)
+bones/2/rotation = Quaternion(-0.0429215, 0, 0, 0.999078)
+bones/3/rotation = Quaternion(-0.331141, -0.478227, 0.686991, -0.435532)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.417068, 0.218328, -0.40845, 0.78202)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.331141, -0.478227, 0.686991, 0.435532)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.417068, -0.218328, 0.40845, 0.78202)
+bones/6/scale = Vector3(1, 1, 1)
