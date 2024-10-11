@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cc8mb6m15i0tw"]
+
+[ext_resource type="Shader" path="res://Materials/StandardLit.gdshader" id="1_gx8s7"]
+[ext_resource type="Texture2D" uid="uid://dcu2r1l6p84r1" path="res://Textures/lights-purple.png" id="2_4tf2h"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gx8s7")
+shader_parameter/base_color = Color(0.61339, 0.61339, 0.61339, 1)
+shader_parameter/uv_scroll = Vector2(0, -0.2)
+shader_parameter/uv_scroll_step = 0.2
+shader_parameter/color_texture = ExtResource("2_4tf2h")
