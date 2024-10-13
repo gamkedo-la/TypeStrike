@@ -40,6 +40,11 @@ func erase(letter : String) -> int:
 		Messenger.enemy_defeated.emit()
 	return word.length() - word_index
 
+func clear_label():
+	remaining_label.text = word
+	word_index = 0
+	_update_label()
+
 func _physics_process(delta):
 	if target:
 		look_at(target.global_position, Vector3.UP)

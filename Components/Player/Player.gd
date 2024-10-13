@@ -8,6 +8,7 @@ var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
 var current_target : int = -1
 
+var typed_text = ""
 
 func _ready():
 	textarea.text_changed.connect(_text_input)
@@ -17,6 +18,13 @@ func _ready():
 
 func _text_input():
 	var key_typed = textarea.text[-1].to_lower() if textarea.text.length() > 0 else ""
+	if textarea.text.length() <= typed_text.length():
+		var enemy = enemies[current_target]
+		enemy.clear_label()
+		textarea.clear()
+		typed_text = ""
+		current_target = -1
+	typed_text = textarea.text
 	if current_target < 0:
 		current_target = get_target(key_typed)
 	if current_target >= 0:
