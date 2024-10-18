@@ -26,7 +26,9 @@ func _input(event):
 		current_speed = speed
 
 func stop_progress():
-	should_move = false
+	#should_move = false
+	current_speed = speed * 0.25
 	
 func continue_progress():
-	should_move = true
+	#should_move = true
+	current_speed = speed

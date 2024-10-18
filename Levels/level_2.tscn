@@ -77,16 +77,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447568, 0, -0.898913)
 player_path = NodePath("../Path3D/Player")
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies" index="0" instance=ExtResource("7_st0gl")]
-transform = Transform3D(-0.866914, 0, -0.498457, 0, 1, 0, 0.498457, 0, -0.866914, -2.05827, 1.67471, -15.3873)
+transform = Transform3D(-0.866914, 0, -0.498457, 0, 1, 0, 0.498457, 0, -0.866914, -2.04759, 1.67471, -15.3863)
 path_position = 0.02
 
-[node name="EnemyBase2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("label", "typed_label", "typed_bg", "remaining_label", "remaining_bg") instance=ExtResource("7_st0gl")]
-transform = Transform3D(-0.894716, 0, 0.446635, 0, 1, 0, -0.446635, 0, -0.894716, 2.30112, 3.50033, -18.7537)
+[node name="EnemyBase2" parent="EnemyDistanceSpawner/Enemies" index="1" instance=ExtResource("7_st0gl")]
+transform = Transform3D(-0.999809, 0, 0.019564, 0, 1, 0, -0.019564, 0, -0.999809, 1.83721, 3.61396, -18.612)
 path_position = 0.02
-label = NodePath("../EnemyBase/SubViewport/Panel/Label")
-typed_label = NodePath("../EnemyBase/Node3D/TypedChars")
-typed_bg = NodePath("../EnemyBase/Node3D/TypedChars/TypedBackground")
-remaining_label = NodePath("../EnemyBase/Node3D/RemainingChars")
-remaining_bg = NodePath("../EnemyBase/Node3D/RemainingChars/RemainingBackground")
+
+[node name="EnemyBase3" parent="EnemyDistanceSpawner/Enemies" index="2" node_paths=PackedStringArray("label") instance=ExtResource("7_st0gl")]
+transform = Transform3D(-0.912256, 0, 0.409621, 0, 1, 0, -0.409621, 0, -0.912256, 5.99288, 5.51375, -18.612)
+path_position = 0.02
+label = NodePath("../EnemyBase2/SubViewport/Panel/Label")
 
 [editable path="EnemyDistanceSpawner"]

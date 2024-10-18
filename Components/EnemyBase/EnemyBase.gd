@@ -10,10 +10,16 @@ var original_word : String
 var word_index : int = 0
 @export var text_material : Material
 
-@export var typed_label : Label3D
-@export var typed_bg : Label3D
-@export var remaining_label : Label3D
-@export var remaining_bg : Label3D
+#@export var typed_label : Label3D
+#@export var typed_bg : Label3D
+#@export var remaining_label : Label3D
+#@export var remaining_bg : Label3D
+
+@onready var typed_label : Label3D = $"Node3D/TypedChars"
+@onready var typed_bg : Label3D = $"Node3D/TypedChars/TypedBackground"
+@onready var remaining_label : Label3D = $"Node3D/RemainingChars"
+@onready var remaining_bg : Label3D = $"Node3D/RemainingChars/RemainingBackground"
+
 var background_char = "▋"
 var in_front = false
 

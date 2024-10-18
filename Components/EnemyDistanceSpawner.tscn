@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpt83e080v7dl"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyDistanceSpawner.gd" id="1_bs4is"]
+
+[node name="EnemyDistanceSpawner" type="Node3D"]
+script = ExtResource("1_bs4is")
+
+[node name="Enemies" type="Node3D" parent="."]
