@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://er6whp0j2ou5"]
+[gd_scene load_steps=13 format=3 uid="uid://er6whp0j2ou5"]
 
 [ext_resource type="MeshLibrary" uid="uid://crous2m8kb4sd" path="res://Meshes/MeshLibraries/blockout.meshlib" id="1_wltjo"]
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="2_4dreb"]
 [ext_resource type="ArrayMesh" uid="uid://bnlwp8fqo46hs" path="res://Meshes/StaticMeshes/tower_a.res" id="4_28arg"]
 [ext_resource type="PackedScene" uid="uid://14bcro00fo0s" path="res://Meshes/StaticMeshes/torus.tscn" id="4_di3mb"]
 [ext_resource type="MeshLibrary" uid="uid://da7vm84qsj6gf" path="res://Meshes/StaticMeshes/pipes.meshlib" id="5_pmxsc"]
+[ext_resource type="PackedScene" uid="uid://bpt83e080v7dl" path="res://Components/EnemyDistanceSpawner.tscn" id="6_pdr8r"]
+[ext_resource type="PackedScene" uid="uid://5uhkotpicmc1" path="res://Components/EnemyBase.tscn" id="7_st0gl"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_m4f1p"]
 
@@ -24,7 +26,7 @@ volumetric_fog_albedo = Color(0.49559, 0.548833, 0.357076, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_aox4y"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1000),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -69,3 +71,22 @@ data = {
 "cells": PackedInt32Array(131069, 65519, 524290, 131069, 65520, 524289, 131069, 65521, 524289, 196606, 65518, 393218, 131070, 65521, 131073, 65534, 65523, 393218, 262143, 65517, 1179649, 196608, 65517, 1179649, 196609, 65517, 1179649, 196610, 65517, 1179649, 196610, 65516, 1310722, 327684, 65516, 1441794, 327685, 65516, 1441793, 327686, 65516, 1441793, 327687, 65516, 1441793, 327688, 65516, 1441793, 327690, 65516, 1441793, 327689, 65516, 1441793, 327691, 65516, 1441793, 131073, 65519, 1, 262142, 65517, 655360)
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
+
+[node name="EnemyDistanceSpawner" parent="." node_paths=PackedStringArray("player_path") instance=ExtResource("6_pdr8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447568, 0, -0.898913)
+player_path = NodePath("../Path3D/Player")
+
+[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies" index="0" instance=ExtResource("7_st0gl")]
+transform = Transform3D(-0.866914, 0, -0.498457, 0, 1, 0, 0.498457, 0, -0.866914, -2.05827, 1.67471, -15.3873)
+path_position = 0.02
+
+[node name="EnemyBase2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("label", "typed_label", "typed_bg", "remaining_label", "remaining_bg") instance=ExtResource("7_st0gl")]
+transform = Transform3D(-0.894716, 0, 0.446635, 0, 1, 0, -0.446635, 0, -0.894716, 2.30112, 3.50033, -18.7537)
+path_position = 0.02
+label = NodePath("../EnemyBase/SubViewport/Panel/Label")
+typed_label = NodePath("../EnemyBase/Node3D/TypedChars")
+typed_bg = NodePath("../EnemyBase/Node3D/TypedChars/TypedBackground")
+remaining_label = NodePath("../EnemyBase/Node3D/RemainingChars")
+remaining_bg = NodePath("../EnemyBase/Node3D/RemainingChars/RemainingBackground")
+
+[editable path="EnemyDistanceSpawner"]

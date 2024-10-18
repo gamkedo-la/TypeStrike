@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var player_rails : PlayerRails
 @export var textarea : TextEdit
 
+var enemy_map : Dictionary
 var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
 var current_target : int = -1
@@ -15,9 +16,12 @@ func _ready():
 	textarea.grab_focus()
 	player_rails.path_completed.connect(unfocus_input)
 	Messenger.pause_changed.connect(handle_pause_changed)
+	Messenger.enemy_spawned.connect(enemy_spawned)
 
 func _text_input():
 	var key_typed = textarea.text[-1].to_lower() if textarea.text.length() > 0 else ""
+	if enemies.size() == 0:
+		return
 	if textarea.text.length() <= typed_text.length():
 		var enemy = enemies[current_target]
 		enemy.clear_label()
@@ -59,9 +63,11 @@ func unfocus_input():
 func enemy_spawned(node: Node):
 	if node is EnemyBase:
 		var enemy = node as EnemyBase
+		enemy_map[enemy.get_instance_id()] = enemy
 		enemies.append(enemy)
 
 func begin_wave(spawned_enemies: Array[EnemyBase]):
+	#enemies.append_array(spawned_enemies)
 	enemies = spawned_enemies
 	Messenger.wave_started.emit()
 

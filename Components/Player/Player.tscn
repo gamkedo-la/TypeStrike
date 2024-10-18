@@ -15,20 +15,20 @@ loop = false
 tilt_enabled = false
 script = ExtResource("1_h5clx")
 
-[node name="Area3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player_rails", "textarea")]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player_rails", "textarea")]
 script = ExtResource("1_bwaaj")
 player_rails = NodePath("..")
 textarea = NodePath("TextEdit")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_q57ax")
 
-[node name="Camera3D" type="Camera3D" parent="Area3D/CollisionShape3D"]
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 size = 5.67
 
-[node name="TextEdit" type="TextEdit" parent="Area3D"]
+[node name="TextEdit" type="TextEdit" parent="CharacterBody3D"]
 anchors_preset = -1
 anchor_left = -0.188368
 anchor_top = -0.0401235

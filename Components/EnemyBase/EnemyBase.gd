@@ -1,6 +1,7 @@
 class_name EnemyBase
 extends CharacterBody3D
 
+@export var path_position : float = 0.5
 @export var move_speed : float = 5.0
 @export var word : String
 var original_word : String
