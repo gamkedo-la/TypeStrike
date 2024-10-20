@@ -26,7 +26,8 @@ func _text_input():
 		current_target = get_target(key_typed)
 	if textarea.text.length() <= typed_text.length():
 		var enemy = enemy_map.get(current_target)
-		enemy.clear_label()
+		if enemy:
+			enemy.clear_label()
 		textarea.clear()
 		current_target = -1
 	typed_text = textarea.text
