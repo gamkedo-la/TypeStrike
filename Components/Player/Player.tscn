@@ -54,3 +54,5 @@ script = ExtResource("8_as5eo")
 [node name="SadKeys" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_vhqe7")
 script = ExtResource("7_orsh2")
+
+[connection signal="text_set" from="CharacterBody3D/TextEdit" to="CharacterBody3D" method="_on_text_edit_text_set"]

@@ -28,12 +28,14 @@ func _text_input():
 		var enemy = enemy_map.get(current_target)
 		enemy.clear_label()
 		textarea.clear()
-		typed_text = ""
 		current_target = -1
 	typed_text = textarea.text
 
 	if current_target >= 0:
 		attack_target(key_typed)
+
+func _on_text_edit_text_set():
+	typed_text = ""
 
 func get_target(letter: String) -> int:
 	for i in enemy_map.keys():
