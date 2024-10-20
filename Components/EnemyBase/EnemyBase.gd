@@ -1,7 +1,23 @@
+@tool
 class_name EnemyBase
 extends CharacterBody3D
 
-@export var path_position : float = 0.5
+@export var path_position : float = 0.5:
+	set(new_position):
+		path_position = new_position
+		var parent = get_parent()
+		if parent == null:
+			return
+		var ancestor = parent.get_parent()
+		if ancestor == null:
+			return
+		var spawner = ancestor as EnemyDistanceSpawner
+		if spawner:
+			var path_follow: PathFollow3D = spawner.player_path
+			var curve = path_follow.get_parent().curve
+			var dist = path_position * curve.get_baked_length()
+			$"Marker3D".global_position = curve.sample_baked(dist)
+
 @export var move_speed : float = 5.0
 @export var word : String
 var original_word : String
@@ -9,11 +25,6 @@ var original_word : String
 @export var label : RichTextLabel
 var word_index : int = 0
 @export var text_material : Material
-
-#@export var typed_label : Label3D
-#@export var typed_bg : Label3D
-#@export var remaining_label : Label3D
-#@export var remaining_bg : Label3D
 
 @onready var typed_label : Label3D = $"Node3D/TypedChars"
 @onready var typed_bg : Label3D = $"Node3D/TypedChars/TypedBackground"
