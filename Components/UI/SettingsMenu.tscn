@@ -45,6 +45,7 @@ anchor_right = 0.7
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -69,6 +70,32 @@ popup/item_2/text = "50%"
 popup/item_2/id = 2
 popup/item_3/text = "10%"
 popup/item_3/id = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume:"
+
+[node name="MasterVolume" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 10
+ticks_on_borders = true
+
+[node name="VolumeDebounceTimer" type="Timer" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

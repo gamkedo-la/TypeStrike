@@ -2,3 +2,5 @@
 .godot/
 Build
 .vscode
+.idea
+**/*.tmp

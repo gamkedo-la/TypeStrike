@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 TypingPhrases="*res://Resources/Globals/TypingPhrases.gd"
 Messenger="*res://Resources/Globals/Messenger.gd"
 PlayerState="*res://Components/Player/PlayerState.gd"
+PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 
 [filesystem]
 

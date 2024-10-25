@@ -13,6 +13,7 @@ func _ready():
 	Messenger.wave_started.connect(stop_progress)
 	Messenger.wave_defeated.connect(continue_progress)
 
+
 func _process(delta):
 	if should_move:
 		progress = progress + (delta * current_speed)
