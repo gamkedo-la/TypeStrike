@@ -13,11 +13,9 @@ var player_controller: TypeStrikePlayer
 
 func _ready():
 	enemies = enemy_container.get_children()
-	enemies.sort_custom(func(a:EnemyBase, b:EnemyBase): return a.path_position < b.path_position)
-	enemies.map(func(e:EnemyBase):
-		e.process_mode = Node.PROCESS_MODE_DISABLED
-		e.hide()
-		)
+	enemies.sort_custom(func(a:EnemyMarker, b:EnemyMarker):
+		return a.path_position < b.path_position
+	)
 
 func _process(delta):
 	if player_path == null:
@@ -29,7 +27,7 @@ func _process(delta):
 	var player_pos = player_path.progress_ratio
 	
 	while enemies.size() > 0 && enemies[0].path_position <= player_path.progress_ratio:
-		var enemy : EnemyBase = enemies.pop_front()
+		var enemy : EnemyBase = enemies.pop_front().enemy
 		enemy.process_mode = PROCESS_MODE_INHERIT
 		enemy.show()
 		Messenger.enemy_spawned.emit(enemy)

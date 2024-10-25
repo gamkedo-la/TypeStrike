@@ -13,6 +13,7 @@
 material = ExtResource("1_jhd2q")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vx01n"]
+material = ExtResource("2_tlt1q")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5vxc0"]
 viewport_path = NodePath("SubViewport")
@@ -33,9 +34,7 @@ material = SubResource("StandardMaterial3D_03cuy")
 
 [node name="EnemyBase" type="CharacterBody3D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_verte")
-path_position = null
 move_speed = 0.5
-word = null
 label = NodePath("SubViewport/Panel/Label")
 text_material = ExtResource("1_jhd2q")
 
@@ -110,7 +109,6 @@ fixed_size = true
 text = "ntsize"
 font = ExtResource("6_xs4k1")
 font_size = 64
-outline_size = 8
 horizontal_alignment = 0
 
 [node name="RemainingBackground" type="Label3D" parent="Node3D/RemainingChars"]
@@ -139,7 +137,6 @@ modulate = Color(0.509804, 1, 0.192157, 1)
 text = "fo"
 font = ExtResource("6_xs4k1")
 font_size = 64
-outline_size = 8
 horizontal_alignment = 2
 justification_flags = 160
 
@@ -158,7 +155,3 @@ font_size = 64
 outline_size = 8
 horizontal_alignment = 2
 justification_flags = 160
-
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0.841247)
-gizmo_extents = 0.05

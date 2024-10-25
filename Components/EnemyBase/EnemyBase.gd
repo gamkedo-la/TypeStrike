@@ -1,22 +1,6 @@
-@tool
 class_name EnemyBase
 extends CharacterBody3D
 
-@export var path_position : float = 0.5:
-	set(new_position):
-		path_position = new_position
-		var parent = get_parent()
-		if parent == null:
-			return
-		var ancestor = parent.get_parent()
-		if ancestor == null:
-			return
-		var spawner = ancestor as EnemyDistanceSpawner
-		if spawner:
-			var path_follow: PathFollow3D = spawner.player_path
-			var curve = path_follow.get_parent().curve
-			var dist = path_position * curve.get_baked_length()
-			$"Marker3D".global_position = curve.sample_baked(dist)
 
 @export var move_speed : float = 5.0
 @export var word : String
@@ -30,9 +14,11 @@ var word_index : int = 0
 @onready var typed_bg : Label3D = $"Node3D/TypedChars/TypedBackground"
 @onready var remaining_label : Label3D = $"Node3D/RemainingChars"
 @onready var remaining_bg : Label3D = $"Node3D/RemainingChars/RemainingBackground"
+@onready var marker : EnemyMarker = $"Marker3D"
 
-var background_char = "▋"
-var in_front = false
+var background_char := "▋"
+var in_front := false
+
 
 func _ready():
 	word = TypingPhrases.get_random_phrase()
@@ -92,5 +78,3 @@ func _update_label():
 	remaining_bg.text = background_char.repeat(remaining.length())
 	typed_bg.offset.x = offset_bg
 	remaining_bg.offset.x = offset_bg
-	#var label_text = "[center][font_size=32][color=DEEP_SKY_BLUE]%s[/color]%s[/font_size][/center]" % [typed, remaining]
-	#label.text = label_text

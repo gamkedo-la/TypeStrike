@@ -7,9 +7,9 @@ extends CharacterBody3D
 var enemy_map : Dictionary
 var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
-var current_target : int = -1
+var current_target := -1
 
-var typed_text = ""
+var typed_text := ""
 
 func _ready():
 	textarea.text_changed.connect(_text_input)
@@ -25,7 +25,7 @@ func _text_input():
 	if current_target < 0:
 		current_target = get_target(key_typed)
 	if textarea.text.length() <= typed_text.length():
-		var enemy = enemy_map.get(current_target)
+		var enemy : EnemyBase = enemy_map.get(current_target)
 		if enemy:
 			enemy.clear_label()
 		textarea.clear()
@@ -46,7 +46,7 @@ func get_target(letter: String) -> int:
 	return -1
 
 func attack_target(letter : String):
-	var enemy = enemy_map.get(current_target)
+	var enemy : EnemyBase = enemy_map.get(current_target)
 	if enemy:
 		var remaining = enemy.erase(letter)
 		if remaining <= 0:
@@ -66,8 +66,7 @@ func unfocus_input():
 
 func enemy_spawned(node: Node):
 	if node is EnemyBase:
-		var enemy = node as EnemyBase
-		var enemy_id = enemy.get_instance_id()
+		var enemy := node as EnemyBase
 		enemy_map[enemy.get_instance_id()] = enemy
 
 func begin_wave(spawned_enemies: Array[EnemyBase]):
