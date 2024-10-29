@@ -1,12 +1,27 @@
-[gd_scene format=3 uid="uid://cbs5dp3v46cig"]
+[gd_scene load_steps=3 format=3 uid="uid://cbs5dp3v46cig"]
 
-[node name="EnemyLabel" type="RichTextLabel"]
+[ext_resource type="Script" path="res://Components/enemy_label.gd" id="1_xvx0a"]
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_5vria"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_xvx0a")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 40.0
+theme = ExtResource("2_5vria")
+
+[node name="EnemyLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "blah blah"
+text = "[center][color=fc0]%s[/color][color=white]%s[/color][/center]"
 fit_content = true
 autowrap_mode = 0

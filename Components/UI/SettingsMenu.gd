@@ -35,4 +35,3 @@ func _handle_master_volume_change(value: float) -> void:
 func _update_master_volume(value: float) -> void:
 	debounce.timeout.disconnect(_update_master_volume)
 	PlayerPrefsManager.update_prefs({PlayerPrefs.P_MASTER_VOLUME: value})
-	print("new volume %.2d" % value)

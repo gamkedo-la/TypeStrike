@@ -62,10 +62,3 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_rid1p")
 label_class = ExtResource("4_imy1f")
-
-[node name="EnemyLabel" parent="EnemyLabelContainer" instance=ExtResource("4_imy1f")]
-layout_mode = 0
-offset_left = 265.0
-offset_top = 194.0
-offset_right = 373.0
-offset_bottom = 234.0
