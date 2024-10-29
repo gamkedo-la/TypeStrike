@@ -8,7 +8,7 @@
 [ext_resource type="MeshLibrary" uid="uid://da7vm84qsj6gf" path="res://Meshes/StaticMeshes/pipes.meshlib" id="5_pmxsc"]
 [ext_resource type="PackedScene" uid="uid://bpt83e080v7dl" path="res://Components/EnemyDistanceSpawner.tscn" id="6_pdr8r"]
 [ext_resource type="PackedScene" uid="uid://5uhkotpicmc1" path="res://Components/EnemyBase.tscn" id="7_st0gl"]
-[ext_resource type="PackedScene" uid="uid://vpi1e1i8e13p" path="res://Components/EnemyMarker.tscn" id="8_p44nv"]
+[ext_resource type="PackedScene" path="res://Components/EnemyMarker.tscn" id="8_p44nv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oanib"]
 shader = ExtResource("1_r7seu")

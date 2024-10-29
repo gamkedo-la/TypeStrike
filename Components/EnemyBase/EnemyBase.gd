@@ -14,7 +14,6 @@ var word_index : int = 0
 @onready var typed_bg : Label3D = $"Node3D/TypedChars/TypedBackground"
 @onready var remaining_label : Label3D = $"Node3D/RemainingChars"
 @onready var remaining_bg : Label3D = $"Node3D/RemainingChars/RemainingBackground"
-@onready var marker : EnemyMarker = $"Marker3D"
 
 var background_char := "▋"
 var in_front := false
@@ -24,7 +23,7 @@ func _ready():
 	word = TypingPhrases.get_random_phrase()
 	_update_label()
 	$SubViewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	Messenger.enemy_spawned.emit(self)
+	#Messenger.enemy_spawned.emit(self)
 
 func erase(letter : String) -> int:
 	if not in_front:
