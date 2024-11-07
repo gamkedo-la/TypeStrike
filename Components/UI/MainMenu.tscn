@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=12 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
 [ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="2_l0abo"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_3cvst"]
 [ext_resource type="Script" path="res://Components/UI/QuitButton.gd" id="4_i7vk5"]
+[ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="4_x2y7g"]
+[ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_7wybc"]
+[ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="8_1sfsp"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_2444r"]
 device = -1
@@ -31,7 +34,24 @@ grow_vertical = 2
 theme = ExtResource("1_0anuj")
 script = ExtResource("2_jpgj5")
 
-[node name="Label" type="Label" parent="."]
+[node name="MenuManager" type="Control" parent="." node_paths=PackedStringArray("menus")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_x2y7g")
+menus = [NodePath("../Control"), NodePath("../SettingsMenu")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_7wybc")
+
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -41,32 +61,36 @@ label_settings = ExtResource("2_l0abo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.5
 anchor_right = 0.7
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "[P] Play"
 script = ExtResource("3_3cvst")
 level_scene = "res://Levels/level_2.tscn"
+unpause = true
 trigger_key = SubResource("InputEventKey_2444r")
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "[S] Settings"
 script = ExtResource("3_3cvst")
-level_scene = "res://Components/UI/SettingsMenu.tscn"
+menu_index = 1
 trigger_key = SubResource("InputEventKey_cest3")
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "[Q] Quit"
 script = ExtResource("4_i7vk5")
 trigger_key = SubResource("InputEventKey_a5rkl")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("8_1sfsp")]
+layout_mode = 1
+
+[connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]

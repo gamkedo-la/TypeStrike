@@ -37,7 +37,7 @@ func _ready():
 		if enemy:
 			enemy.process_mode = Node.PROCESS_MODE_DISABLED
 			enemy.hide()
-
+	
 func enable_enemy():
 	if enemy:
 		enemy.process_mode = Node.PROCESS_MODE_INHERIT

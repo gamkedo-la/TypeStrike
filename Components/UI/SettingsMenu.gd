@@ -1,10 +1,11 @@
-extends Control
+extends IMenu
 
 var filter_mode := Viewport.SCALING_3D_MODE_BILINEAR
 @onready var viewport: Window = get_tree().root
 @onready var resolution_changer: OptionButton = get_node("%ResolutionOptions")
 @onready var master_volume_slider: Slider = get_node("%MasterVolume")
 @onready var debounce: Timer = get_node("%VolumeDebounceTimer")
+@onready var back_button: Button = $"MarginContainer/HBoxContainer/BackButton"
 
 var final_mv_value: float = 0.0
 
@@ -12,6 +13,7 @@ func _ready():
 	viewport.scaling_3d_mode = filter_mode
 	resolution_changer.item_selected.connect(_handle_resolution_change)
 	master_volume_slider.value_changed.connect(_handle_master_volume_change)
+	back_button.pressed.connect(func(): exit_menu.emit())
 	_init_values_from_prefs()
 
 func _init_values_from_prefs():

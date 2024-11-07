@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/UI/PlayerHud.gd" id="1_eicr1"]
 [ext_resource type="PackedScene" uid="uid://cv88lewxmuvp6" path="res://Components/UI/PauseMenu.tscn" id="2_aehjx"]
-[ext_resource type="Script" path="res://Components/UI/TypingPhraseManager.gd" id="3_rid1p"]
+[ext_resource type="Script" path="res://Components/UI/EnemyLabelManager.gd" id="3_l4j3h"]
 [ext_resource type="PackedScene" uid="uid://cbs5dp3v46cig" path="res://Components/enemy_label.tscn" id="4_imy1f"]
 
 [node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label", "streak_label")]
@@ -60,5 +60,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_rid1p")
+mouse_filter = 2
+script = ExtResource("3_l4j3h")
 label_class = ExtResource("4_imy1f")

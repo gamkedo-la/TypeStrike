@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://5uhkotpicmc1"]
+[gd_scene load_steps=7 format=3 uid="uid://5uhkotpicmc1"]
 
 [ext_resource type="Material" uid="uid://ccbtvlisd2k75" path="res://Materials/red.tres" id="1_jhd2q"]
 [ext_resource type="Script" path="res://Components/EnemyBase/EnemyBase.gd" id="1_verte"]
 [ext_resource type="Material" uid="uid://cg4toje106t5a" path="res://Materials/white.tres" id="2_tlt1q"]
-[ext_resource type="Script" path="res://Components/BillboardMesh.gd" id="4_1ybbc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uopbk"]
 
@@ -12,23 +11,6 @@ material = ExtResource("1_jhd2q")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vx01n"]
 material = ExtResource("2_tlt1q")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_5vxc0"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03cuy"]
-resource_local_to_scene = true
-transparency = 4
-shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_5vxc0")
-billboard_mode = 2
-billboard_keep_scale = true
-fixed_size = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_iubjb"]
-resource_local_to_scene = true
-lightmap_size_hint = Vector2i(7, 7)
-material = SubResource("StandardMaterial3D_03cuy")
 
 [node name="EnemyBase" type="CharacterBody3D"]
 script = ExtResource("1_verte")
@@ -46,11 +28,3 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.416983, 0, 0, 0, 0.208438, 0, 0, 0, 0.416983, -0.000678062, 0.492258, -0.414477)
 material_override = ExtResource("2_tlt1q")
 mesh = SubResource("BoxMesh_vx01n")
-
-[node name="ViewportSurface" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(-5, 0, 7.54979e-07, 0, 5, 0, -7.54979e-07, 0, -5, 0, 1, -0.942)
-visible = false
-cast_shadow = 0
-mesh = SubResource("QuadMesh_iubjb")
-skeleton = NodePath("../..")
-script = ExtResource("4_1ybbc")

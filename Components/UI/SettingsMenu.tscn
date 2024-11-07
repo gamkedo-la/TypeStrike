@@ -119,13 +119,12 @@ layout_mode = 2
 size_flags_horizontal = 2
 text = "[B] Back"
 script = ExtResource("4_jwtpe")
-level_scene = "res://Components/UI/MainMenu.tscn"
 trigger_key = SubResource("InputEventKey_2444r")
 
 [node name="ApplySettingsButton" type="Button" parent="MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
 text = "[A] Apply"
 script = ExtResource("4_jwtpe")
-level_scene = "res://Components/UI/MainMenu.tscn"
 trigger_key = SubResource("InputEventKey_7hqus")
