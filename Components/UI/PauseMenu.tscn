@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv88lewxmuvp6"]
+[gd_scene load_steps=12 format=3 uid="uid://cv88lewxmuvp6"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_oryxb"]
 [ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="2_puce7"]
@@ -7,6 +7,19 @@
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_851a4"]
 [ext_resource type="Script" path="res://Components/UI/ResumeButton.gd" id="4_fapse"]
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="6_sfk46"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm4cn"]
+bg_color = Color(0.119978, 0.214287, 0.171119, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.121569, 0.215686, 0.172549, 0.815686)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="InputEventKey" id="InputEventKey_hulsc"]
 resource_local_to_scene = true
@@ -38,12 +51,25 @@ theme = ExtResource("1_oryxb")
 
 [node name="MenuManager" type="Control" parent="." node_paths=PackedStringArray("menus")]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("2_puce7")
-menus = [NodePath("../PauseMenu"), NodePath("../SettingsMenu")]
+menus = [NodePath("../Panel/PauseMenu"), NodePath("../Panel/SettingsMenu")]
 
-[node name="PauseMenu" type="Control" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oryxb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fm4cn")
+
+[node name="PauseMenu" type="Control" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_sr63d")
 
-[node name="Label" type="Label" parent="PauseMenu"]
+[node name="Label" type="Label" parent="Panel/PauseMenu"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -67,7 +93,7 @@ label_settings = ExtResource("3_qafcc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="PauseMenu"]
+[node name="Buttons" type="VBoxContainer" parent="Panel/PauseMenu"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -79,20 +105,20 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="ResumeButton" type="Button" parent="PauseMenu/Buttons"]
+[node name="ResumeButton" type="Button" parent="Panel/PauseMenu/Buttons"]
 layout_mode = 2
 text = "[R] Resume"
 script = ExtResource("4_fapse")
 trigger_key = SubResource("InputEventKey_hulsc")
 
-[node name="SettingsButton" type="Button" parent="PauseMenu/Buttons"]
+[node name="SettingsButton" type="Button" parent="Panel/PauseMenu/Buttons"]
 layout_mode = 2
 text = "[S] Settings"
 script = ExtResource("4_851a4")
 menu_index = 1
 trigger_key = SubResource("InputEventKey_cest3")
 
-[node name="QuitButton" type="Button" parent="PauseMenu/Buttons"]
+[node name="QuitButton" type="Button" parent="Panel/PauseMenu/Buttons"]
 layout_mode = 2
 text = "[Q] Quit to Main Menu"
 script = ExtResource("4_851a4")
@@ -100,9 +126,8 @@ level_scene = "res://Components/UI/MainMenu.tscn"
 unpause = true
 trigger_key = SubResource("InputEventKey_nqa6t")
 
-[node name="SettingsMenu" parent="." instance=ExtResource("6_sfk46")]
+[node name="SettingsMenu" parent="Panel" instance=ExtResource("6_sfk46")]
 process_mode = 4
-visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="PauseMenu/Buttons/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]
+[connection signal="pressed" from="Panel/PauseMenu/Buttons/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]

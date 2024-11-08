@@ -2,18 +2,22 @@
 extends Node3D
 class_name EnemyMarker
 
-
 @export var path : Path3D
+## Distance along path in meters
 @export var path_position := 0.5:
 	set(p):
-		path_position = p
 		if path:
 			var curve := path.curve
-			var dist := path_position * curve.get_baked_length()
-			var curve_position = curve.sample_baked(dist)
+			path_position = clampf(p, 0, curve.get_baked_length())
+			var curve_position = curve.sample_baked(path_position)
 			var marker := $"Marker"
 			if marker:
-				marker.global_position = curve_position
+				marker.global_position = path.to_global(curve_position)
+		else:
+			path_position = p
+			printerr("Need to set path to evaluate path_position")
+	get:
+		return path_position
 
 var enemy : EnemyBase:
 	get:

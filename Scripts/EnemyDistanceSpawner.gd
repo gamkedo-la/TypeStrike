@@ -24,9 +24,9 @@ func _process(delta):
 		return
 	
 	var enemy_pos = enemies[0].path_position
-	var player_pos = player_path.progress_ratio
+	var player_pos = player_path.progress
 	
-	while enemies.size() > 0 && enemies[0].path_position <= player_path.progress_ratio:
+	while enemies.size() > 0 && enemies[0].path_position <= player_pos:
 		var enemy : EnemyBase = enemies.pop_front().enemy
 		enemy.process_mode = PROCESS_MODE_INHERIT
 		enemy.show()

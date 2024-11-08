@@ -83,49 +83,42 @@ player_path = NodePath("../Path3D/Player")
 [node name="EnemyMarker" parent="EnemyDistanceSpawner/Enemies" index="0" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137181, 3.61182, -18.5865)
 path = NodePath("../../../Path3D")
-path_position = 0.02
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97542, 5.96169, -18.5865)
 path = NodePath("../../../Path3D")
-path_position = 0.02
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker2" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies" index="2" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.459099, 0.627183, -18.6674)
 path = NodePath("../../../Path3D")
-path_position = 0.02
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker4" parent="EnemyDistanceSpawner/Enemies" index="3" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137181, 3.61182, -58.6094)
 path = NodePath("../../../Path3D")
-path_position = 0.18
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker4" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker7" parent="EnemyDistanceSpawner/Enemies" index="4" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05111, 0.480691, -58.6094)
 path = NodePath("../../../Path3D")
-path_position = 0.18
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker7" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker5" parent="EnemyDistanceSpawner/Enemies" index="5" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97542, 5.96169, -58.6094)
 path = NodePath("../../../Path3D")
-path_position = 0.18
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker5" instance=ExtResource("7_st0gl")]
 
 [node name="EnemyMarker6" parent="EnemyDistanceSpawner/Enemies" index="6" node_paths=PackedStringArray("path") instance=ExtResource("8_p44nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.459099, 0.627183, -58.6903)
 path = NodePath("../../../Path3D")
-path_position = 0.164
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker6" instance=ExtResource("7_st0gl")]
 

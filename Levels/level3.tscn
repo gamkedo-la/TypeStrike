@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c06go7rvv1w7s"]
+[gd_scene load_steps=23 format=3 uid="uid://c06go7rvv1w7s"]
 
 [ext_resource type="Environment" uid="uid://dciy1pk4n3ph" path="res://Levels/level3_environment.tres" id="2_8k746"]
 [ext_resource type="PackedScene" uid="uid://cvgr706cfuhue" path="res://Components/UI/win_screen.tscn" id="3_0s8bb"]
@@ -14,10 +14,21 @@
 [ext_resource type="Material" uid="uid://cduc5lbphscw5" path="res://Materials/SurfaceGlitchMaterial.material" id="14_70xjd"]
 [ext_resource type="ArrayMesh" uid="uid://d3eenhevr1027" path="res://ContentSources/neon-city-elements/city-maze.obj" id="15_old5i"]
 [ext_resource type="Material" uid="uid://cp6y8qjeag5wn" path="res://Materials/static-blue.tres" id="16_6pw22"]
+[ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="17_62n2x"]
 [ext_resource type="ArrayMesh" uid="uid://lj8h8xciw7le" path="res://ContentSources/neon-city-elements/city-spiky.obj" id="17_klcwe"]
 [ext_resource type="Material" uid="uid://cc8mb6m15i0tw" path="res://Materials/ScrollingLit.tres" id="18_fwcgy"]
+[ext_resource type="PackedScene" uid="uid://bpt83e080v7dl" path="res://Components/EnemyDistanceSpawner.tscn" id="18_yhlj3"]
+[ext_resource type="PackedScene" uid="uid://vpi1e1i8e13p" path="res://Components/EnemyMarker.tscn" id="19_chnfa"]
+[ext_resource type="PackedScene" uid="uid://5uhkotpicmc1" path="res://Components/EnemyBase.tscn" id="20_mauhs"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vh4v3"]
+
+[sub_resource type="Curve3D" id="Curve3D_l58ma"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22.56, 0, 0, 0, 0, 0, 0, 17.515, 0, 22.56),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="Level3" type="Node3D"]
 
@@ -346,3 +357,38 @@ transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e
 mesh = ExtResource("17_klcwe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("18_fwcgy")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0151, 1.38982, 0)
+curve = SubResource("Curve3D_l58ma")
+
+[node name="Player" parent="Path3D" instance=ExtResource("17_62n2x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="EnemyDistanceSpawner" parent="." node_paths=PackedStringArray("player_path") instance=ExtResource("18_yhlj3")]
+player_path = NodePath("../Path3D/Player")
+
+[node name="EnemyMarker" parent="EnemyDistanceSpawner/Enemies" index="0" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.964649, 0, 0.263536, 0, 1, 0, -0.263536, 0, 0.964649, 14.904, 1.75791, 15.973)
+path = NodePath("../../../Path3D")
+path_position = 3.3
+
+[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker" instance=ExtResource("20_mauhs")]
+
+[node name="EnemyMarker2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.852211, 0, -0.523198, 0, 1, 0, 0.523198, 0, 0.852211, 6.39876, 2.45575, 17.2082)
+path = NodePath("../../../Path3D")
+path_position = 3.3
+
+[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker2" instance=ExtResource("20_mauhs")]
+
+[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies" index="2" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 9.18263, 1.48056, 17.2082)
+path = NodePath("../../../Path3D")
+path_position = 3.3
+
+[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3" instance=ExtResource("20_mauhs")]
+
+[connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
+
+[editable path="EnemyDistanceSpawner"]
