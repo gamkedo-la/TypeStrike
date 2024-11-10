@@ -91,6 +91,7 @@ script = ExtResource("4_i7vk5")
 trigger_key = SubResource("InputEventKey_a5rkl")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("8_1sfsp")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]

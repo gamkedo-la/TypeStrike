@@ -17,7 +17,7 @@ func _input(event):
 func _update_streak_label(streak: int = 0):
 	streak_label.text = "%d" % streak
 
-func _update_score_label(streak: int, score: int):
+func _update_score_label(streak: int, score: int, gained: int):
 	score_label.text = "%d" % score
 	_update_streak_label(streak)
 

@@ -13,6 +13,8 @@ class_name EnemyMarker
 			var marker := $"Marker"
 			if marker:
 				marker.global_position = path.to_global(curve_position)
+				for child in get_children():
+					child.look_at(Vector3(marker.global_position.x, child.global_position.y, marker.global_position.z))
 		else:
 			path_position = p
 			printerr("Need to set path to evaluate path_position")

@@ -25,10 +25,10 @@
 
 [sub_resource type="Curve3D" id="Curve3D_l58ma"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22.56, 0, 0, 0, 0, 0, 0, 17.515, 0, 22.56),
-"tilts": PackedFloat32Array(0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22.56, -1.08205, -0.7915, 0.00998497, 1.08205, 0.7915, -0.00998497, 17.515, 0, 22.56, 0, 0, 0, 0, 0, 0, 17.515, 8.685, 22.56),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 3
+point_count = 4
 
 [node name="Level3" type="Node3D"]
 
@@ -374,6 +374,7 @@ path = NodePath("../../../Path3D")
 path_position = 3.3
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker" instance=ExtResource("20_mauhs")]
+transform = Transform3D(0.994854, 0, 0.101322, 0, 1, 0, -0.101322, 0, 0.994854, 0, 0, 0)
 
 [node name="EnemyMarker2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
 transform = Transform3D(0.852211, 0, -0.523198, 0, 1, 0, 0.523198, 0, 0.852211, 6.39876, 2.45575, 17.2082)
@@ -381,6 +382,7 @@ path = NodePath("../../../Path3D")
 path_position = 3.3
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker2" instance=ExtResource("20_mauhs")]
+transform = Transform3D(0.956448, 0, 0.291904, 0, 1, 0, -0.291904, 0, 0.956448, 0, 0, 0)
 
 [node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies" index="2" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
 transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 9.18263, 1.48056, 17.2082)
@@ -388,6 +390,7 @@ path = NodePath("../../../Path3D")
 path_position = 3.3
 
 [node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3" instance=ExtResource("20_mauhs")]
+transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
 
 [connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
 

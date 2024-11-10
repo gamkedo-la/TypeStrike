@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbs5dp3v46cig"]
+[gd_scene load_steps=4 format=3 uid="uid://cbs5dp3v46cig"]
 
 [ext_resource type="Script" path="res://Components/enemy_label.gd" id="1_xvx0a"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_5vria"]
+
+[sub_resource type="SystemFont" id="SystemFont_quofx"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,8 +22,13 @@ theme = ExtResource("2_5vria")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/normal_font = SubResource("SystemFont_quofx")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][color=fc0]%s[/color][color=white]%s[/color][/center]"
 fit_content = true
 autowrap_mode = 0
+
+[node name="FadeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
