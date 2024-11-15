@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://deyjmtlq3kka4"]
+
+[ext_resource type="Script" path="res://Components/Enemies/dragonfly_enemy.gd" id="1_c370n"]
+[ext_resource type="PackedScene" uid="uid://b37o2i3qtxbxe" path="res://Meshes/SkeletalMeshes/dragonfly/dragonfly.tscn" id="1_cu5na"]
+
+[node name="dragonfly_enemy" type="Node3D"]
+script = ExtResource("1_c370n")
+radius = 5
+speed = 0.33
+phrase_length = 0
+
+[node name="dragonfly2" parent="." instance=ExtResource("1_cu5na")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

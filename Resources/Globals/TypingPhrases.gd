@@ -1,16 +1,41 @@
 extends Node
 
-var phrases : ShuffleBag
+var phrases : Array[ShuffleBag]
+
+
+
+var cutoffs = [
+	2, #TINY
+	3, #SHORT
+	5, #MEDIUM
+	7, #LONG
+	9, #XLONG
+	1000, #WTF
+]
+
+var file_length = 374976.0
 
 func _init():
-	phrases = ShuffleBag.new()
-	var dictionary_file = FileAccess.open("res://Data/en/cc0_word_list_with_fewer_offensive_words.txt", FileAccess.READ)
-	var phrase_array = []
+	var dictionary_file = FileAccess.open("res://Data/en/word_list_sorted_by_length.txt", FileAccess.READ)
+
+	for i in cutoffs.size():
+		phrases.append(ShuffleBag.new())
+
+	var section = TS_Enums.PhraseLength.TINY
+	var section_phrases = []
 	while not dictionary_file.eof_reached():
 		var phrase = dictionary_file.get_line()
-		if not phrase.is_empty():
-			phrase_array.append(phrase)
-	phrases.populate(phrase_array)
+		if phrase.is_empty():
+			continue
+		if phrase.length() > cutoffs[section]:
+			phrases[section].populate(section_phrases)
+			section_phrases.clear()
+			section += 1
+		section_phrases.append(phrase)
+	phrases[section].populate(section_phrases)
+	
+	phrases.map(func(b : ShuffleBag): b.reshuffle())
+	phrases.map(func(b : ShuffleBag): print(b.bag.size()))
 
-func get_random_phrase():
-	return phrases.random()
+func get_random_phrase(length : TS_Enums.PhraseLength):
+	return phrases[length].random()

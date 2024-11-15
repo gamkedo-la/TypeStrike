@@ -6,13 +6,16 @@
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/rotation = Quaternion(-0.704808, 0, 0, 0.709398)
-bones/1/rotation = Quaternion(-0.00502254, 0, 0, 0.999987)
-bones/2/rotation = Quaternion(-0.0429215, 0, 0, 0.999078)
-bones/3/rotation = Quaternion(-0.331141, -0.478227, 0.686991, -0.435532)
+bones/1/rotation = Quaternion(-0.00543665, 0, 0, 0.999985)
+bones/2/rotation = Quaternion(-0.0433352, 0, 0, 0.999061)
+bones/3/rotation = Quaternion(-0.493097, -0.337829, 0.578705, -0.554822)
 bones/3/scale = Vector3(1, 1, 1)
-bones/4/rotation = Quaternion(0.417068, 0.218328, -0.40845, 0.78202)
+bones/4/rotation = Quaternion(0.309831, 0.351481, -0.495197, 0.731605)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(0.331141, -0.478227, 0.686991, 0.435532)
+bones/5/rotation = Quaternion(0.493097, -0.337829, 0.578705, 0.554822)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.417068, -0.218328, 0.40845, 0.78202)
+bones/6/rotation = Quaternion(0.361459, -0.323534, 0.460333, 0.743482)
 bones/6/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Fly"

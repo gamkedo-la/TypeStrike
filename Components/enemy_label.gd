@@ -33,7 +33,7 @@ func _remove():
 
 func _process(delta):
 	if _is_enemy_valid():
-		var pos2d = cam.unproject_position(enemy.global_position)
+		var pos2d = cam.unproject_position(enemy.get_body_position())
 		offset_left = pos2d.x - (enemy_label.get_content_width() / 2)
 		offset_top = pos2d.y
 	else:

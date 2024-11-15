@@ -1,18 +1,20 @@
 class_name EnemyBase
-extends CharacterBody3D
+extends Node3D
 
 signal focus_lost
 
-
-@export var move_speed : float = 5.0
 @export var word : String
 @export var target : TypeStrikePlayer
+@export var phrase_length : TS_Enums.PhraseLength = TS_Enums.PhraseLength.SHORT
 
 var word_index : int = 0
 
-
 func _ready():
-	word = TypingPhrases.get_random_phrase()
+	word = TypingPhrases.get_random_phrase(phrase_length)
+	Messenger.enemy_spawned.emit(self)
+
+func get_body_position():
+	return self.global_position
 
 func erase(letter : String) -> int:
 	if word[word_index] == letter:
@@ -31,9 +33,3 @@ func erase(letter : String) -> int:
 func clear_label():
 	word_index = 0
 	focus_lost.emit()
-
-func _physics_process(delta):
-	if target:
-		look_at(target.global_position, Vector3.UP)
-		velocity = -global_basis.z * move_speed
-		move_and_slide()

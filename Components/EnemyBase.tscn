@@ -12,9 +12,8 @@ material = ExtResource("1_jhd2q")
 [sub_resource type="BoxMesh" id="BoxMesh_vx01n"]
 material = ExtResource("2_tlt1q")
 
-[node name="EnemyBase" type="CharacterBody3D"]
+[node name="EnemyBase" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_verte")
-move_speed = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

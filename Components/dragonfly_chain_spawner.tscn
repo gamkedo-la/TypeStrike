@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3bb3ygn3i2y4"]
+
+[ext_resource type="Script" path="res://Scripts/chain_spawner.gd" id="1_qc6xg"]
+[ext_resource type="PackedScene" uid="uid://deyjmtlq3kka4" path="res://Components/Enemies/dragonfly_enemy.tscn" id="1_v4xr0"]
+
+[node name="dragonfly_chain_spawner" type="Node3D" node_paths=PackedStringArray("container", "chain_delay") groups=["enemies"]]
+script = ExtResource("1_qc6xg")
+container = NodePath("container")
+chain_length = 15
+chain_delay = NodePath("Timer")
+enemy = ExtResource("1_v4xr0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.06598)
+
+[node name="container" type="Node3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

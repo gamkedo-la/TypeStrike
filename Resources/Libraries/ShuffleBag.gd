@@ -5,7 +5,7 @@ var bag : Array
 var index : int = 0
 
 func populate(items : Array) -> void:
-	bag = items
+	bag = items.duplicate()
 	reshuffle()
 
 func reshuffle():
