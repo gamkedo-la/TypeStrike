@@ -1,9 +1,12 @@
 extends Control
 
+@export var health_label: Label
 @export var score_label : Label
 @export var streak_label : Label
 
 func _ready():
+	_update_health_label()
+	Messenger.player_take_damage.connect(_update_health_label)
 	Messenger.score_changed.connect(_update_score_label)
 	Messenger.wrong_letter_typed.connect(_update_streak_label)
 	Messenger.pause_changed.connect(handle_pause_changed)
@@ -13,6 +16,9 @@ func _input(event):
 		var paused = not get_tree().paused
 		get_tree().paused = paused
 		Messenger.pause_changed.emit(paused)
+
+func _update_health_label(label: int = PlayerState.health):
+	health_label.text = str(label)
 
 func _update_streak_label(streak: int = 0):
 	streak_label.text = "%d" % streak

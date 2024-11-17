@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pqdm4i0c0o1l"]
+[gd_scene load_steps=10 format=3 uid="uid://pqdm4i0c0o1l"]
 
 [ext_resource type="Script" path="res://Components/Player/Player.gd" id="1_bwaaj"]
 [ext_resource type="Script" path="res://Components/Player/PlayerRails.gd" id="1_h5clx"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://b6btpqarqaihh" path="res://Audio/key_fail.wav" id="6_vhqe7"]
 [ext_resource type="Script" path="res://Components/Player/SadKeys.gd" id="7_orsh2"]
 [ext_resource type="Script" path="res://Components/Player/AttackSoundEffects.gd" id="8_as5eo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcpla"]
+size = Vector3(20, 20, 0.2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q57ax"]
 
@@ -19,6 +22,13 @@ script = ExtResource("1_h5clx")
 script = ExtResource("1_bwaaj")
 player_rails = NodePath("..")
 textarea = NodePath("TextEdit")
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24516, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0298)
+shape = SubResource("BoxShape3D_tcpla")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -55,4 +65,5 @@ script = ExtResource("8_as5eo")
 stream = ExtResource("6_vhqe7")
 script = ExtResource("7_orsh2")
 
+[connection signal="body_shape_exited" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_shape_exited"]
 [connection signal="text_set" from="CharacterBody3D/TextEdit" to="CharacterBody3D" method="_on_text_edit_text_set"]

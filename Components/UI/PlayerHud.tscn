@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Components/UI/EnemyLabelManager.gd" id="3_l4j3h"]
 [ext_resource type="PackedScene" uid="uid://cbs5dp3v46cig" path="res://Components/enemy_label.tscn" id="4_imy1f"]
 
-[node name="PlayerHud" type="Control" node_paths=PackedStringArray("score_label", "streak_label")]
+[node name="PlayerHud" type="Control" node_paths=PackedStringArray("health_label", "score_label", "streak_label")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eicr1")
+health_label = NodePath("StatsContainer/VBoxContainer/HealthContainer/HealthValue")
 score_label = NodePath("StatsContainer/VBoxContainer/ScoreContainer/ScoreValue")
 streak_label = NodePath("StatsContainer/VBoxContainer/StreakContainer/StreakValue")
 
@@ -26,6 +27,17 @@ theme_override_constants/margin_top = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StatsContainer"]
 layout_mode = 2
+
+[node name="HealthContainer" type="HBoxContainer" parent="StatsContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="StatsContainer/VBoxContainer/HealthContainer"]
+layout_mode = 2
+text = "Health:"
+
+[node name="HealthValue" type="Label" parent="StatsContainer/VBoxContainer/HealthContainer"]
+layout_mode = 2
+text = "0"
 
 [node name="ScoreContainer" type="HBoxContainer" parent="StatsContainer/VBoxContainer"]
 layout_mode = 2

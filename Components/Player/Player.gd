@@ -77,3 +77,7 @@ func begin_wave(spawned_enemies: Array[EnemyBase]):
 func handle_pause_changed(paused: bool):
 	if not paused:
 		textarea.grab_focus()
+
+func _on_area_3d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	if body is EnemyBase:
+		Messenger.player_take_damage.emit()
