@@ -30,6 +30,7 @@ func _ready():
 	if Engine.is_editor_hint():
 		set_notify_transform(true)
 		_update_marker_position()
+		path_position = path_position
 	else:
 		_hide_markers()
 	

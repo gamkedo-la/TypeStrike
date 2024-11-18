@@ -6,10 +6,10 @@ var phrases : Array[ShuffleBag]
 
 var cutoffs = [
 	2, #TINY
-	3, #SHORT
-	5, #MEDIUM
-	7, #LONG
-	9, #XLONG
+	4, #SHORT
+	6, #MEDIUM
+	8, #LONG
+	10, #XLONG
 	1000, #WTF
 ]
 

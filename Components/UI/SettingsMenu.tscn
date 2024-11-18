@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1vbq8efigd0c"]
+[gd_scene load_steps=8 format=3 uid="uid://d1vbq8efigd0c"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_pexnt"]
 [ext_resource type="Script" path="res://Components/UI/SettingsMenu.gd" id="2_okkfc"]
 [ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="3_sy2f8"]
+[ext_resource type="AudioStream" uid="uid://b0igylsditd2n" path="res://Audio/Galactic Rap.mp3" id="4_0mcm1"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_jwtpe"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_2444r"]
@@ -71,16 +72,54 @@ popup/item_2/id = 2
 popup/item_3/text = "10%"
 popup/item_3/id = 3
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volume
+"
+horizontal_alignment = 1
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-alignment = 1
+theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Master Volume:"
 
-[node name="MasterVolume" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MasterVolume" type="HSlider" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="MusicVolume" type="HSlider" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -88,14 +127,29 @@ size_flags_vertical = 1
 size_flags_stretch_ratio = 2.0
 max_value = 1.0
 step = 0.01
-value = 0.5
+value = 1.0
 tick_count = 10
 ticks_on_borders = true
 
-[node name="VolumeDebounceTimer" type="Timer" parent="VBoxContainer/HBoxContainer2"]
+[node name="SFXVolume" type="HSlider" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
-wait_time = 0.1
-one_shot = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -128,3 +182,13 @@ size_flags_horizontal = 10
 text = "[A] Apply"
 script = ExtResource("4_jwtpe")
 trigger_key = SubResource("InputEventKey_7hqus")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0mcm1")
+autoplay = true
+bus = &"Music"
+
+[node name="VolumeDebounceTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.1
+one_shot = true
