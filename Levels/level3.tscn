@@ -370,295 +370,255 @@ player_path = NodePath("../Path3D/Player")
 
 [node name="EnemyMarker" parent="EnemyDistanceSpawner/Enemies" index="0" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
 transform = Transform3D(0.964649, 0, 0.263536, 0, 1, 0, -0.263536, 0, 0.964649, 14.904, 1.75791, 15.973)
+enemy_template = ExtResource("20_mauhs")
 path = NodePath("../../../Path3D")
 path_position = 3.3
-
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.994854, 0, 0.101322, 0, 1, 0, -0.101322, 0, 0.994854, 0, 0, 0)
 
 [node name="EnemyMarker2" parent="EnemyDistanceSpawner/Enemies" index="1" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
 transform = Transform3D(0.852211, 0, -0.523198, 0, 1, 0, 0.523198, 0, 0.852211, 6.39876, 2.45575, 17.2082)
+enemy_template = ExtResource("20_mauhs")
 path = NodePath("../../../Path3D")
 path_position = 3.3
-
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker2" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.956448, 0, 0.291904, 0, 1, 0, -0.291904, 0, 0.956448, 0, 0, 0)
 
 [node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies" index="2" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
 transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 9.18263, 1.48056, 17.2082)
+enemy_template = ExtResource("20_mauhs")
 path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 15.0967, 0.165229, 1.43853)
-path = NodePath("../../../../Path3D")
+[node name="EnemyMarker4" parent="EnemyDistanceSpawner/Enemies" index="3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.93103, 0, -0.364942, 0, 1, 0, 0.364942, 0, 0.93103, 23.7496, 1.64579, 21.4252)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 4.5385, 0.508292, -4.66595)
-path = NodePath("../../../../../Path3D")
+[node name="EnemyMarker5" parent="EnemyDistanceSpawner/Enemies" index="4" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.847065, 0, -0.531487, 0, 1, 0, 0.531487, 0, 0.847065, 29.6779, 2.15408, 18.7373)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 5.65356, 1.08375, -2.88884)
-path = NodePath("../../../../../../Path3D")
+[node name="EnemyMarker6" parent="EnemyDistanceSpawner/Enemies" index="5" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.733634, 0, -0.679543, 0, 1, 0, 0.679543, 0, 0.733634, 36.0022, 3.23783, 19.2951)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 8.57216, -0.888799, -9.84441)
-path = NodePath("../../../../../../../Path3D")
+[node name="EnemyMarker7" parent="EnemyDistanceSpawner/Enemies" index="6" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.594681, 0, -0.80396, 0, 1, 0, 0.80396, 0, 0.594681, 48.9807, 2.34903, 17.8981)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, -2.99197, -0.0569773, -0.994774)
-path = NodePath("../../../../../../../../Path3D")
+[node name="EnemyMarker8" parent="EnemyDistanceSpawner/Enemies" index="7" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.435041, 0, -0.900409, 0, 1, 0, 0.900409, 0, 0.435041, 48.0012, 2.29205, 14.9011)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, -1.538, -0.0569773, -4.00405)
-path = NodePath("../../../../../../../../../Path3D")
+[node name="EnemyMarker9" parent="EnemyDistanceSpawner/Enemies" index="8" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.260267, 0, -0.965535, 0, 1, 0, 0.965535, 0, 0.260267, 50.9374, 2.23508, 11.7743)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 9.61905, 2.20153, -0.996593)
-path = NodePath("../../../../../../../../../../Path3D")
+[node name="EnemyMarker10" parent="EnemyDistanceSpawner/Enemies" index="9" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.0764392, 0, -0.997072, 0, 1, 0, 0.997072, 0, 0.0764392, 54.4032, 4.43661, 20.8024)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 9.93362, 2.20153, -5.09985)
-path = NodePath("../../../../../../../../../../../Path3D")
+[node name="EnemyMarker11" parent="EnemyDistanceSpawner/Enemies" index="10" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.110048, 0, -0.993924, 0, 1, 0, 0.993924, 0, -0.110048, 60.2474, 6.63814, 30.3172)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 2.11066, 1.68542, 3.8853)
-path = NodePath("../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker12" parent="EnemyDistanceSpawner/Enemies" index="11" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.292706, 0, -0.9562, 0, 1, 0, 0.9562, 0, -0.292706, 56.1534, 8.32356, 31.9874)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 18.6781, -0.660713, -0.818024)
-path = NodePath("../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker13" parent="EnemyDistanceSpawner/Enemies" index="12" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.465182, 0, -0.885213, 0, 1, 0, 0.885213, 0, -0.465182, 51.4684, 7.66284, 50.0869)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 2.62029, -0.660713, 3.6137)
-path = NodePath("../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker14" parent="EnemyDistanceSpawner/Enemies" index="13" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.621477, 0, -0.783432, 0, 1, 0, 0.783432, 0, -0.621477, 47.0506, 7.00213, 50.7253)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 14.137, -0.397358, -5.52222)
-path = NodePath("../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker15" parent="EnemyDistanceSpawner/Enemies" index="14" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.756151, 0, -0.654397, 0, 1, 0, 0.654397, 0, -0.756151, 42.5911, 6.60477, 65.2327)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, -0.0719852, -0.397358, 3.51622)
-path = NodePath("../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker16" parent="EnemyDistanceSpawner/Enemies" index="15" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.864522, 0, -0.502597, 0, 1, 0, 0.502597, 0, -0.864522, 40.3445, 6.20741, 62.5268)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 13.0541, 0.578158, 7.94923)
-path = NodePath("../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker17" parent="EnemyDistanceSpawner/Enemies" index="16" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.942818, 0, -0.333313, 0, 1, 0, 0.333313, 0, -0.942818, 25.0637, 6.78557, 62.2154)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 2.27897, 0.326419, 1.60883)
-path = NodePath("../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker18" parent="EnemyDistanceSpawner/Enemies" index="17" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.988316, 0, -0.152433, 0, 1, 0, 0.152433, 0, -0.988316, 22.3788, 7.11199, 61.4582)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, -0.146343, -0.371377, 1.23475)
-path = NodePath("../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker19" parent="EnemyDistanceSpawner/Enemies" index="18" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.777805, 0, 0.628503, 0, 1, 0, -0.628503, 0, 0.777805, 60.6545, 39.1555, 63.108)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 12.3448, -0.371377, 5.27226)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker20" parent="EnemyDistanceSpawner/Enemies" index="19" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.647563, 0, 0.762011, 0, 1, 0, -0.762011, 0, 0.647563, 60.7274, 33.9329, 58.3703)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 3.71719, 0.124008, 0.404495)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker21" parent="EnemyDistanceSpawner/Enemies" index="20" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.494794, 0, 0.869011, 0, 1, 0, -0.869011, 0, 0.494794, 59.9192, 24.8645, 53.7014)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, -14.5514, 0.124008, 8.28663)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker22" parent="EnemyDistanceSpawner/Enemies" index="21" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.324811, 0, 0.945781, 0, 1, 0, -0.945781, 0, 0.324811, 62.2126, 25.208, 51.7987)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982607, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982607, 2.65509, 0.124008, 0.220381)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker23" parent="EnemyDistanceSpawner/Enemies" index="22" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.143529, 0, 0.989649, 0, 1, 0, -0.989649, 0, 0.143529, 39.8073, 7.05995, 37.7442)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 0.202934, 0.124008, -2.25394)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker24" parent="EnemyDistanceSpawner/Enemies" index="23" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.0427465, 0, 0.99909, 0, 1, 0, -0.99909, 0, -0.0427465, 39.7616, 7.28089, 43.075)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 1.40543, -0.481648, 0.740527)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker25" parent="EnemyDistanceSpawner/Enemies" index="24" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.227535, 0, 0.973775, 0, 1, 0, -0.973775, 0, -0.227535, 34.3881, 8.15546, 44.9386)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, -1.76248, 1.77184, 15.7336)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker26" parent="EnemyDistanceSpawner/Enemies" index="25" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.404409, 0, 0.914584, 0, 1, 0, -0.914584, 0, -0.404409, 19.2856, 6.38362, 49.6895)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982606, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982606, 0.592094, -0.87457, 5.65664)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker27" parent="EnemyDistanceSpawner/Enemies" index="26" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.567214, 0, 0.823577, 0, 1, 0, -0.823577, 0, -0.567214, 19.4729, 6.86527, 51.267)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982605, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982605, 5.32394, -0.220943, 0.273525)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker28" parent="EnemyDistanceSpawner/Enemies" index="27" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.710287, 0, 0.70392, 0, 1, 0, -0.70392, 0, -0.710287, 21.2036, 6.74126, 49.8089)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982605, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982605, -10.6932, 18.148, 24.1905)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker29" parent="EnemyDistanceSpawner/Enemies" index="28" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.828651, 0, 0.559775, 0, 1, 0, -0.559775, 0, -0.828651, 23.2804, 6.61725, 51.4778)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982605, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982605, -2.54447, -0.343443, -1.55105)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker30" parent="EnemyDistanceSpawner/Enemies" index="29" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.918187, 0, 0.396157, 0, 1, 0, -0.396157, 0, -0.918187, 6.63668, 6.49325, 53.3218)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982605, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982605, -3.65739, 9.06842, 3.01246)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker31" parent="EnemyDistanceSpawner/Enemies" index="30" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.975783, 0, 0.218758, 0, 1, 0, -0.218758, 0, -0.975783, 10.1754, 6.36924, 54.5297)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
-
-[node name="EnemyMarker3" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
-transform = Transform3D(0.982605, 0, -0.185701, 0, 1, 0, 0.185701, 0, 0.982605, -3.65739, 5.22255, 3.01244)
-path = NodePath("../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../Path3D")
+[node name="EnemyMarker32" parent="EnemyDistanceSpawner/Enemies" index="31" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.999433, 0, 0.0337493, 0, 1, 0, -0.0337493, 0, -0.999433, 22.3352, 6.74061, 60.2156)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 path_position = 3.3
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 0, 0, 0)
+[node name="EnemyMarker33" parent="EnemyDistanceSpawner/Enemies" index="32" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.800036, 0, 0.599947, 0, 1, 0, -0.599947, 0, -0.800036, 45.9684, 43.2642, 0.0460794)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 12.473, 4.06592, -8.94868)
+[node name="EnemyMarker34" parent="EnemyDistanceSpawner/Enemies" index="33" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.717603, 0, 0.696448, 0, 1, 0, -0.696448, 0, -0.717603, 42.4227, 44.3829, 2.17026)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 3.44062, 0.26012, -2.26335)
+[node name="EnemyMarker35" parent="EnemyDistanceSpawner/Enemies" index="34" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.484555, 0, 0.874757, 0, 1, 0, -0.874757, 0, -0.484555, 42.3553, 44.1735, 0.16926)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 3.44062, 0.26012, -2.26335)
+[node name="EnemyMarker36" parent="EnemyDistanceSpawner/Enemies" index="35" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.369855, 0, 0.929087, 0, 1, 0, -0.929087, 0, -0.369855, 42.0833, 43.9134, -2.29752)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 3.44062, 0.26012, -2.26335)
+[node name="EnemyMarker37" parent="EnemyDistanceSpawner/Enemies" index="36" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.249197, 0, 0.96845, 0, 1, 0, -0.96845, 0, -0.249197, 48.038, 43.6532, 2.68894)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991947, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991947, 32.5917, -0.200092, -7.02378)
+[node name="EnemyMarker38" parent="EnemyDistanceSpawner/Enemies" index="37" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(-0.124525, 0, 0.992215, 0, 1, 0, -0.992215, 0, -0.124525, 48.6666, 43.3931, -0.148645)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 3.44062, -0.668671, -2.26335)
+[node name="EnemyMarker39" parent="EnemyDistanceSpawner/Enemies" index="38" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.00215296, 0, 0.999996, 0, 1, 0, -0.999996, 0, 0.00215296, 61.6058, 43.133, -1.35713)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, -1.23634, 0.26012, -12.9365)
+[node name="EnemyMarker40" parent="EnemyDistanceSpawner/Enemies" index="39" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.128796, 0, 0.991669, 0, 1, 0, -0.991669, 0, 0.128796, 63.4071, 43.8017, 2.34634)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991945, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991945, -2.73722, 0.26012, -0.977131)
+[node name="EnemyMarker41" parent="EnemyDistanceSpawner/Enemies" index="40" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.253364, 0, 0.967368, 0, 1, 0, -0.967368, 0, 0.253364, 61.9441, 44.0018, 35.6541)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, 6.31306, 0.26012, -4.52423)
+[node name="EnemyMarker42" parent="EnemyDistanceSpawner/Enemies" index="41" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.373852, 0, 0.927486, 0, 1, 0, -0.927486, 0, 0.373852, 62.7571, 43.7416, 39.6914)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, -2.39245, 0.26012, -0.659676)
+[node name="EnemyMarker43" parent="EnemyDistanceSpawner/Enemies" index="42" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.488317, 0, 0.872664, 0, 1, 0, -0.872664, 0, 0.488317, 63.0521, 43.4815, 43.7991)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.956947, 0, 0.290263, 0, 1, 0, -0.290263, 0, 0.956947, -1.78308, 0.209419, -0.910606)
-
-[node name="EnemyBase" parent="EnemyDistanceSpawner/Enemies/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyMarker3/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase/EnemyBase" instance=ExtResource("20_mauhs")]
-transform = Transform3D(0.991946, 0, 0.126661, 0, 1, 0, -0.126661, 0, 0.991946, -1.06504, -1.11866, 3.99375)
+[node name="EnemyMarker44" parent="EnemyDistanceSpawner/Enemies" index="43" node_paths=PackedStringArray("path") instance=ExtResource("19_chnfa")]
+transform = Transform3D(0.594917, 0, 0.803785, 0, 1, 0, -0.803785, 0, 0.594917, 62.8245, 43.2214, 47.9111)
+enemy_template = ExtResource("20_mauhs")
+path = NodePath("../../../Path3D")
 
 [connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
 
