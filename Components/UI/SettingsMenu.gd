@@ -33,6 +33,9 @@ func _init_values_from_prefs():
 	master_volume_slider.value = prefs.master_volume
 	music_volume_slider.value = prefs.music_volume
 	sfx_volume_slider.value = prefs.sfx_volume
+	AudioServer.set_bus_volume_db(MASTER_BUS_ID, linear_to_db(prefs.master_volume))
+	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(prefs.music_volume))
+	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(prefs.sfx_volume))
 
 func _handle_resolution_change(index: int) -> void:
 	var description = resolution_changer.get_item_text(index)
