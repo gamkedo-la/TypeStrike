@@ -22,6 +22,10 @@ Messenger="*res://Resources/Globals/Messenger.gd"
 PlayerState="*res://Components/Player/PlayerState.gd"
 PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [filesystem]
 
 import/blender/enabled=false
