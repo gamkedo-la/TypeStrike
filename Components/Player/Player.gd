@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var player_rails : PlayerRails
 @export var textarea : TextEdit
 
+@onready var audio_lost_health := $"../LostHealth" as AudioStreamPlayer3D
+
 var enemy_map : Dictionary
 var enemies : Array[EnemyBase] = []
 var active_spawner : EnemySpawner
@@ -80,4 +82,5 @@ func handle_pause_changed(paused: bool):
 
 func _on_area_3d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	if body is EnemyBase:
+		audio_lost_health.play()
 		Messenger.player_take_damage.emit()

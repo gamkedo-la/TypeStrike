@@ -20,8 +20,8 @@ streak_label = NodePath("StatsContainer/VBoxContainer/StreakContainer/StreakValu
 
 [node name="StatsContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_right = 62.0
-offset_bottom = 23.0
+offset_right = 1147.0
+offset_bottom = 97.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 

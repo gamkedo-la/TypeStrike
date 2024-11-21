@@ -17,8 +17,8 @@ func _input(event):
 		get_tree().paused = paused
 		Messenger.pause_changed.emit(paused)
 
-func _update_health_label(label: int = PlayerState.health):
-	health_label.text = str(label)
+func _update_health_label(health: int = PlayerState.health):
+	health_label.text = str(health)
 
 func _update_streak_label(streak: int = 0):
 	streak_label.text = "%d" % streak
