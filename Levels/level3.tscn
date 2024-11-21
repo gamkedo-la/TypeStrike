@@ -97,7 +97,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("5_y8xh2")
 
 [node name="City-buildings14" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(-1, -3.7749e-08, 1.65006e-15, 0, -1.09278e-08, -0.25, 1.50996e-07, -0.25, 1.09278e-08, 138.499, -6.04508, 69.3772)
+transform = Transform3D(-1, -3.7749e-08, 1.65006e-15, 0, -1.09278e-08, -0.25, 1.50996e-07, -0.25, 1.09278e-08, 138.499, -35.7843, 69.3772)
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("4_s0s3l")
@@ -166,12 +166,6 @@ mesh = ExtResource("7_ybhew")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("8_s2rrq")
 
-[node name="City-planks3" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(-2.18557e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, -2.18557e-09, 9.55343e-17, 65, 7, 18)
-mesh = ExtResource("7_ybhew")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("8_s2rrq")
-
 [node name="City-planks4" type="MeshInstance3D" parent="Cyber City"]
 transform = Transform3D(-2.18557e-09, -0.05, 2.18557e-09, 0, -2.18557e-09, -0.05, 0.05, -2.18557e-09, 9.55343e-17, 65, 7, 5)
 mesh = ExtResource("7_ybhew")
@@ -222,24 +216,6 @@ surface_material_override/0 = ExtResource("14_70xjd")
 
 [node name="City-pylons6" type="MeshInstance3D" parent="Cyber City"]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 39.3244, 16.7799, -3.00511)
-mesh = ExtResource("13_tpwdb")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("14_70xjd")
-
-[node name="City-pylons3" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 51.7661, -1.59596, 68.8789)
-mesh = ExtResource("13_tpwdb")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("14_70xjd")
-
-[node name="City-pylons4" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 26.7661, -1.59596, 68.8789)
-mesh = ExtResource("13_tpwdb")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("14_70xjd")
-
-[node name="City-pylons5" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(-0.1, -8.74228e-09, 3.82137e-16, 0, -4.37114e-09, -0.1, 8.74228e-09, -0.1, 4.37114e-09, 68.4878, 17.6153, 67.9936)
 mesh = ExtResource("13_tpwdb")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("14_70xjd")
@@ -310,12 +286,6 @@ mesh = ExtResource("15_old5i")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("16_6pw22")
 
-[node name="static-purple-transparent" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 4.53076, 13.7881)
-mesh = ExtResource("17_klcwe")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("18_fwcgy")
-
 [node name="static-purple-transparent2" type="MeshInstance3D" parent="Cyber City"]
 transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 13.0457, 21.2181)
 mesh = ExtResource("17_klcwe")
@@ -323,7 +293,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("18_fwcgy")
 
 [node name="static-purple-transparent3" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, 1.46073, 31.035)
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-09, -0.025, 0, 0.025, -1.09278e-09, 3.84567, -2.87786, 31.035)
 mesh = ExtResource("17_klcwe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("18_fwcgy")
@@ -335,7 +305,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("18_fwcgy")
 
 [node name="static-purple-transparent7" type="MeshInstance3D" parent="Cyber City"]
-transform = Transform3D(0.25, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -2.7238, 9.21334, 10.761)
+transform = Transform3D(0.25, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -2.7238, 1.28477, 7.64667)
 mesh = ExtResource("17_klcwe")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("18_fwcgy")

@@ -7,6 +7,6 @@
 render_priority = 0
 shader = ExtResource("1_gx8s7")
 shader_parameter/base_color = Color(0.581033, 0.581033, 0.581033, 1)
-shader_parameter/uv_scroll = Vector2(0, -0.2)
-shader_parameter/uv_scroll_step = 0.2
+shader_parameter/uv_scroll = Vector2(-0.2, 0)
+shader_parameter/uv_scroll_step = 0.01
 shader_parameter/color_texture = ExtResource("2_4tf2h")
