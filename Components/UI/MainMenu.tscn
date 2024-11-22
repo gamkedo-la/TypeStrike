@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=14 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="4_x2y7g"]
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_7wybc"]
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="8_1sfsp"]
+[ext_resource type="Texture2D" uid="uid://dk1dphpqtswst" path="res://Textures/logo.png" id="9_fgdc1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m23b"]
 draw_center = false
@@ -120,6 +121,7 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 2
 text = "[P] Play"
+uppercase = true
 
 [node name="SettingsButton" type="Button" parent="BorderPanel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 50)
@@ -147,6 +149,7 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 2
 text = "[S] Settings"
+uppercase = true
 
 [node name="QuitButton" type="Button" parent="BorderPanel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 50)
@@ -173,9 +176,21 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 2
 text = "[Q] Quit"
+uppercase = true
 
 [node name="SettingsMenu" parent="BorderPanel" instance=ExtResource("8_1sfsp")]
 visible = false
 layout_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_fgdc1")
 
 [connection signal="pressed" from="BorderPanel/MarginContainer/VBoxContainer/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]

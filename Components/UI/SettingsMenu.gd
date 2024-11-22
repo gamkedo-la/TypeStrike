@@ -2,22 +2,22 @@ extends IMenu
 
 var filter_mode := Viewport.SCALING_3D_MODE_BILINEAR
 @onready var viewport: Window = get_tree().root
-@onready var resolution_changer: OptionButton = %ResolutionOptions
 @onready var master_volume_slider: Slider = %MasterVolume
 @onready var music_volume_slider: Slider = %MusicVolume
 @onready var sfx_volume_slider = %SFXVolume
 @onready var debounce: Timer = %VolumeDebounceTimer
-@onready var back_button: Button = $"MarginContainer/HBoxContainer/BackButton"
+@onready var back_button: Button = %BackButton
 
 @onready var MASTER_BUS_ID = AudioServer.get_bus_index("Master")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("Music")
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
+@onready var fullscreen_button = %FullscreenButton
+@onready var text_size_selector = %TextSizeSelector
 
 var final_mv_value: float = 0.0
 
 func _ready():
 	viewport.scaling_3d_mode = filter_mode
-	resolution_changer.item_selected.connect(_handle_resolution_change)
 	master_volume_slider.value_changed.connect(func(v: float):
 		_handle_volume_change(v, MASTER_BUS_ID, PlayerPrefs.P_MASTER_VOLUME))
 	music_volume_slider.value_changed.connect(func(v: float):
@@ -26,6 +26,17 @@ func _ready():
 		_handle_volume_change(v, SFX_BUS_ID, PlayerPrefs.P_SFX_VOLUME))
 	back_button.pressed.connect(func():
 		exit_menu.emit())
+	fullscreen_button.toggled.connect(func(state): _update_display_mode(state))
+	text_size_selector.item_selected.connect(func(index: int):
+		var cam2d = get_viewport().get_camera_2d()
+		var scaling = 1.0 + index
+		cam2d.set_zoom(Vector2(scaling, scaling)))
+		
+	#get_viewport().set_size_2d_override_stretch(true)
+	#get_viewport().get_size_2d()
+	var cam3d = get_viewport().get_camera_3d()
+	
+	#get_viewport().set_size_2d_override(Vector2i)
 	_init_values_from_prefs()
 
 func _init_values_from_prefs():
@@ -37,11 +48,6 @@ func _init_values_from_prefs():
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(prefs.music_volume))
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(prefs.sfx_volume))
 
-func _handle_resolution_change(index: int) -> void:
-	var description = resolution_changer.get_item_text(index)
-	var ratio = description.replace("%", "").to_float() / 100.0
-	viewport.scaling_3d_scale = ratio
-
 # Ensures that we're not updating the volume every time
 # the slider value changes.
 func _handle_volume_change(value: float, bus_id: int, prefs_name: String, ) -> void:
@@ -51,7 +57,14 @@ func _handle_volume_change(value: float, bus_id: int, prefs_name: String, ) -> v
 	debounce.timeout.connect(_update_volume.bind(value, bus_id, prefs_name))
 	debounce.start()
 
+func _update_display_mode(fullscreen: bool) -> void:
+	var display_mode = DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
+	DisplayServer.window_set_mode(display_mode)
+
 func _update_volume(value: float, bus_id: int, prefs_name: String) -> void:
 	debounce.timeout.disconnect(_update_volume)
 	PlayerPrefsManager.update_prefs({prefs_name: value})
 	AudioServer.set_bus_volume_db(bus_id, linear_to_db(value))
+
+func _update_text_size(index: int) -> void:
+	printerr("not yet implemented")
