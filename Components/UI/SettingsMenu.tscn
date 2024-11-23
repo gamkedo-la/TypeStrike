@@ -59,6 +59,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -83,18 +84,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dmnrx")
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer2"]
-material = ExtResource("3_j3vcj")
-layout_mode = 2
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/CenterContainer"]
-layout_mode = 2
-texture = ExtResource("6_hco6q")
-expand_mode = 5
-stretch_mode = 3
-
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -107,6 +96,18 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+material = ExtResource("3_j3vcj")
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("6_hco6q")
+expand_mode = 5
+stretch_mode = 3
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
@@ -115,6 +116,7 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 14
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -247,14 +249,6 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 ticks_on_borders = true
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
 
 [node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer2"]
 unique_name_in_owner = true

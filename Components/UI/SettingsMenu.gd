@@ -47,6 +47,7 @@ func _init_values_from_prefs():
 	AudioServer.set_bus_volume_db(MASTER_BUS_ID, linear_to_db(prefs.master_volume))
 	AudioServer.set_bus_volume_db(MUSIC_BUS_ID, linear_to_db(prefs.music_volume))
 	AudioServer.set_bus_volume_db(SFX_BUS_ID, linear_to_db(prefs.sfx_volume))
+	fullscreen_button.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 
 # Ensures that we're not updating the volume every time
 # the slider value changes.

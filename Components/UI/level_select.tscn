@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjk5gtxyu3kny"]
+
+[ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="1_s7jl1"]
+[ext_resource type="Material" uid="uid://bm2qoh8um5pte" path="res://Components/UI/ui_glitch.material" id="2_wyx3f"]
+[ext_resource type="Texture2D" uid="uid://bjuwbmwh5yomm" path="res://Textures/settings_header.png" id="3_xcyow"]
+[ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_1be8v"]
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="5_8vatv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x1ak"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.168627, 0.909804, 0.541176, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_38pml"]
+device = -1
+keycode = 66
+unicode = 98
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+texture = ExtResource("1_s7jl1")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0x1ak")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+material = ExtResource("2_wyx3f")
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_xcyow")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 2
+script = ExtResource("4_1be8v")
+trigger_key = SubResource("InputEventKey_38pml")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -16.5
+offset_right = 59.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_8vatv")
+theme_override_colors/font_shadow_color = Color(0.168627, 0.317647, 0.909804, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+text = "[B] Back"
+uppercase = true
