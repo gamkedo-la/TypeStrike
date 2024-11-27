@@ -4,6 +4,7 @@ signal correct_letter_typed
 signal wrong_letter_typed
 signal enemy_defeated(enemy: EnemyBase)
 signal player_take_damage
+signal player_died
 signal wave_started
 signal wave_defeated
 signal enemy_spawned(enemy: EnemyBase)

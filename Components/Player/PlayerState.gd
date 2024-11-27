@@ -34,6 +34,7 @@ func _calculate_bonus() -> int:
 func _damage_player() -> int:
 	if health > 0:
 		health -= 1
-		print(health)
+	if health <= 0:
+		Messenger.player_died.emit()
 	return health
 

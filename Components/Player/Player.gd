@@ -21,6 +21,9 @@ func _ready():
 	Messenger.enemy_spawned.connect(enemy_spawned)
 
 func _text_input():
+	if PlayerState.health <= 0:
+		return
+
 	var key_typed = textarea.text[-1].to_lower() if textarea.text.length() > 0 else ""
 	if enemy_map.is_empty():
 		return

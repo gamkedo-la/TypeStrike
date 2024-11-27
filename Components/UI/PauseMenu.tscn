@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="2_puce7"]
 [ext_resource type="LabelSettings" uid="uid://o7rnxodnme6s" path="res://Resources/main_title_label_settings.tres" id="3_qafcc"]
 [ext_resource type="Script" path="res://Components/UI/PauseMenu.gd" id="3_sr63d"]
-[ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_851a4"]
 [ext_resource type="Script" path="res://Components/UI/ResumeButton.gd" id="4_fapse"]
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="6_sfk46"]
 
@@ -26,6 +25,20 @@ resource_local_to_scene = true
 device = -1
 keycode = 82
 unicode = 114
+
+[sub_resource type="GDScript" id="GDScript_0qnrb"]
+script/source = "extends IMenuButton
+
+@export var level_scene : String
+@export var unpause: bool = false
+@export var menu_index := 0
+
+func _pressed():
+	if unpause:
+		get_tree().paused = false
+	if level_scene:
+		get_tree().change_scene_to_file(level_scene)
+"
 
 [sub_resource type="InputEventKey" id="InputEventKey_cest3"]
 resource_local_to_scene = true
@@ -114,14 +127,14 @@ trigger_key = SubResource("InputEventKey_hulsc")
 [node name="SettingsButton" type="Button" parent="Panel/PauseMenu/Buttons"]
 layout_mode = 2
 text = "[S] Settings"
-script = ExtResource("4_851a4")
+script = SubResource("GDScript_0qnrb")
 menu_index = 1
 trigger_key = SubResource("InputEventKey_cest3")
 
 [node name="QuitButton" type="Button" parent="Panel/PauseMenu/Buttons"]
 layout_mode = 2
 text = "[Q] Quit to Main Menu"
-script = ExtResource("4_851a4")
+script = SubResource("GDScript_0qnrb")
 level_scene = "res://Components/UI/MainMenu.tscn"
 unpause = true
 trigger_key = SubResource("InputEventKey_nqa6t")

@@ -1,0 +1,169 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpgo4bliiwfaw"]
+
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_m52dr"]
+[ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="3_x22yr"]
+[ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="4_yx00r"]
+[ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_q8wap"]
+[ext_resource type="Script" path="res://Components/UI/QuickRestartButton.gd" id="6_gjj4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m23b"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.168627, 0.909804, 0.541176, 1)
+
+[sub_resource type="GDScript" id="GDScript_0qnrb"]
+script/source = "extends IMenuButton
+
+@export var level_scene : String
+@export var unpause: bool = false
+@export var menu_index := 0
+
+func _pressed():
+	if unpause:
+		get_tree().paused = false
+	if level_scene:
+		get_tree().change_scene_to_file(level_scene)
+"
+
+[sub_resource type="InputEventKey" id="InputEventKey_yl6f4"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="InputEventKey" id="InputEventKey_n1dex"]
+device = -1
+keycode = 81
+unicode = 81
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m52dr")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x22yr")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="MenuManager" type="Control" parent="." node_paths=PackedStringArray("menus")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_yx00r")
+menus = [NodePath("../BorderPanel")]
+
+[node name="BorderPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m52dr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8m23b")
+script = ExtResource("5_q8wap")
+
+[node name="MainMenuContainer" type="Control" parent="BorderPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BorderPanel/MainMenuContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 491.0
+offset_top = 141.0
+offset_right = -437.2
+offset_bottom = -150.2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/MainMenuContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 7.75
+theme_override_constants/separation = 20
+
+[node name="QuickRestartButton" type="Button" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+script = SubResource("GDScript_0qnrb")
+level_scene = "res://Levels/level1.tscn"
+trigger_key = SubResource("InputEventKey_yl6f4")
+
+[node name="Label" type="Label" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/QuickRestartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -16.5
+offset_right = 59.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m52dr")
+theme_override_colors/font_shadow_color = Color(0.168627, 0.317647, 0.909804, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+text = "[R] Quick Restart"
+uppercase = true
+
+[node name="BackToMainMenuButton" type="Button" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+script = ExtResource("6_gjj4v")
+level_scene = "res://Components/UI/MainMenu.tscn"
+trigger_key = SubResource("InputEventKey_n1dex")
+
+[node name="Label" type="Label" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/BackToMainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -16.5
+offset_right = 59.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m52dr")
+theme_override_colors/font_shadow_color = Color(0.168627, 0.317647, 0.909804, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+text = "[Q] Back to Main Menu"
+uppercase = true
