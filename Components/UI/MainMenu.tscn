@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=15 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_7wybc"]
 [ext_resource type="Texture2D" uid="uid://chrk7te104n6y" path="res://Textures/logo_noglitch.png" id="6_q8jo5"]
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="8_1sfsp"]
+[ext_resource type="PackedScene" uid="uid://rm2u3svrm2ky" path="res://Components/UI/level_select.tscn" id="10_ra2y1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m23b"]
 draw_center = false
@@ -60,7 +61,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_x2y7g")
-menus = [NodePath("../BorderPanel"), NodePath("../SettingsMenu")]
+menus = [NodePath("../BorderPanel"), NodePath("../SettingsMenu"), NodePath("../LevelSelect")]
 
 [node name="BorderPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -122,8 +123,7 @@ theme_override_constants/separation = 20
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 script = ExtResource("3_3cvst")
-level_scene = "res://Levels/level_2.tscn"
-unpause = true
+menu_index = 2
 trigger_key = SubResource("InputEventKey_2444r")
 
 [node name="Label" type="Label" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/PlayButton"]
@@ -206,4 +206,9 @@ uppercase = true
 visible = false
 layout_mode = 1
 
+[node name="LevelSelect" parent="." instance=ExtResource("10_ra2y1")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/PlayButton" to="MenuManager" method="_set_active" binds= [2]]
 [connection signal="pressed" from="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]

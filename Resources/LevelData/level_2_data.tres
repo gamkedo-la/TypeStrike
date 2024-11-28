@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://budynfs3o5piy"]
+
+[ext_resource type="Texture2D" uid="uid://41booyx84eqi" path="res://Textures/level_2_screenshot.png" id="1_12i3a"]
+[ext_resource type="Script" path="res://Resources/LevelData/level_data.gd" id="2_x7fp1"]
+
+[resource]
+script = ExtResource("2_x7fp1")
+level_name = "Level 2"
+level_path = "res://Levels/level_2.tscn"
+level_image = ExtResource("1_12i3a")
