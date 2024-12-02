@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://rm2u3svrm2ky"]
+[gd_scene load_steps=14 format=3 uid="uid://rm2u3svrm2ky"]
 
 [ext_resource type="Script" path="res://Components/UI/level_select.gd" id="1_is4du"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="1_s7jl1"]
-[ext_resource type="Material" uid="uid://bm2qoh8um5pte" path="res://Components/UI/ui_glitch.material" id="2_wyx3f"]
 [ext_resource type="Texture2D" uid="uid://bjuwbmwh5yomm" path="res://Textures/settings_header.png" id="3_xcyow"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_1be8v"]
 [ext_resource type="PackedScene" uid="uid://bg2rnx4wheum5" path="res://Components/UI/level_panel.tscn" id="4_stp8k"]
@@ -75,16 +74,9 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
-material = ExtResource("2_wyx3f")
-layout_mode = 2
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_xcyow")
-expand_mode = 5
 stretch_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
@@ -95,16 +87,16 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="Panel" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
+[node name="level1_button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
 layout_mode = 2
 texture_normal = ExtResource("6_7cbke")
 
-[node name="Panel2" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
+[node name="level2_button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
 layout_mode = 2
 texture_normal = ExtResource("7_ojmhn")
 level_data = ExtResource("7_biwcy")
 
-[node name="Panel3" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
+[node name="level3_button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
 layout_mode = 2
 texture_normal = ExtResource("6_v3mad")
 level_data = ExtResource("8_hsf60")
@@ -114,6 +106,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 2
+theme = ExtResource("5_8vatv")
 script = ExtResource("4_1be8v")
 trigger_key = SubResource("InputEventKey_38pml")
 
