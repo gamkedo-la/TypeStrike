@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1vbq8efigd0c"]
+[gd_scene load_steps=15 format=3 uid="uid://d1vbq8efigd0c"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_pexnt"]
 [ext_resource type="Script" path="res://Components/UI/SettingsMenu.gd" id="2_okkfc"]
-[ext_resource type="Material" uid="uid://bm2qoh8um5pte" path="res://Components/UI/ui_glitch.material" id="3_j3vcj"]
 [ext_resource type="AudioStream" uid="uid://b0igylsditd2n" path="res://Audio/Galactic Rap.mp3" id="4_0mcm1"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_jwtpe"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="4_unvuh"]
@@ -92,57 +91,62 @@ theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(720, 0)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
 theme_override_constants/separation = 30
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
-material = ExtResource("3_j3vcj")
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
 texture = ExtResource("6_hco6q")
-expand_mode = 5
 stretch_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Text Size"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Font Style"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Display Mode"
 horizontal_alignment = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="TextSizeSelector" type="OptionButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextSizeSelector" type="OptionButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 alignment = 1
@@ -157,8 +161,9 @@ popup/item_1/id = 1
 popup/item_2/text = "Extra Large"
 popup/item_2/id = 2
 
-[node name="FontOptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="FontOptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 icon_alignment = 1
 expand_icon = true
@@ -174,51 +179,52 @@ popup/item_2/text = ""
 popup/item_2/icon = ExtResource("9_phcx7")
 popup/item_2/id = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 
-[node name="FullscreenButton" type="CheckButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="FullscreenButton" type="CheckButton" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_2km18")
 text = "Full Screen"
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_y5mbs")
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 2.0
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Master"
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Music"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "SFX"
 horizontal_alignment = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="MasterVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+[node name="MasterVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
@@ -228,7 +234,7 @@ step = 0.01
 value = 1.0
 ticks_on_borders = true
 
-[node name="MusicVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+[node name="MusicVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -239,7 +245,7 @@ step = 0.01
 value = 1.0
 ticks_on_borders = true
 
-[node name="SFXVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+[node name="SFXVolume" type="HSlider" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
