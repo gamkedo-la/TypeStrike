@@ -8,13 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="6_sfk46"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm4cn"]
-bg_color = Color(0.119978, 0.214287, 0.171119, 1)
+draw_center = false
 border_width_left = 20
 border_width_top = 20
 border_width_right = 20
 border_width_bottom = 20
-border_color = Color(0.121569, 0.215686, 0.172549, 0.815686)
-border_blend = true
+border_color = Color(0.121569, 0.215686, 0.172549, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -82,7 +81,6 @@ theme = ExtResource("1_oryxb")
 theme_override_styles/panel = SubResource("StyleBoxFlat_fm4cn")
 
 [node name="PauseMenu" type="Control" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,6 +139,7 @@ trigger_key = SubResource("InputEventKey_nqa6t")
 
 [node name="SettingsMenu" parent="Panel" instance=ExtResource("6_sfk46")]
 process_mode = 4
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Panel/PauseMenu/Buttons/SettingsButton" to="MenuManager" method="_set_active" binds= [1]]
