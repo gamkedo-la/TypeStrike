@@ -29,16 +29,19 @@ func _notification(what):
 func _ready():
 	if Engine.is_editor_hint():
 		set_notify_transform(true)
-		_update_marker_position()
-		path_position = path_position
+
 	else:
 		_hide_markers()
+	_update_marker_position()
+	path_position = path_position
 	
 func enable_enemy():
 	if enemy_template and enemy_template.can_instantiate():
 		var enemy = enemy_template.instantiate() as Node3D
-		add_child(enemy)
 		enemy.position = enemy_marker.position
+		add_child(enemy)
+		var path_position = path_marker.global_position
+		enemy.look_at(Vector3(path_position.x, 0, path_position.z))
 
 func _hide_markers():
 	$"EnemyMarker".hide()

@@ -4,7 +4,6 @@ extends Node3D
 signal focus_lost
 
 @export var word : String
-@export var target : TypeStrikePlayer
 @export var phrase_length : TS_Enums.PhraseLength = TS_Enums.PhraseLength.SHORT
 
 var word_index : int = 0
