@@ -1,16 +1,21 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dciy1pk4n3ph"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dciy1pk4n3ph"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ugcad"]
+[ext_resource type="Texture2D" uid="uid://bsmnn0jhinyay" path="res://Textures/sky_panorama.png" id="1_epnw6"]
 
-[sub_resource type="Sky" id="Sky_1m75t"]
-sky_material = SubResource("PhysicalSkyMaterial_ugcad")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5bgq7"]
+panorama = ExtResource("1_epnw6")
+
+[sub_resource type="Sky" id="Sky_rypds"]
+sky_material = SubResource("PanoramaSkyMaterial_5bgq7")
 
 [resource]
-background_mode = 1
-sky = SubResource("Sky_1m75t")
+background_mode = 2
+sky = SubResource("Sky_rypds")
+sky_rotation = Vector3(0, 0.541052, 0)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 1
+glow_bloom = 0.72
 fog_height = 1.0
 fog_height_density = 1.0
 volumetric_fog_albedo = Color(0.49559, 0.548833, 0.357076, 1)
