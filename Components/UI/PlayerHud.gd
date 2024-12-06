@@ -1,11 +1,10 @@
 extends Control
 
-@export var health_label: Label
 @export var score_label : Label
 @export var streak_label : Label
 
 @onready var _game_over_scene := preload("res://Components/UI/GameOver.tscn")
-@onready var health_progress_bar = $StatsContainer/VBoxContainer/HealthContainer/HealthValue/HealthProgressBar
+@onready var health_progress_bar = $StatsContainer/VBoxContainer/HealthContainer/HealthProgressBar
 
 
 func _ready():
@@ -23,7 +22,6 @@ func _input(event):
 		Messenger.pause_changed.emit(paused)
 
 func _update_health_label(health: int = PlayerState.health):
-	health_label.text = str(health)
 	health_progress_bar.value = health / 5.0
 
 func _show_game_over():

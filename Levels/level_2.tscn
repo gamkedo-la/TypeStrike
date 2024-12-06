@@ -191,7 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206819, 0)
 curve = SubResource("Curve3D_aox4y")
 
 [node name="Player" parent="Path3D" instance=ExtResource("2_4dreb")]
-combat_slow_multiplier = 0.0
 
 [node name="TowerA" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.45771e-07, 0, -3.33486, 0, 3.33486, 0, 3.33486, 0, -1.45771e-07, -4, -1, -69.821)
