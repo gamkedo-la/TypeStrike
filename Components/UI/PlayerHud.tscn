@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://fdpfrvxj66fa"]
+[gd_scene load_steps=7 format=3 uid="uid://fdpfrvxj66fa"]
 
 [ext_resource type="Script" path="res://Components/UI/PlayerHud.gd" id="1_eicr1"]
 [ext_resource type="PackedScene" uid="uid://cv88lewxmuvp6" path="res://Components/UI/PauseMenu.tscn" id="2_aehjx"]
+[ext_resource type="Texture2D" uid="uid://gwyndsgm68v7" path="res://Textures/healthbar.png" id="2_i86t8"]
+[ext_resource type="Texture2D" uid="uid://cc0llvpn35lj6" path="res://Textures/healthbar_filled.png" id="3_fwyio"]
 [ext_resource type="Script" path="res://Components/UI/EnemyLabelManager.gd" id="3_l4j3h"]
 [ext_resource type="PackedScene" uid="uid://cbs5dp3v46cig" path="res://Components/enemy_label.tscn" id="4_imy1f"]
 
@@ -38,6 +40,21 @@ text = "Health:"
 [node name="HealthValue" type="Label" parent="StatsContainer/VBoxContainer/HealthContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="HealthProgressBar" type="TextureProgressBar" parent="StatsContainer/VBoxContainer/HealthContainer/HealthValue"]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 70.0
+max_value = 1.0
+step = 0.2
+value = 0.6
+nine_patch_stretch = true
+stretch_margin_left = 35
+stretch_margin_top = 35
+stretch_margin_right = 35
+stretch_margin_bottom = 35
+texture_over = ExtResource("2_i86t8")
+texture_progress = ExtResource("3_fwyio")
 
 [node name="ScoreContainer" type="HBoxContainer" parent="StatsContainer/VBoxContainer"]
 layout_mode = 2
