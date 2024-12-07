@@ -2,8 +2,6 @@ extends Node
 
 var phrases : Array[ShuffleBag]
 
-
-
 var cutoffs = [
 	2, #TINY
 	4, #SHORT
@@ -31,7 +29,7 @@ func _init():
 			phrases[section].populate(section_phrases)
 			section_phrases.clear()
 			section += 1
-		section_phrases.append(phrase)
+		section_phrases.append(phrase.to_lower())
 	phrases[section].populate(section_phrases)
 	
 	phrases.map(func(b : ShuffleBag): b.reshuffle())
