@@ -5,6 +5,7 @@ signal focus_lost
 
 @export var word : String
 @export var phrase_length : TS_Enums.PhraseLength = TS_Enums.PhraseLength.SHORT
+@export var collision_body : CollisionObject3D
 
 var word_index : int = 0
 

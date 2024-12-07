@@ -23,7 +23,6 @@ func _ready():
 func _text_input():
 	if PlayerState.health <= 0:
 		return
-
 	var key_typed = textarea.text[-1].to_lower() if textarea.text.length() > 0 else ""
 	if enemy_map.is_empty():
 		return
@@ -37,7 +36,7 @@ func _text_input():
 		current_target = -1
 	typed_text = textarea.text
 
-	if current_target >= 0:
+	if current_target >= 0 and not Input.is_key_pressed(KEY_ENTER):
 		attack_target(key_typed)
 
 func _on_text_edit_text_set():
@@ -45,21 +44,27 @@ func _on_text_edit_text_set():
 
 func get_target(letter: String) -> int:
 	for i in enemy_map.keys():
-		var enemy_word = enemy_map.get(i).word
-		if enemy_word.begins_with(letter):
-			return i
+		var enemy = enemy_map.get(i)
+		if is_instance_valid(enemy):
+			var enemy_word = enemy.word
+			if enemy_word.begins_with(letter):
+				return i
+		else:
+			enemy_map.erase(i)
 	return -1
 
 func attack_target(letter : String):
-	var enemy : EnemyBase = enemy_map.get(current_target)
-	if enemy:
+	var enemy = enemy_map.get(current_target)
+	if is_instance_valid(enemy):
 		var remaining = enemy.erase(letter)
 		if remaining <= 0:
 			remove_target()
 	else:
-		current_target = -1
+		remove_target()
 
 func remove_target():
+	if current_target == -1:
+		return
 	enemy_map.erase(current_target)
 	current_target = -1
 	textarea.clear()
@@ -87,3 +92,4 @@ func _on_area_3d_body_shape_exited(body_rid, body, body_shape_index, local_shape
 	if body is EnemyBase:
 		audio_lost_health.play()
 		Messenger.player_take_damage.emit()
+		body.queue_free()
