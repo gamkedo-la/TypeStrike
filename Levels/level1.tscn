@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1t8f0obc186b"]
+[gd_scene load_steps=10 format=3 uid="uid://b1t8f0obc186b"]
 
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="1_3sbqm"]
 [ext_resource type="PackedScene" uid="uid://dgdtjr8holjb4" path="res://Components/EnemySpawner/EnemySpawner.tscn" id="2_2vuqi"]
 [ext_resource type="PackedScene" uid="uid://bphx3mefxm0ls" path="res://Meshes/test_map_blockout.tscn" id="2_imtpq"]
-[ext_resource type="PackedScene" uid="uid://cvgr706cfuhue" path="res://Components/UI/win_screen.tscn" id="4_r8m1o"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ugcad"]
 
@@ -114,16 +113,12 @@ shape = SubResource("BoxShape3D_b063c")
 [node name="test_map_blockout2" parent="." instance=ExtResource("2_imtpq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55961, 0, 0.427317)
 
-[node name="WinScreen" parent="." instance=ExtResource("4_r8m1o")]
-
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5512, -2.38419e-07, 23.6566)
 curve = SubResource("Curve3D_khvet")
 
 [node name="Player" parent="Path3D" instance=ExtResource("1_3sbqm")]
 transform = Transform3D(0.998644, 0, 0.0515863, 0, 1, 0, -0.0515863, 0, 0.998644, 0, 0, 0)
-
-[connection signal="path_completed" from="Path3D/Player" to="WinScreen" method="on_level_completed"]
 
 [editable path="EnemySpawner"]
 [editable path="EnemySpawner2"]

@@ -46,3 +46,48 @@ text = "[B] Back to menu"
 script = ExtResource("3_7iniu")
 level_scene = "res://Components/UI/MainMenu.tscn"
 trigger_key = SubResource("InputEventKey_c6iug")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -330.0
+offset_top = 150.0
+offset_right = 330.0
+offset_bottom = 220.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="wpm_label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+text = "WPM:"
+horizontal_alignment = 2
+
+[node name="wpm_value" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+text = "50"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="errors_label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+text = "Errors:"
+horizontal_alignment = 2
+
+[node name="errors_value" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+text = "0"
