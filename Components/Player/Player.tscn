@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pqdm4i0c0o1l"]
+[gd_scene load_steps=14 format=3 uid="uid://pqdm4i0c0o1l"]
 
 [ext_resource type="Script" path="res://Components/Player/Player.gd" id="1_bwaaj"]
 [ext_resource type="Script" path="res://Components/Player/PlayerRails.gd" id="1_h5clx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Components/Player/SadKeys.gd" id="7_orsh2"]
 [ext_resource type="Script" path="res://Components/Player/AttackSoundEffects.gd" id="8_as5eo"]
 [ext_resource type="Material" uid="uid://b3aw060f3dhf0" path="res://Materials/outline.material" id="9_8oy21"]
+[ext_resource type="PackedScene" uid="uid://cvgr706cfuhue" path="res://Components/UI/win_screen.tscn" id="10_6sqha"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tcpla"]
 size = Vector3(2010.32, 20, 0.547076)
@@ -80,5 +81,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963009, 0)
 visible = false
 mesh = SubResource("BoxMesh_wjgcy")
 
+[node name="WinScreen" parent="." instance=ExtResource("10_6sqha")]
+
+[connection signal="path_completed" from="." to="WinScreen" method="on_level_completed"]
 [connection signal="body_shape_exited" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_shape_exited"]
 [connection signal="text_set" from="CharacterBody3D/TextEdit" to="CharacterBody3D" method="_on_text_edit_text_set"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh6if5jjexm4a"]
+[gd_scene load_steps=4 format=3 uid="uid://dh6if5jjexm4a"]
 
 [ext_resource type="Script" path="res://Components/Player/PlayerRails.gd" id="1_7nw7h"]
 [ext_resource type="PackedScene" uid="uid://pqdm4i0c0o1l" path="res://Components/Player/Player.tscn" id="2_faxi1"]
+[ext_resource type="PackedScene" uid="uid://cvgr706cfuhue" path="res://Components/UI/win_screen.tscn" id="3_ggjwy"]
 
 [node name="PlayerRails" type="PathFollow3D"]
 rotation_mode = 1
@@ -10,3 +11,7 @@ tilt_enabled = false
 script = ExtResource("1_7nw7h")
 
 [node name="Player" parent="." instance=ExtResource("2_faxi1")]
+
+[node name="WinScreen" parent="." instance=ExtResource("3_ggjwy")]
+
+[connection signal="path_completed" from="." to="WinScreen" method="on_level_completed"]
