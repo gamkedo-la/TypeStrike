@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cik5bytqukxt6"]
+
+[ext_resource type="PackedScene" uid="uid://cjre8y1dl50my" path="res://Meshes/SkeletalMeshes/bacteriophage/bacteriophage.glb" id="1_2mgr6"]
+
+[node name="bacteriophage2" instance=ExtResource("1_2mgr6")]
