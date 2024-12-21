@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_pexnt"]
 [ext_resource type="Script" path="res://Components/UI/SettingsMenu.gd" id="2_okkfc"]
-[ext_resource type="AudioStream" uid="uid://b0igylsditd2n" path="res://Audio/Galactic Rap.mp3" id="4_0mcm1"]
+[ext_resource type="AudioStream" uid="uid://clsuipyq1jlkh" path="res://Audio/typestrike-neon-ambience.mp3" id="3_nnrw6"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_jwtpe"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="4_unvuh"]
 [ext_resource type="Texture2D" uid="uid://bjuwbmwh5yomm" path="res://Textures/settings_header.png" id="6_hco6q"]
@@ -48,7 +48,7 @@ theme = ExtResource("1_pexnt")
 script = ExtResource("2_okkfc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_0mcm1")
+stream = ExtResource("3_nnrw6")
 autoplay = true
 bus = &"Music"
 
