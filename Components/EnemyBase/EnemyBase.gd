@@ -6,12 +6,16 @@ signal focus_lost
 @export var word : String
 @export var phrase_length : TS_Enums.PhraseLength = TS_Enums.PhraseLength.SHORT
 @export var collision_body : CollisionObject3D
+@onready var cpu_particles_3d = $CPUParticles3D
+@onready var animation_player = $AnimationPlayer
 
 var word_index : int = 0
 
 func _ready():
 	word = TypingPhrases.get_random_phrase(phrase_length)
 	Messenger.enemy_spawned.emit(self)
+	if animation_player:
+		animation_player.play("scale_in")
 
 func get_body_position():
 	return self.global_position
