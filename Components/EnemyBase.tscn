@@ -41,6 +41,7 @@ metadata/_snap_enabled = true
 
 [sub_resource type="Animation" id="Animation_asfmm"]
 resource_name = "scale_in"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -94,17 +95,22 @@ mesh = SubResource("BoxMesh_vx01n")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1, 0)
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21375, 0)
 emitting = false
-amount = 20
-lifetime = 0.2
+amount = 15
+lifetime = 0.21
 local_coords = true
+draw_order = 1
 mesh = SubResource("PlaneMesh_x42r6")
 emission_shape = 3
-emission_box_extents = Vector3(0.5, 1, 0.5)
+emission_box_extents = Vector3(1.185, 1.79, 1.255)
 particle_flag_rotate_y = true
 spread = 13.75
 gravity = Vector3(0, 0, 0)
+angular_velocity_min = -659.86
+angular_velocity_max = 43.2
+radial_accel_min = -23.56
+radial_accel_max = -1.04
 scale_amount_min = 0.0
 scale_amount_max = 0.25
 split_scale = true
