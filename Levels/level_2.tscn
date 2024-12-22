@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://er6whp0j2ou5"]
+[gd_scene load_steps=31 format=3 uid="uid://er6whp0j2ou5"]
 
 [ext_resource type="Shader" path="res://Materials/sky.gdshader" id="1_r7seu"]
 [ext_resource type="MeshLibrary" uid="uid://crous2m8kb4sd" path="res://Meshes/MeshLibraries/blockout.meshlib" id="1_wltjo"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://3bb3ygn3i2y4" path="res://Components/dragonfly_chain_spawner.tscn" id="10_n8tge"]
 [ext_resource type="Material" uid="uid://cduc5lbphscw5" path="res://Materials/SurfaceGlitchMaterial.material" id="12_tvj50"]
 [ext_resource type="PackedScene" uid="uid://b8s2uun3vwxi6" path="res://Resources/Globals/glitch_reference.tscn" id="13_ux3tq"]
+[ext_resource type="AudioStream" uid="uid://clsuipyq1jlkh" path="res://Audio/typestrike-neon-ambience.mp3" id="14_frxqj"]
 
 [sub_resource type="Gradient" id="Gradient_kvfpb"]
 offsets = PackedFloat32Array(0, 0.575, 1)
@@ -295,6 +296,11 @@ path_position = 31.29
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95302, 0.450937, -15.0543)
 mesh = SubResource("BoxMesh_7by2f")
 
-[node name="GlitchReference" parent="." instance=ExtResource("13_ux3tq")]
+[node name="GlitchReference" parent="." node_paths=PackedStringArray("audio_stream") instance=ExtResource("13_ux3tq")]
+audio_stream = NodePath("../AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_frxqj")
+bus = &"Music"
 
 [editable path="EnemyDistanceSpawner"]
