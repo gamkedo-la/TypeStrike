@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://cryygq3dxg1w4"]
+
+[ext_resource type="Script" path="res://Scripts/steam_test.gd" id="1_or6yp"]
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_2qdja"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_or6yp")
+
+[node name="Submit Score Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 137.0
+offset_right = 282.0
+offset_bottom = 145.0
+text = "Submit score"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="steam_id" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "steam_id"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "score"
+horizontal_alignment = 1
+
+[node name="global_rank" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "global_rank"
+horizontal_alignment = 1
+
+[node name="leaderboard entries" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="."]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 234.0
+offset_right = 993.0
+offset_bottom = 737.0
+theme = ExtResource("2_2qdja")
+columns = 3
+column_titles_visible = true
+allow_reselect = true
+allow_search = false
+hide_folding = true
+hide_root = true
+select_mode = 1
+scroll_horizontal_enabled = false
+scroll_vertical_enabled = false

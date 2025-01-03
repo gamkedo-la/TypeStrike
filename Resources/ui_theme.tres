@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=24 format=3 uid="uid://urlbj24trl7l"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://urlbj24trl7l"]
 
 [ext_resource type="FontFile" uid="uid://ctfji3yanf8v2" path="res://Resources/Fonts/whitrabt.ttf" id="1_2hvlj"]
 [ext_resource type="FontVariation" uid="uid://b232a1afyvihd" path="res://Resources/Fonts/fontvariation__victor_mono_bold.tres" id="1_oocc0"]
@@ -149,12 +149,17 @@ expand_margin_bottom = 12.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mbj6"]
 bg_color = Color(0, 0, 0, 0.784314)
 border_color = Color(0, 0, 0, 0)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_detail = 1
 expand_margin_left = 12.0
 expand_margin_right = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3egl"]
+bg_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 
 [resource]
 default_font_size = 16
@@ -212,3 +217,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_d45ld")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_4mbj6")
 RichTextLabel/font_sizes/normal_font_size = 24
 RichTextLabel/fonts/normal_font = ExtResource("1_2hvlj")
+Tree/styles/title_button_hover = SubResource("StyleBoxFlat_n3egl")
+Tree/styles/title_button_normal = SubResource("StyleBoxFlat_n3egl")
+Tree/styles/title_button_pressed = SubResource("StyleBoxFlat_n3egl")
