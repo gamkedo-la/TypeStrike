@@ -6,6 +6,7 @@ const STEAM_APP_ID = 480
 var leaderboard_handle: int
 
 func _init():
+	return
 	OS.set_environment("SteamAppId", str(STEAM_APP_ID))
 	OS.set_environment("SteamGameId", str(STEAM_APP_ID))
 	initialize_steam()

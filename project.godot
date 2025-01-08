@@ -22,11 +22,14 @@ Messenger="*res://Resources/Globals/Messenger.gd"
 PlayerState="*res://Components/Player/PlayerState.gd"
 PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 InterfaceAudio="*res://Resources/Globals/InterfaceAudio.gd"
+SteamInit="*res://Scripts/SteamInit.gd"
+
+[debug]
+
+file_logging/enable_file_logging=true
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
 [filesystem]
