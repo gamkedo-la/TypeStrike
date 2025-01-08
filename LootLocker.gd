@@ -145,6 +145,14 @@ func _update_score_label():
 	current_score_value.text = str(score)
 
 func _submit_name():
+	var name_check := ProfanityFilter.new()
+	add_child(name_check)
+	var is_name_clean = await name_check.is_name_ok(desired_name.text)
+
+	if !is_name_clean:
+		print("Name contains profanity")
+		return
+
 	var data = {
 		"name": desired_name.text
 	}
