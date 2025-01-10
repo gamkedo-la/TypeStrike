@@ -338,7 +338,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6509, 1.38982, -0.169014)
 curve = SubResource("Curve3D_l58ma")
 
 [node name="Player" parent="Path3D" instance=ExtResource("17_62n2x")]
-transform = Transform3D(-0.999996, 0, -8.74219e-08, 0, 0.999993, 0, 8.74225e-08, 0, -0.99999, 0, 0, 0)
+transform = Transform3D(-0.999996, 2.11874e-09, 1.61249e-05, 0, 0.999993, -0.000131394, -1.6125e-05, -0.000131394, -0.99999, 0, 0, 0)
 
 [node name="EnemyDistanceSpawner" parent="." node_paths=PackedStringArray("player_path") instance=ExtResource("18_yhlj3")]
 player_path = NodePath("../Path3D/Player")
