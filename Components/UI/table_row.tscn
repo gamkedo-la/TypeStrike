@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg25db1ni22yp"]
+
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_bukr4"]
+[ext_resource type="Script" path="res://Components/UI/table_row.gd" id="2_ibn0o"]
+
+[node name="table_row" type="PanelContainer"]
+theme = ExtResource("1_bukr4")
+theme_type_variation = &"TableRow"
+script = ExtResource("2_ibn0o")
+
+[node name="row" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="col_0" type="Label" parent="row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_bukr4")
+theme_type_variation = &"TableRowText"
+text = "tyfoo"
+
+[node name="col_1" type="Label" parent="row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_bukr4")
+theme_type_variation = &"TableRowText"
+text = "32,789"
+horizontal_alignment = 1
+
+[node name="col_2" type="Label" parent="row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_bukr4")
+theme_type_variation = &"TableRowText"
+text = "2"
+horizontal_alignment = 2

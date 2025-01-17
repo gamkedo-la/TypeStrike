@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=11 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
+[ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="2_bcyp8"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_7iniu"]
+[ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_al4ln"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g1sks"]
 font_size = 64
@@ -10,6 +12,23 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="InputEventKey" id="InputEventKey_c6iug"]
+device = -1
+keycode = 66
+unicode = 98
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka7m1"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.168627, 0.909804, 0.541176, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hulpg"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_gq60v"]
 device = -1
 keycode = 66
 unicode = 98
@@ -23,7 +42,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5p8od")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -85.6
+offset_bottom = 85.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bcyp8")
+expand_mode = 5
+stretch_mode = 6
+
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -34,6 +67,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3
@@ -48,6 +82,7 @@ level_scene = "res://Components/UI/MainMenu.tscn"
 trigger_key = SubResource("InputEventKey_c6iug")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -91,3 +126,247 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_7sqmg")
 text = "0"
+
+[node name="BorderPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7sqmg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ka7m1")
+script = ExtResource("5_al4ln")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderLarge"
+text = "results"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="subheads" type="HBoxContainer" parent="BorderPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/subheads"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderMedium"
+text = "leaders"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="BorderPanel/VBoxContainer/subheads"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderMedium"
+text = "typing stats"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="data" type="HBoxContainer" parent="BorderPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="BorderPanel/VBoxContainer/data"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"TableContainer"
+
+[node name="tree" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hulpg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "player"
+uppercase = true
+
+[node name="Label2" type="Label" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "score"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "rank"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanel/VBoxContainer/data/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "wpm"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="wpm_value" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "62"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "errors"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="errors_Value" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "23"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderSmall"
+text = "score"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="score_value" type="Label" parent="BorderPanel/VBoxContainer/data/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_7sqmg")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "32,789"
+horizontal_alignment = 1
+
+[node name="buttons" type="HBoxContainer" parent="BorderPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="CenterContainer" type="CenterContainer" parent="BorderPanel/VBoxContainer/buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+script = ExtResource("3_7iniu")
+trigger_key = SubResource("InputEventKey_gq60v")
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -16.5
+offset_right = 59.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7sqmg")
+theme_override_colors/font_shadow_color = Color(0.168627, 0.317647, 0.909804, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+text = "[R] Retry"
+uppercase = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="BorderPanel/VBoxContainer/buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton2" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 7
+script = ExtResource("3_7iniu")
+trigger_key = SubResource("InputEventKey_gq60v")
+
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2/BackButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -16.5
+offset_right = 59.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7sqmg")
+theme_override_colors/font_shadow_color = Color(0.168627, 0.317647, 0.909804, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+text = "[L] Level Select"
+uppercase = true

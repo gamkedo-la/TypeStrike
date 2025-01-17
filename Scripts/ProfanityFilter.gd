@@ -17,7 +17,7 @@ func _load_profanity_list():
     profanity_list.append(line)
 
 func _replace_l33t(player_name: String):
-  var l33t = {
+  var l33t: Dictionary = {
     'a': ['4', '@'],
     'b': ['8'],
     'e': ['3'],
