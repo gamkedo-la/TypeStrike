@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://rm2u3svrm2ky"]
+[gd_scene load_steps=13 format=3 uid="uid://rm2u3svrm2ky"]
 
 [ext_resource type="Script" path="res://Components/UI/level_select.gd" id="1_is4du"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="1_s7jl1"]
-[ext_resource type="Texture2D" uid="uid://bjuwbmwh5yomm" path="res://Textures/settings_header.png" id="3_xcyow"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="4_1be8v"]
 [ext_resource type="PackedScene" uid="uid://bg2rnx4wheum5" path="res://Components/UI/level_panel.tscn" id="4_stp8k"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="5_8vatv"]
@@ -74,10 +73,13 @@ theme_override_constants/margin_right = 200
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_xcyow")
-stretch_mode = 3
+theme = ExtResource("5_8vatv")
+theme_type_variation = &"HeaderLarge"
+text = "Level Select"
+horizontal_alignment = 1
+uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
