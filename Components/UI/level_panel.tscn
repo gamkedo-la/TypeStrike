@@ -1,9 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg2rnx4wheum5"]
+[gd_scene load_steps=12 format=3 uid="uid://bg2rnx4wheum5"]
 
 [ext_resource type="Texture2D" uid="uid://b63q7k1ku27cv" path="res://Textures/level_1_screenshot.png" id="1_tdni2"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_v64ig"]
 [ext_resource type="Script" path="res://Components/UI/level_list_item.gd" id="1_x4plm"]
 [ext_resource type="Resource" uid="uid://dqrqa7fjjaag0" path="res://Resources/LevelData/level_1_data.tres" id="3_0cpyi"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n3ava"]
+device = -1
+keycode = 49
+unicode = 49
 
 [sub_resource type="Gradient" id="Gradient_2a0fx"]
 colors = PackedColorArray(0.168627, 0.317647, 0.909804, 1, 0.168627, 0.317647, 0.909804, 0)
@@ -37,6 +42,7 @@ ignore_texture_size = true
 stretch_mode = 6
 script = ExtResource("1_x4plm")
 level_data = ExtResource("3_0cpyi")
+trigger_key = SubResource("InputEventKey_n3ava")
 
 [node name="NormalFrame" type="NinePatchRect" parent="."]
 layout_mode = 1

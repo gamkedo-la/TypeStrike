@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rm2u3svrm2ky"]
+[gd_scene load_steps=15 format=3 uid="uid://rm2u3svrm2ky"]
 
 [ext_resource type="Script" path="res://Components/UI/level_select.gd" id="1_is4du"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="1_s7jl1"]
@@ -22,6 +22,16 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.168627, 0.909804, 0.541176, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_g74jh"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="InputEventKey" id="InputEventKey_cfhvq"]
+device = -1
+keycode = 51
+unicode = 51
 
 [sub_resource type="InputEventKey" id="InputEventKey_38pml"]
 device = -1
@@ -97,11 +107,13 @@ texture_normal = ExtResource("6_7cbke")
 layout_mode = 2
 texture_normal = ExtResource("7_ojmhn")
 level_data = ExtResource("7_biwcy")
+trigger_key = SubResource("InputEventKey_g74jh")
 
 [node name="level3_button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("4_stp8k")]
 layout_mode = 2
 texture_normal = ExtResource("6_v3mad")
 level_data = ExtResource("8_hsf60")
+trigger_key = SubResource("InputEventKey_cfhvq")
 
 [node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
