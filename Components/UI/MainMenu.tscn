@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://daw7r0a4t3rjr"]
+[gd_scene load_steps=14 format=3 uid="uid://daw7r0a4t3rjr"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_0anuj"]
 [ext_resource type="Script" path="res://Components/UI/MainMenu.gd" id="2_jpgj5"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Components/UI/QuitButton.gd" id="4_i7vk5"]
 [ext_resource type="Script" path="res://Components/UI/MenuManager.gd" id="4_x2y7g"]
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_7wybc"]
-[ext_resource type="Texture2D" uid="uid://chrk7te104n6y" path="res://Textures/logo_noglitch.png" id="6_q8jo5"]
 [ext_resource type="PackedScene" uid="uid://d1vbq8efigd0c" path="res://Components/UI/SettingsMenu.tscn" id="8_1sfsp"]
 [ext_resource type="PackedScene" uid="uid://rm2u3svrm2ky" path="res://Components/UI/level_select.tscn" id="10_ra2y1"]
 
@@ -86,20 +85,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="BorderPanel/MainMenuContainer"]
+[node name="Label" type="Label" parent="BorderPanel/MainMenuContainer"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.2
 anchor_right = 0.5
-anchor_bottom = 0.2
-offset_left = -327.0
-offset_top = -47.0
-offset_right = 327.0
-offset_bottom = 23.0
+offset_top = 50.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_q8jo5")
+theme = ExtResource("1_0anuj")
+theme_type_variation = &"HeaderXL"
+text = "TYPESTRIKE"
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="BorderPanel/MainMenuContainer"]
 layout_mode = 1
