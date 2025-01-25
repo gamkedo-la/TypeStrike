@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct2h041nxkr2e"]
+
+[ext_resource type="Script" path="res://Components/UI/loading_screen.gd" id="1_df5ml"]
+[ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="1_warog"]
+[ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="3_3a1qf"]
+[ext_resource type="Script" path="res://loading_messge.gd" id="5_p6auu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klg02"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.168627, 0.909804, 0.541176, 1)
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_df5ml")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_warog")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="MenuManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BorderPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3a1qf")
+theme_override_styles/panel = SubResource("StyleBoxFlat_klg02")
+
+[node name="MainMenuContainer" type="Control" parent="BorderPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="BorderPanel/MainMenuContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.5
+offset_top = -57.0
+offset_right = 316.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3a1qf")
+theme_type_variation = &"HeaderXL"
+text = "TYPESTRIKE"
+horizontal_alignment = 1
+
+[node name="Loading___" type="Label" parent="BorderPanel/MainMenuContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.449
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+grow_vertical = 2
+text = "Loading"
+script = ExtResource("5_p6auu")
+
+[node name="Timer" type="Timer" parent="BorderPanel/MainMenuContainer/Loading___"]
+wait_time = 0.3
+autostart = true

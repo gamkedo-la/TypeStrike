@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TypeStrike"
-run/main_scene="res://Components/UI/MainMenu.tscn"
+run/main_scene="res://Components/UI/loading_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ PlayerState="*res://Components/Player/PlayerState.gd"
 PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 InterfaceAudio="*res://Resources/Globals/InterfaceAudio.gd"
 SteamInit="*res://Scripts/SteamInit.gd"
+LootLocker="*res://LootLocker.gd"
 
 [debug]
 

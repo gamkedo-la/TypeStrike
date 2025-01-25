@@ -5,16 +5,16 @@ signal steam_ready
 const STEAM_APP_ID = 480
 var leaderboard_handle: int
 
-func _init():
-	return
-	OS.set_environment("SteamAppId", str(STEAM_APP_ID))
-	OS.set_environment("SteamGameId", str(STEAM_APP_ID))
-	initialize_steam()
+var active := false
 
 func _process(delta):
-	Steam.run_callbacks()
+	if active:
+		Steam.run_callbacks()
 	
 func initialize_steam() -> void:
+	OS.set_environment("SteamAppId", str(STEAM_APP_ID))
+	OS.set_environment("SteamGameId", str(STEAM_APP_ID))
+	active = true
 	var init_response : Dictionary = Steam.steamInitEx()
 	if init_response.status == 0:
 		Steam.leaderboard_find_result.connect(_on_leaderboard_find_result)
@@ -27,6 +27,7 @@ func initialize_steam() -> void:
 			print("one is named %s (%s)" % [nickname, str(friend)])
 	else:
 		printerr("Steam failed to initialize")
+		print_debug(init_response)
 
 func _on_leaderboard_find_result(handle: int, found: int) -> void:
 	leaderboard_handle = handle
