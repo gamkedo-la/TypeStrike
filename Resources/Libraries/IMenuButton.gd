@@ -1,4 +1,4 @@
-extends Button
+extends BaseButton
 class_name IMenuButton
 
 @onready var pressed_sound = preload("res://Audio/keyboard clack.wav")
@@ -12,3 +12,4 @@ func _unhandled_key_input(event):
 	if key_event.pressed && key_event.keycode == trigger_key.keycode:
 		pressed.emit()
 		_pressed()
+ 

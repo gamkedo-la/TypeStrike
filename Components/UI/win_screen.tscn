@@ -1,20 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=10 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="2_bcyp8"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_7iniu"]
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_al4ln"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_g1sks"]
-font_size = 64
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="InputEventKey" id="InputEventKey_c6iug"]
-device = -1
-keycode = 66
-unicode = 98
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka7m1"]
 draw_center = false
@@ -28,10 +18,15 @@ border_color = Color(0.168627, 0.909804, 0.541176, 1)
 content_margin_left = 20.0
 content_margin_right = 20.0
 
-[sub_resource type="InputEventKey" id="InputEventKey_gq60v"]
+[sub_resource type="InputEventKey" id="InputEventKey_t4rw5"]
 device = -1
-keycode = 66
-unicode = 98
+keycode = 82
+unicode = 114
+
+[sub_resource type="InputEventKey" id="InputEventKey_afdjs"]
+device = -1
+keycode = 76
+unicode = 108
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -54,78 +49,6 @@ grow_vertical = 2
 texture = ExtResource("2_bcyp8")
 expand_mode = 5
 stretch_mode = 6
-
-[node name="Label" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Level complete!"
-label_settings = SubResource("LabelSettings_g1sks")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.7
-anchor_right = 0.7
-anchor_bottom = 0.8
-offset_bottom = -0.231995
-theme = ExtResource("2_7sqmg")
-text = "[B] Back to menu"
-script = ExtResource("3_7iniu")
-level_scene = "res://Components/UI/MainMenu.tscn"
-trigger_key = SubResource("InputEventKey_c6iug")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -330.0
-offset_top = 150.0
-offset_right = 330.0
-offset_bottom = 220.0
-grow_horizontal = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="wpm_label" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_7sqmg")
-text = "WPM:"
-horizontal_alignment = 2
-
-[node name="wpm_value" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_7sqmg")
-text = "50"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="errors_label" type="Label" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_7sqmg")
-text = "Errors:"
-horizontal_alignment = 2
-
-[node name="errors_value" type="Label" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_7sqmg")
-text = "0"
 
 [node name="BorderPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -231,6 +154,14 @@ text = "rank"
 horizontal_alignment = 2
 uppercase = true
 
+[node name="loading_message" type="Label" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Loading leaderboard..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -309,15 +240,16 @@ theme_override_constants/separation = 100
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackButton" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer"]
+[node name="retry_button" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 7
 script = ExtResource("3_7iniu")
-trigger_key = SubResource("InputEventKey_gq60v")
+unpause = true
+trigger_key = SubResource("InputEventKey_t4rw5")
 
-[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer/BackButton"]
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer/retry_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -342,15 +274,17 @@ uppercase = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BackButton2" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2"]
+[node name="level_select_button" type="Button" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 7
 script = ExtResource("3_7iniu")
-trigger_key = SubResource("InputEventKey_gq60v")
+level_scene = "res://Components/UI/level_select.tscn"
+unpause = true
+trigger_key = SubResource("InputEventKey_afdjs")
 
-[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2/BackButton2"]
+[node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer2/level_select_button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
