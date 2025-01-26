@@ -21,6 +21,5 @@ func _on_body_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local
 		for node in spawn_points.get_children():
 			var enemy = enemy_type.instantiate() as EnemyBase
 			node.add_child(enemy)
-			enemy.target = body
 			enemies.append(enemy)
 		player.begin_wave(enemies)
