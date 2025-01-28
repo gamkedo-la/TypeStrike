@@ -11,6 +11,8 @@ const row_scene = preload("res://Components/UI/table_row.tscn")
 
 func _ready():
 	visible = false
+	retry_button.pressed.connect(func():
+		get_tree().reload_current_scene())
 	LootLocker.initialize() # delete later after adding leaderboard wrapper
 	LootLocker.leaderboard_list_retrieved.connect(fill_table)
 	LootLocker.get_leaderboards('typestrike-level-2')

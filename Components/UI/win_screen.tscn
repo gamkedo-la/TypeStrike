@@ -246,7 +246,6 @@ custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 7
 script = ExtResource("3_7iniu")
-unpause = true
 trigger_key = SubResource("InputEventKey_t4rw5")
 
 [node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer/retry_button"]
