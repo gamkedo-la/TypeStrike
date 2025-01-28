@@ -4,7 +4,10 @@ extends IMenuButton
 @export var unpause: bool = false
 @export var menu_index := 0
 
-func _pressed():
+func _ready():
+	pressed.connect(handle_press)
+
+func handle_press():
 	if unpause:
 		get_tree().paused = false
 	if level_scene:
