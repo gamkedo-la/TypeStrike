@@ -13,7 +13,6 @@ func _ready():
 	visible = false
 	retry_button.pressed.connect(func():
 		get_tree().reload_current_scene())
-	LootLocker.initialize() # delete later after adding leaderboard wrapper
 
 func on_level_completed():
 	if visible:
@@ -26,10 +25,10 @@ func on_level_completed():
 	var scene_name = 'typestrike_' + get_tree().current_scene.name
 	
 	# Submit new score to leaderboard
-	LootLocker.leaderboard_list_retrieved.connect(fill_table)
-	LootLocker.upload_score_completed.connect(func():
-		LootLocker.get_leaderboards(scene_name))
-	LootLocker.upload_score(PlayerState.score, scene_name)
+	LeaderboardManager.board_api.leaderboard_entries_retrieved.connect(fill_table)
+	LeaderboardManager.board_api.upload_score_completed.connect(func():
+		LeaderboardManager.get_leaderboard_entries(scene_name))
+	LeaderboardManager.upload_score(scene_name, PlayerState.score)
 	
 	# Set local data
 	wpm_value.text = "%d" % wpm_score
@@ -47,14 +46,19 @@ func _submit_new_score():
 	# do the thing
 
 func fill_table(data: Dictionary):
-	print("Player short id %s" % LootLocker.player_short_id)
-	for entry in data.items:
+	#print("Player short id %s" % LootLocker.player_short_id)
+	for entry : Dictionary in data.items:
 		var row : TableRow = row_scene.instantiate()
-		row.set_data(entry.player.name, 0)
-		row.set_data(str(entry.score), 1)
-		row.set_data(str(entry.rank), 2)
-		row.set_highlight(true)
-		if str(entry.player.id) == str(LootLocker.player_short_id):
-			row.set_highlight(true)
+		if entry.has('steam_id'):
+			row.set_data(Steam.getFriendPersonaName(entry.steam_id), 0)
+			row.set_data(str(entry.score), 1)
+			row.set_data(str(entry.global_rank), 2)
+		else:
+			row.set_data(entry.player.name, 0)
+			row.set_data(str(entry.score), 1)
+			row.set_data(str(entry.rank), 2)
+			#row.set_highlight(true)
+			#if str(entry.player.id) == str(LootLocker.player_short_id):
+				#row.set_highlight(true)
 		tree.add_child(row)
 	loading_message.visible = false

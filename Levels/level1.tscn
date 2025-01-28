@@ -118,7 +118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5512, -2.38419e-07, 23.656
 curve = SubResource("Curve3D_khvet")
 
 [node name="Player" parent="Path3D" instance=ExtResource("1_3sbqm")]
-transform = Transform3D(0.998644, 0, 0.0515863, 0, 1, 0, -0.0515863, 0, 0.998644, 0, 0, 0)
+transform = Transform3D(0.998644, 0, 0.0515862, 0, 1, 0, -0.0515862, 0, 0.998644, 0, 0, 0)
 
 [editable path="EnemySpawner"]
 [editable path="EnemySpawner2"]

@@ -1,4 +1,5 @@
-extends Control
+extends Leaderboard
+class_name LootLocker
 
 #@onready var submit_name_button: Button = %"submit_name_button"
 #@onready var desired_name: TextEdit = %"desired_name"
@@ -6,14 +7,9 @@ extends Control
 #@onready var high_score_value: Label = %"high_score_value"
 #@onready var loading_panel: Panel = %"loading_panel"
 
-signal lootlocker_ready
-signal upload_score_completed
-signal leaderboard_list_retrieved(board_data: Dictionary)
-
 var api_domain := "https://h38q7ajo.api.lootlocker.io/"
 var domain_key := "h38q7ajo"
 var game_key := "dev_47e6dd3fe47d475ab9fdfc365903bf44"
-#var board_id := "typestrike-leaders"
 
 var session_token : String
 var player_id : String
@@ -50,10 +46,8 @@ func _authentication_request():
   
 	var headers = ['Content-Type: application/json']
 
-	auth_http = HTTPRequest.new()
-	add_child(auth_http)  
-	auth_http.request_completed.connect(_on_auth_request_completed)
-	auth_http.request(api_domain + "game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
+	request_completed.connect(_on_auth_request_completed)
+	request(api_domain + "game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
 func _on_auth_request_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
@@ -65,17 +59,12 @@ func _on_auth_request_completed(_result, _response_code, _headers, body):
 	file.store_string(player_id)
 	file.close()
 
-	#desired_name.text = response.player_name
-
 	# Save session token to memory
 	session_token = response.session_token
 
-	print(session_token)
-
 	# Clear node
-	auth_http.queue_free()
-	lootlocker_ready.emit()
-	#loading_panel.visible = false
+	request_completed.disconnect(_on_auth_request_completed)
+	api_ready.emit()
 
 func get_leaderboard_entry(board_id):
 	leader_http = HTTPRequest.new()
@@ -98,25 +87,22 @@ func _on_get_leaderboard_entry_completed(_result, _response_code, _headers, body
 		#high_score_value.text = "0"
 	leader_http.queue_free()
 
-func get_leaderboards(board_id):
-	if session_token.is_empty():
-		await auth_http.request_completed
-	leader_http = HTTPRequest.new()
-	add_child(leader_http)
+func get_leaderboard_entries(board_name: String):
 	var headers = [
 		'Content-Type: application/json',
 		'X-Session-Token: ' + session_token
 	]
-	leader_http.request_completed.connect(_on_get_leaderboards_completed)
-	leader_http.request(api_domain + "game/leaderboards/" + board_id + "/list", headers)
+	request_completed.connect(_on_get_leaderboards_completed)
+	request(api_domain + "game/leaderboards/" + board_name + "/list", headers)
 
 func _on_get_leaderboards_completed(_result, _responses_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
-	leaderboard_list_retrieved.emit(response)
+	leaderboard_entries_retrieved.emit(response)
 	print(response)
-	leader_http.queue_free()
+	request_completed.disconnect(_on_get_leaderboards_completed)
 
-func upload_score(score: int, board_id: String):
+func upload_score(board_id: String, score: int):
+	print('or the LL one?')
 	var data = {
 		"score": score
 	}
@@ -125,16 +111,13 @@ func upload_score(score: int, board_id: String):
 		'X-Session-Token: ' + session_token
 	]
 
-	submit_score_http = HTTPRequest.new()
-	add_child(submit_score_http)
-
-	submit_score_http.request_completed.connect(_on_submit_score_completed)
-	submit_score_http.request(api_domain + "game/leaderboards/" + board_id + "/submit", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
+	request_completed.connect(_on_submit_score_completed)
+	request(api_domain + "game/leaderboards/" + board_id + "/submit", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
 func _on_submit_score_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	print(response)
-	submit_score_http.queue_free()
+	request_completed.disconnect(_on_submit_score_completed)
 	upload_score_completed.emit()
 
 func _update_score_label():

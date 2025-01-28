@@ -23,7 +23,7 @@ PlayerState="*res://Components/Player/PlayerState.gd"
 PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 InterfaceAudio="*res://Resources/Globals/InterfaceAudio.gd"
 SteamInit="*res://Scripts/SteamInit.gd"
-LootLocker="*res://LootLocker.gd"
+LeaderboardManager="*res://Scripts/Leaderboards/LeaderboardManager.gd"
 
 [debug]
 
