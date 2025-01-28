@@ -22,7 +22,6 @@ Messenger="*res://Resources/Globals/Messenger.gd"
 PlayerState="*res://Components/Player/PlayerState.gd"
 PlayerPrefsManager="*res://Resources/Globals/PlayerPrefsManager.gd"
 InterfaceAudio="*res://Resources/Globals/InterfaceAudio.gd"
-SteamInit="*res://Scripts/SteamInit.gd"
 LeaderboardManager="*res://Scripts/Leaderboards/LeaderboardManager.gd"
 
 [debug]
