@@ -2,7 +2,9 @@ extends IMenu
 
 @onready var back_button = %BackButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	back_button.pressed.connect(func():
-		exit_menu.emit())
+	back_button.pressed.connect(_exit)
+
+func _exit():
+	if exit_menu.get_connections().size() > 0:
+		exit_menu.emit()
