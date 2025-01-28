@@ -43,22 +43,14 @@ func millis_to_minutes(millis: float) -> float:
 
 func _submit_new_score():
 	pass
-	# do the thing
 
 func fill_table(data: Dictionary):
-	#print("Player short id %s" % LootLocker.player_short_id)
 	for entry : Dictionary in data.items:
 		var row : TableRow = row_scene.instantiate()
-		if entry.has('steam_id'):
-			row.set_data(Steam.getFriendPersonaName(entry.steam_id), 0)
-			row.set_data(str(entry.score), 1)
-			row.set_data(str(entry.global_rank), 2)
-		else:
-			row.set_data(entry.player.name, 0)
-			row.set_data(str(entry.score), 1)
-			row.set_data(str(entry.rank), 2)
-			#row.set_highlight(true)
-			#if str(entry.player.id) == str(LootLocker.player_short_id):
-				#row.set_highlight(true)
+		var lb_entry : Dictionary = LeaderboardManager.board_api.parse_entry(entry)
+		row.set_data(lb_entry.name, 0)
+		row.set_data(lb_entry.score, 1)
+		row.set_data(lb_entry.rank, 2)
+		row.set_highlight(lb_entry.highlight)
 		tree.add_child(row)
 	loading_message.visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=11 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="2_bcyp8"]
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_7iniu"]
+[ext_resource type="Script" path="res://loading_messge.gd" id="5_0fn1b"]
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_al4ln"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka7m1"]
@@ -158,9 +159,15 @@ uppercase = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-text = "Loading leaderboard..."
+text = "Loading leaderboard"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("5_0fn1b")
+base_message = "Loading leaderboard"
+
+[node name="Timer" type="Timer" parent="BorderPanel/VBoxContainer/data/PanelContainer/tree/loading_message"]
+wait_time = 0.3
+autostart = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/VBoxContainer/data"]
 layout_mode = 2

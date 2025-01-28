@@ -172,6 +172,7 @@ text = "[S] Settings"
 uppercase = true
 
 [node name="QuitButton" type="Button" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 script = ExtResource("4_i7vk5")

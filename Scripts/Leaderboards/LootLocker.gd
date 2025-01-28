@@ -21,7 +21,9 @@ var leader_http : HTTPRequest
 var submit_score_http : HTTPRequest
 var submit_name_http : HTTPRequest
 
+
 func initialize():
+	print('init lootlocker')
 	_authentication_request()
 
 func _authentication_request():
@@ -113,6 +115,15 @@ func upload_score(board_id: String, score: int):
 
 	request_completed.connect(_on_submit_score_completed)
 	request(api_domain + "game/leaderboards/" + board_id + "/submit", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
+
+func parse_entry(entry: Dictionary) -> Dictionary:
+	# todo: highlight row if it belongs to current user
+	return {
+		'name': entry.player.name,
+		'score': str(entry.score),
+		'rank': str(entry.rank),
+		'highlight': false
+	}
 
 func _on_submit_score_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())

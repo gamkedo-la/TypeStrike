@@ -14,3 +14,6 @@ func upload_score(board_name: String, score: int):
 
 func get_leaderboard_entries(board_name: String):
 	pass
+
+func parse_entry(entry: Dictionary):
+	pass
