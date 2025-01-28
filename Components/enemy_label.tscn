@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/enemy_label.gd" id="1_xvx0a"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_5vria"]
-
-[sub_resource type="SystemFont" id="SystemFont_quofx"]
+[ext_resource type="FontVariation" uid="uid://b232a1afyvihd" path="res://Resources/Fonts/fontvariation__victor_mono_bold.tres" id="3_aosop"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,7 +21,7 @@ theme = ExtResource("2_5vria")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/normal_font = SubResource("SystemFont_quofx")
+theme_override_fonts/normal_font = ExtResource("3_aosop")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][color=fc0]%s[/color][color=white]%s[/color][/center]"

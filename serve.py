@@ -36,11 +36,12 @@ def shell_open(url):
 
 
 def serve(root, port, run_browser):
+    os.chdir(root)
 
     address = ("", port)
     httpd = DualStackServer(address, CORSRequestHandler)
 
-    url = f"http://127.0.0.1:{port}/Build/Web/"
+    url = f"http://127.0.0.1:{port}"
     if run_browser:
         # Open the served page in the user's default browser.
         print(f"Opening the served URL in the default browser (use `--no-browser` or `-n` to disable this): {url}")

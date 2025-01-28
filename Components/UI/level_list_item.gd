@@ -13,9 +13,6 @@ func _ready():
 	mouse_exited.connect(func(): hover_frame.hide())
 	pressed.connect(_load_scene())
 
-func _pressed():
-	_load_scene()
-	
 func _load_scene():
 	return func():
 		get_tree().change_scene_to_file(level_data.level_path)	
