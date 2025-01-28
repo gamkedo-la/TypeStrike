@@ -14,14 +14,12 @@ var current_speed : float:
 	get:
 		return speed * fast_forward * combat_slow
 
-
 func _ready():
 	tilt_enabled = false
 	rotation_mode = PathFollow3D.ROTATION_Y
 	current_speed = speed
 	Messenger.wave_started.connect(stop_progress)
 	Messenger.wave_defeated.connect(continue_progress)
-
 
 func _process(delta):
 	progress = progress + current_speed * delta

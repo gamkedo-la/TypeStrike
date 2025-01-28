@@ -14,15 +14,24 @@ func _ready():
 	retry_button.pressed.connect(func():
 		get_tree().reload_current_scene())
 	LootLocker.initialize() # delete later after adding leaderboard wrapper
-	LootLocker.leaderboard_list_retrieved.connect(fill_table)
-	LootLocker.get_leaderboards('typestrike-level-2')
 
 func on_level_completed():
 	if visible:
 		return
 	visible = true
+	
+	# Collect stats
 	var time_sum = PlayerState.wpm.reduce(func(sum, number): return sum + number)
 	var wpm_score = wpm(PlayerState.letters_typed, time_sum)
+	var scene_name = 'typestrike_' + get_tree().current_scene.name
+	
+	# Submit new score to leaderboard
+	LootLocker.leaderboard_list_retrieved.connect(fill_table)
+	LootLocker.upload_score_completed.connect(func():
+		LootLocker.get_leaderboards(scene_name))
+	LootLocker.upload_score(PlayerState.score, scene_name)
+	
+	# Set local data
 	wpm_value.text = "%d" % wpm_score
 	errors_value.text = "%d" % PlayerState.mistakes
 	score_value.text = "%d" % PlayerState.score
@@ -32,6 +41,10 @@ func wpm(letters, time) -> float:
 
 func millis_to_minutes(millis: float) -> float:
 	return millis / (1000.0 * 60.0)
+
+func _submit_new_score():
+	pass
+	# do the thing
 
 func fill_table(data: Dictionary):
 	print("Player short id %s" % LootLocker.player_short_id)

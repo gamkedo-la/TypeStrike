@@ -31,7 +31,7 @@ _data = {
 }
 point_count = 11
 
-[node name="Level1" type="Node3D"]
+[node name="level_1" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_shc2y")

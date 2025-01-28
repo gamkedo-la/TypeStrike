@@ -167,7 +167,7 @@ material = ExtResource("12_tvj50")
 size = Vector3(0.1, 0.5, 10)
 subdivide_depth = 50
 
-[node name="Level2" type="Node3D"]
+[node name="level_2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_iqkm6")

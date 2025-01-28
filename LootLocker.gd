@@ -7,6 +7,7 @@ extends Control
 #@onready var loading_panel: Panel = %"loading_panel"
 
 signal lootlocker_ready
+signal upload_score_completed
 signal leaderboard_list_retrieved(board_data: Dictionary)
 
 var api_domain := "https://h38q7ajo.api.lootlocker.io/"
@@ -69,6 +70,8 @@ func _on_auth_request_completed(_result, _response_code, _headers, body):
 	# Save session token to memory
 	session_token = response.session_token
 
+	print(session_token)
+
 	# Clear node
 	auth_http.queue_free()
 	lootlocker_ready.emit()
@@ -96,7 +99,8 @@ func _on_get_leaderboard_entry_completed(_result, _response_code, _headers, body
 	leader_http.queue_free()
 
 func get_leaderboards(board_id):
-	await auth_http.request_completed
+	if session_token.is_empty():
+		await auth_http.request_completed
 	leader_http = HTTPRequest.new()
 	add_child(leader_http)
 	var headers = [
@@ -112,7 +116,7 @@ func _on_get_leaderboards_completed(_result, _responses_code, _headers, body):
 	print(response)
 	leader_http.queue_free()
 
-func upload_score(score, board_id):
+func upload_score(score: int, board_id: String):
 	var data = {
 		"score": score
 	}
@@ -131,7 +135,7 @@ func _on_submit_score_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	print(response)
 	submit_score_http.queue_free()
-	#high_score_value.text = str(response.score)
+	upload_score_completed.emit()
 
 func _update_score_label():
 	pass
