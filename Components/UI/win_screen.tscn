@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvgr706cfuhue"]
+[gd_scene load_steps=12 format=3 uid="uid://cvgr706cfuhue"]
 
 [ext_resource type="Script" path="res://Components/UI/WinScreen.gd" id="1_5p8od"]
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="2_7sqmg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Components/UI/PlayButton.gd" id="3_7iniu"]
 [ext_resource type="Script" path="res://loading_messge.gd" id="5_0fn1b"]
 [ext_resource type="Script" path="res://Components/UI/IMenu.gd" id="5_al4ln"]
+[ext_resource type="Script" path="res://Components/UI/QuickRestartButton.gd" id="6_bc8yl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka7m1"]
 draw_center = false
@@ -19,7 +20,7 @@ border_color = Color(0.168627, 0.909804, 0.541176, 1)
 content_margin_left = 20.0
 content_margin_right = 20.0
 
-[sub_resource type="InputEventKey" id="InputEventKey_t4rw5"]
+[sub_resource type="InputEventKey" id="InputEventKey_b8l1i"]
 device = -1
 keycode = 82
 unicode = 114
@@ -30,6 +31,8 @@ keycode = 76
 unicode = 108
 
 [node name="WinScreen" type="Control"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -252,8 +255,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 size_flags_horizontal = 7
-script = ExtResource("3_7iniu")
-trigger_key = SubResource("InputEventKey_t4rw5")
+script = ExtResource("6_bc8yl")
+unpause = true
+trigger_key = SubResource("InputEventKey_b8l1i")
 
 [node name="Label" type="Label" parent="BorderPanel/VBoxContainer/buttons/CenterContainer/retry_button"]
 layout_mode = 1

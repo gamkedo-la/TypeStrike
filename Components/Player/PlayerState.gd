@@ -1,5 +1,7 @@
 extends Node
 
+const MAX_HEALTH = 5
+
 var letter_value_base := 10
 var score := 0
 var streak := 0
@@ -18,11 +20,24 @@ func _ready():
 	Messenger.wrong_letter_typed.connect(_break_streak)
 	Messenger.enemy_defeated.connect(_update_player_score)
 	Messenger.player_take_damage.connect(_damage_player)
+	#Messenger.reset_level.connect(_reset_state)
+	Messenger.level_begin.connect(_reset_state)
 
 func _break_streak():
 	streak = 0
 	bonus = 0
 	mistakes += 1
+
+func _reset_state():
+	timer_running = false
+	start_time = 0
+	letters_typed = 0
+	mistakes = 0
+	score = 0
+	streak = 0
+	bonus = 1
+	health = MAX_HEALTH
+	wpm.clear()
 
 func _update_player_score():
 	streak += 1

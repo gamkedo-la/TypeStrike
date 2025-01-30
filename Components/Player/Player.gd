@@ -17,8 +17,13 @@ func _ready():
 	textarea.text_changed.connect(_text_input)
 	textarea.grab_focus()
 	player_rails.path_completed.connect(unfocus_input)
-	Messenger.pause_changed.connect(handle_pause_changed)
 	Messenger.enemy_spawned.connect(enemy_spawned)
+	Messenger.pause_changed.connect(handle_pause_changed)
+	Messenger.level_begin.emit()
+
+func _process(delta):
+	if not get_tree().paused and PlayerState.health > 0:
+		textarea.grab_focus()
 
 func _text_input():
 	if PlayerState.health <= 0:
@@ -80,7 +85,6 @@ func enemy_spawned(node: Node):
 		enemy_map[enemy.get_instance_id()] = enemy
 
 func begin_wave(spawned_enemies: Array[EnemyBase]):
-	#enemies.append_array(spawned_enemies)
 	enemies = spawned_enemies
 	Messenger.wave_started.emit()
 

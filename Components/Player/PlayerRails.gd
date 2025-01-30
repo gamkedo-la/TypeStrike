@@ -20,6 +20,8 @@ func _ready():
 	current_speed = speed
 	Messenger.wave_started.connect(stop_progress)
 	Messenger.wave_defeated.connect(continue_progress)
+	Messenger.player_died.connect(stop_progress)
+	Messenger.level_begin.emit()
 
 func _process(delta):
 	progress = progress + current_speed * delta

@@ -5,9 +5,9 @@ signal api_ready
 var board_api : Leaderboard
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	if OS.has_feature('web'):
 		board_api = LootLocker.new()
-		print('create lootlocker object')
 	else:
 		board_api = SteamLeaderboards.new()
 

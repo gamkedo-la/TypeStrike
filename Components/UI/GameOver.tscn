@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpgo4bliiwfaw"]
+[gd_scene load_steps=9 format=3 uid="uid://cpgo4bliiwfaw"]
 
 [ext_resource type="Theme" uid="uid://urlbj24trl7l" path="res://Resources/ui_theme.tres" id="1_m52dr"]
 [ext_resource type="Texture2D" uid="uid://4qxd5qx3v0p8" path="res://Textures/main_menu.png" id="3_x22yr"]
@@ -14,21 +14,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.168627, 0.909804, 0.541176, 1)
 
-[sub_resource type="GDScript" id="GDScript_0qnrb"]
-script/source = "extends IMenuButton
-
-@export var level_scene : String
-@export var unpause: bool = false
-@export var menu_index := 0
-
-func _pressed():
-	if unpause:
-		get_tree().paused = false
-	if level_scene:
-		get_tree().change_scene_to_file(level_scene)
-"
-
-[sub_resource type="InputEventKey" id="InputEventKey_yl6f4"]
+[sub_resource type="InputEventKey" id="InputEventKey_amo6b"]
 device = -1
 keycode = 82
 unicode = 114
@@ -94,12 +80,10 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="BorderPanel/MainMenuContainer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 491.0
-offset_top = 141.0
-offset_right = -437.2
-offset_bottom = -150.2
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.7
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -108,16 +92,17 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BorderPanel/MainMenuContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 4
 size_flags_stretch_ratio = 7.75
 theme_override_constants/separation = 20
 
 [node name="QuickRestartButton" type="Button" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
-script = SubResource("GDScript_0qnrb")
-level_scene = "res://Levels/level1.tscn"
-trigger_key = SubResource("InputEventKey_yl6f4")
+script = ExtResource("6_gjj4v")
+unpause = true
+autofocus = true
+trigger_key = SubResource("InputEventKey_amo6b")
 
 [node name="Label" type="Label" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/QuickRestartButton"]
 layout_mode = 1
@@ -145,6 +130,7 @@ custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 script = ExtResource("6_gjj4v")
 level_scene = "res://Components/UI/MainMenu.tscn"
+unpause = true
 trigger_key = SubResource("InputEventKey_n1dex")
 
 [node name="Label" type="Label" parent="BorderPanel/MainMenuContainer/MarginContainer/VBoxContainer/BackToMainMenuButton"]

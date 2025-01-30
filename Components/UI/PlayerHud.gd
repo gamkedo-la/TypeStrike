@@ -14,6 +14,7 @@ func _ready():
 	Messenger.score_changed.connect(_update_score_label)
 	Messenger.wrong_letter_typed.connect(_update_streak_label)
 	Messenger.pause_changed.connect(handle_pause_changed)
+	Messenger.level_begin.connect(_update_health_label.bind(PlayerState.MAX_HEALTH))
 
 func _input(event):
 	if event.is_action_pressed("pause"):

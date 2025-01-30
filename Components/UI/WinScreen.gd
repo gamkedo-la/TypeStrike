@@ -11,17 +11,21 @@ const row_scene = preload("res://Components/UI/table_row.tscn")
 
 func _ready():
 	visible = false
-	retry_button.pressed.connect(func():
-		get_tree().reload_current_scene())
 
 func on_level_completed():
+	# Not complete, failed
+	if PlayerState.health <= 0:
+		return
+	# Don't run this method twice
 	if visible:
 		return
+	
 	visible = true
+	get_tree().paused = true
 	
 	# Collect stats
 	var time_sum = PlayerState.wpm.reduce(func(sum, number): return sum + number)
-	var wpm_score = wpm(PlayerState.letters_typed, time_sum)
+	var wpm_score = 0 if time_sum == null else wpm(PlayerState.letters_typed, time_sum)
 	var scene_name = 'typestrike_' + get_tree().current_scene.name
 	
 	# Submit new score to leaderboard

@@ -82,6 +82,7 @@ visible = false
 mesh = SubResource("BoxMesh_wjgcy")
 
 [node name="WinScreen" parent="." instance=ExtResource("10_6sqha")]
+process_priority = 100
 
 [connection signal="path_completed" from="." to="WinScreen" method="on_level_completed"]
 [connection signal="body_shape_exited" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_shape_exited"]
