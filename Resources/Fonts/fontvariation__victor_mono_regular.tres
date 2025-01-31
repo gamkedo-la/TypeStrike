@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b7reiwfu6tehc"]
+
+[ext_resource type="FontFile" uid="uid://ykq4p8icrdqv" path="res://Resources/Fonts/VictorMono-VariableFont_wght.ttf" id="1_wmsty"]
+
+[resource]
+base_font = ExtResource("1_wmsty")

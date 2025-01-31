@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=35 format=3 uid="uid://urlbj24trl7l"]
+[gd_resource type="Theme" load_steps=34 format=3 uid="uid://urlbj24trl7l"]
 
-[ext_resource type="FontFile" uid="uid://ctfji3yanf8v2" path="res://Resources/Fonts/whitrabt.ttf" id="1_2hvlj"]
 [ext_resource type="FontVariation" uid="uid://b232a1afyvihd" path="res://Resources/Fonts/fontvariation__victor_mono_bold.tres" id="1_oocc0"]
 [ext_resource type="Texture2D" uid="uid://dsk4g43nsf8rg" path="res://Textures/button_frame.png" id="2_b8he5"]
 [ext_resource type="Texture2D" uid="uid://cugmi3amdshv4" path="res://Textures/button_frame_hovered.png" id="2_wm40u"]
@@ -280,8 +279,6 @@ Label/styles/header_large = null
 Label/styles/normal = SubResource("StyleBoxEmpty_w1xfa")
 Panel/styles/panel = SubResource("StyleBoxFlat_d45ld")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_4mbj6")
-RichTextLabel/font_sizes/normal_font_size = 24
-RichTextLabel/fonts/normal_font = ExtResource("1_2hvlj")
 TableContainer/base_type = &"PanelContainer"
 TableContainer/styles/panel = SubResource("StyleBoxFlat_n2ug5")
 TableRow/base_type = &"PanelContainer"
