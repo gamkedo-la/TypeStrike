@@ -77,9 +77,17 @@ theme = ExtResource("1_coimf")
 theme_override_fonts/normal_font = ExtResource("4_w7sfe")
 theme_override_fonts/bold_font = ExtResource("5_t8nnt")
 bbcode_enabled = true
-text = "Credits go here!
-[b]you can use bbcode if you want[/b]
-"
+text = "[b][color=2be88a]Tyler Funk[/color]
+Project lead, core gameplay, spawn system, stage 1 and 2 level design, scoring, glitch shader, track motion, wpm calculation, enemy behaviors, bacteriophage and dragonfly models, typing system, HUD sprites, UV scroll effect, win screen, inappropriate name detection, menus, audio system, UI font setup, steam leaderboards integration
+
+[color=2be88a]Christer \"McFunkypants\" Kaitila[/color]
+Neon ambience music, stage 3 (tech/cyber light) level design, glow effects, player rotation fix, sky glitch fix, additional words sourcing (CC0) and related filtering/cleanup
+
+[color=2be88a]Randy Tan Shaoxian[/color]
+Health system, dragonfly physics, damage sound, game over screen, backspace handling, keyboard handler improvement, enemy removal crash addressed, player out of bounds fix
+
+[color=2be88a]Justin Montgomery[/color]
+~250 additional words for game dictionary[/b]"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
