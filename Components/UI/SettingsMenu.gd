@@ -32,11 +32,8 @@ func _ready():
 		var scaling = 1.0 + index
 		cam2d.set_zoom(Vector2(scaling, scaling)))
 		
-	#get_viewport().set_size_2d_override_stretch(true)
-	#get_viewport().get_size_2d()
 	var cam3d = get_viewport().get_camera_3d()
 	
-	#get_viewport().set_size_2d_override(Vector2i)
 	_init_values_from_prefs()
 
 func _init_values_from_prefs():
