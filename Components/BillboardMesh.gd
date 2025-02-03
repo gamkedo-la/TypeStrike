@@ -14,4 +14,3 @@ func _physics_process(delta):
 	var ratio = remap(clampf(dist_to_camera, min_scale, max_scale), min_scale, max_scale, 0, 1.0)
 	var position_delta = lerp(-0.3, 1.0, ratio)
 	position.y = base_y + position_delta
-	#print("base: %f\tdelta: %f\tratio: %f\tdist: %f" % [base_y, position_delta, ratio, dist_to_camera])

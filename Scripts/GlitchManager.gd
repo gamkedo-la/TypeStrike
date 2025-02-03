@@ -14,7 +14,6 @@ func _ready():
 	audio_stream.play()
 	var wav_stream: AudioStreamWAV = audio_stream.stream as AudioStreamWAV
 	var bpm = audio_stream.stream.get_bpm()
-	print ("stream bpm: %3.2f" % bpm)
 
 func _process(delta):
 	glitch_amount = maxf(0.0, glitch_amount - delta)

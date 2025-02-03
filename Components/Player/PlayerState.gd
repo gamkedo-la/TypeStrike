@@ -74,5 +74,3 @@ func _track_typing_stats():
 	timer_running = false
 	var type_time = Time.get_ticks_msec() - start_time
 	wpm.append(type_time)
-	print(type_time)
-	

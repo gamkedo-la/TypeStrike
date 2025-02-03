@@ -23,7 +23,6 @@ var submit_name_http : HTTPRequest
 
 
 func initialize():
-	print('init lootlocker')
 	_authentication_request()
 
 func _authentication_request():
@@ -76,17 +75,11 @@ func get_leaderboard_entry(board_id):
 		'X-Session-Token: ' + session_token
 	]
 	var request_url = api_domain + "game/leaderboards/" + board_id + "/member/" + player_short_id
-	print(request_url)
 	leader_http.request_completed.connect(_on_get_leaderboard_entry_completed)
 	leader_http.request(request_url, headers)
 
 func _on_get_leaderboard_entry_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
-	print(response)
-	#if response.score != null:
-		#high_score_value.text = str(response.score)
-	#else:
-		#high_score_value.text = "0"
 	leader_http.queue_free()
 
 func get_leaderboard_entries(board_name: String):
@@ -100,11 +93,9 @@ func get_leaderboard_entries(board_name: String):
 func _on_get_leaderboards_completed(_result, _responses_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
 	leaderboard_entries_retrieved.emit(response)
-	print(response)
 	request_completed.disconnect(_on_get_leaderboards_completed)
 
 func upload_score(board_id: String, score: int):
-	print('or the LL one?')
 	var data = {
 		"score": score
 	}
@@ -127,7 +118,6 @@ func parse_entry(entry: Dictionary) -> Dictionary:
 
 func _on_submit_score_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
-	print(response)
 	request_completed.disconnect(_on_submit_score_completed)
 	upload_score_completed.emit()
 
@@ -142,7 +132,6 @@ func _submit_name():
 	var is_name_clean = true
 
 	if !is_name_clean:
-		print("Name contains profanity")
 		return
 
 	var data = {
@@ -161,5 +150,4 @@ func _submit_name():
 
 func _on_submit_name_completed(_result, _response_code, _headers, body):
 	var response = JSON.parse_string(body.get_string_from_utf8())
-	print(response)
 	submit_name_http.queue_free()

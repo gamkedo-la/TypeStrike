@@ -31,9 +31,7 @@ func _init():
 			section += 1
 		section_phrases.append(phrase.to_lower())
 	phrases[section].populate(section_phrases)
-	
 	phrases.map(func(b : ShuffleBag): b.reshuffle())
-	phrases.map(func(b : ShuffleBag): print(b.bag.size()))
 
 func get_random_phrase(length : TS_Enums.PhraseLength):
 	return phrases[length].random()

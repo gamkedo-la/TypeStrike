@@ -9,7 +9,6 @@ func initialize():
 	pass
 
 func upload_score(board_name: String, score: int):
-	print('are we calling this one?')
 	pass
 
 func get_leaderboard_entries(board_name: String):
